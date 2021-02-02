@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SPA</title>
+    <title>Joke generator</title>
+    <link rel="shortcut icon" type="image/svg" href="favicon.svg" />
     <link rel="stylesheet" href="styles/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap"
@@ -18,15 +19,19 @@
 
     <main>
       <section id="cat-images">
-        <br />
-        <!-- Remove!-->
         <img id="image-cat" src="" alt="random-cat-image" />
       </section>
 
       <section id="jokes">
         <h2 id="joke">...</h2>
         <h2 id="punchline">...</h2>
-        <h4 id="id">...</h4>
+        <h4 id="joke-id">...</h4>
+      </section>
+
+      <section id="likes">
+        <h2>Favorites</h2>
+        <button id="likeButton">❤️</button>
+        <div id="likeArea"></div>
       </section>
     </main>
 
@@ -40,8 +45,11 @@
         >
       </p>
       <p>
-        Used APIs: <a href="https://docs.thecatapi.com/">Cat images</a> &
-        <a href="https://github.com/15Dkatz/official_joke_api">Jokes</a>
+        Used APIs:
+        <a href="https://thecatapi.com/" target="_blank">Cat images</a> &
+        <a href="https://github.com/15Dkatz/official_joke_api" target="_blank"
+          >Jokes</a
+        >
       </p>
     </footer>
 
