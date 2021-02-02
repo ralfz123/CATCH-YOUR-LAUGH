@@ -84,6 +84,8 @@ Credits to [Joost Faber](https://github.com/joostf) && [Koop](https://github.com
 This project from [Ralf](https://github.com/ralfz123) has a [MIT © License](https://github.com/ralfz123/web-app-from-scratch-2021/blob/main/LICENSE)
 
 
+### Tasklist
+- [ ] Video about Async data fetching, because I had no grip/understanding on that subject.
 <!-- end -->
 
 
@@ -108,6 +110,12 @@ This project from [Ralf](https://github.com/ralfz123) has a [MIT © License](htt
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
 
 <!-- ## Program
+
+
+
+
+------ Program -----
+
 
 ### Week 1 - Hello API 🐒
 

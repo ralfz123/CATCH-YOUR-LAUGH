@@ -5,10 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SPA</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>SPA</h1>
-    <p>Content comes here 🚀</p>
+    <header>
+      <h1>Funniest joke generator (cat + meme) 🤣</h1>
+      <button onclick="reloadPage()">Another combo!</button>
+    </header>
+
+    <main>
+      <section id="cat-images">
+        <br />
+        <!-- Remove!-->
+        <img id="image-cat" src="" alt="random-cat-image" />
+      </section>
+
+      <section id="jokes">
+        <h2 id="joke">...</h2>
+        <h2 id="punchline">...</h2>
+        <h4 id="id">...</h4>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Made by Ralf Zonneveld © 2021 - All rights reserved |
+        <a
+          href="https://github.com/ralfz123/web-app-from-scratch-2021"
+          target="_blank"
+          >GitHub link</a
+        >
+      </p>
+      <p>
+        Used APIs: <a href="https://docs.thecatapi.com/">Cat images</a> &
+        <a href="https://github.com/15Dkatz/official_joke_api">Jokes</a>
+      </p>
+    </footer>
+
     <script src="scripts/main.js"></script>
   </body>
 </html>
