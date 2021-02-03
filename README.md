@@ -7,49 +7,83 @@
 # -Title project-
 _Web App From Scratch, a course of the minor Web Design & Development. It is a minor of the third year from the study [CMD](https://www.cmd-amsterdam.nl/)._
 
+### Table of Contents
+<table style="margin-left: auto; margin-right: auto;">
+    <tr>
+        <td align="center"><a href="#-Purpose-of-Project">🚀 Purpose of Project<a></td>
+        <td align="center"><a href="#-Concept">😍 Concept<a></td>
+        <td align="center"><a href="#-Data">🔢 Data<a></td>
+        <td align="center"><a href="#technical-summary">🤓  Technical summary<a></td>
+        <td align="center"><a href="#-Installation">⚙️ Installation<a></td>
+        <td align="center"><a href="#-sources">📁 Sources<a></td>
+        <td align="center"><a href="#-license">👮 License<a></td>
+    </tr> 
+</table>
+
 ## :rocket: Purpose of Project
-In this course you will learn to build a web application without frameworks or unnecessary libraries, but with vanilla HTML, CSS & JavaScript as much as possible. The end result is a modular, single page web app (SPA). Data will be retrieved from an external API of your choice, manipulated and finally shown in the UI of the App. You will learn different ways to structure code and develop your own coding style. With the gained knowledge you will be able to build interactive prototypes, based on real data. Also you will gain a better understanding of how API's, frameworks and libraries work.
-
-## Learning goals
-
-* _You can add structure to your code by applying patterns. You can defend the choice for the chosen patterns_
-* _You can retrieve data, manipulate it and dynamically convert it to html elements using templating_
-* _You understand how you can work with an external API using asynchronous code_
-* _You understand how you can manage state in your application and you inform the user of state where necessary_
-
-[Rubric](https://docs.google.com/spreadsheets/d/1vJJ4EhIqkefWj1nWFp0Pnvy1Kld-S2V3qwZgC6XQO0c/edit?usp=sharing), with learning goals
-[Overall planning](https://teams.microsoft.com/l/file/95EAEC95-4AB8-4E62-A810-2445969460B6?tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7&fileType=xlsx&objectUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt%2FShared%20Documents%2F02%20-%20Web%20App%20From%20Scratch%2FWAFS%202021%20Planning.xlsx&baseUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt&serviceName=teams&threadId=19:9bd8abc7b32c4e0196ddbaae12cf8e79@thread.tacv2&groupId=5d001f9a-0a4b-4768-92b1-0f1768328ba3)
-
-
+In this course I will learn to build a web application _without_ frameworks or unnecessary libraries, but with **_vanilla_ HTML**, **CSS** & **JavaScript** as much as possible. The end result is a modular, single page web app (SPA). Data will be retrieved from an external API of your choice, manipulated and finally shown in the UI of the App. I will learn different ways to structure code and develop my own coding style. With the gained knowledge I will be able to build interactive prototypes, based on real data. Also I will gain a better understanding of how API's, frameworks and libraries work.
 
 ## :heart_eyes: Concept
-lorem
+Het wordt een applicatie waarbij er afbeeldingen van katten :cat: worden laten zien in combinatie met een mop. Deze combinatie zal leiden tot een eindeloos gelach van de gebruiker. Dit is namelijk een applicatie die je kan gebruiken als de sfeer niet lekker meer is, of er is even geen gesprekstof, of je wilt gewoon even goed hard lachen. Dan is dit dé oplossing!
 
 ### :bulb: Idea
-lorem
-
 <img src="" alt="sketch" width="800px">
 
 ### [Live version now](https://ralfz123.github.io/web-app-from-scratch-2021)
 <img src="" alt="live-demo-screenshot" width="800px">
 
+#### Features
+In deze app kan je:
+- Steeds een andere combinatie van kat & mop zien
+- Je favoriete combinatie 'liken'
+- Favoriete lijst aanmaken met jouw favoriete combinaties van kat & mop
+
+
 ## :1234: Data  
+### APIs are:
+1. Cat images - https://thecatapi.com/
+2. Jokes - https://github.com/15Dkatz/official_joke_api
+
 The data variables I used, are:
-- `lorem`  
-- `lorem` 
+#### 1. Cat images
+- `id`
+- `url`  
+
+#### 2. Jokes
+- `id`
+- `setup` 
+- `punchline`
+
 
 ### Dataset structure
+#### 1. Cat images
+
 ```js
 {
-lorem: "lorem"
+    breeds: [ ],
+    id: "eg4",
+    url: "https://cdn2.thecatapi.com/images/eg4.jpg",
+    width: 300,
+    height: 225
 }
 ```
+
+#### 2. Jokes
+```js
+{
+    id: 327,
+    type: "general",
+    setup: "Why did Sweden start painting barcodes on the sides of their battleships?",
+    punchline: "So they could Scandinavian."
+}
+```
+
 
 ## :nerd_face: Technical summary
 This app is built, using:
 - [Functional Programming Patterns](https://github.com/ralfz123/frontend-data/wiki/Functional-Patterns)
 
-## :gear: Install
+## :gear: Installation
 1. Clone the repository:  
 ```
 git clone https://github.com/ralfz123/web-app-from-scratch-2021.git
@@ -111,6 +145,16 @@ This project from [Ralf](https://github.com/ralfz123) has a [MIT © License](htt
 
 <!-- ## Program
 
+
+## Learning goals
+
+* _You can add structure to your code by applying patterns. You can defend the choice for the chosen patterns_
+* _You can retrieve data, manipulate it and dynamically convert it to html elements using templating_
+* _You understand how you can work with an external API using asynchronous code_
+* _You understand how you can manage state in your application and you inform the user of state where necessary_
+
+[Rubric](https://docs.google.com/spreadsheets/d/1vJJ4EhIqkefWj1nWFp0Pnvy1Kld-S2V3qwZgC6XQO0c/edit?usp=sharing), with learning goals
+[Overall planning](https://teams.microsoft.com/l/file/95EAEC95-4AB8-4E62-A810-2445969460B6?tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7&fileType=xlsx&objectUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt%2FShared%20Documents%2F02%20-%20Web%20App%20From%20Scratch%2FWAFS%202021%20Planning.xlsx&baseUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt&serviceName=teams&threadId=19:9bd8abc7b32c4e0196ddbaae12cf8e79@thread.tacv2&groupId=5d001f9a-0a4b-4768-92b1-0f1768328ba3)
 
 
 
