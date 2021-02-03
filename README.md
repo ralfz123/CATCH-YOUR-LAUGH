@@ -10,13 +10,13 @@ _Web App From Scratch, a course of the minor Web Design & Development. It is a m
 ### Table of Contents
 <table style="margin-left: auto; margin-right: auto;">
     <tr>
-        <td align="center"><a href="#-Purpose-of-Project">🚀 Purpose of Project<a></td>
-        <td align="center"><a href="#-Concept">😍 Concept<a></td>
-        <td align="center"><a href="#-Data">🔢 Data<a></td>
-        <td align="center"><a href="#technical-summary">🤓  Technical summary<a></td>
-        <td align="center"><a href="#-Installation">⚙️ Installation<a></td>
-        <td align="center"><a href="#-sources">📁 Sources<a></td>
-        <td align="center"><a href="#-license">👮 License<a></td>
+        <td align="center"><a href="#rocket-purpose-of-project">🚀 Purpose of Project<a></td>
+        <td align="center"><a href="#heart_eyes-concept">😍 Concept<a></td>
+        <td align="center"><a href="#1234-data">🔢 Data<a></td>
+        <td align="center"><a href="#nerd_face-technical-summary">🤓  Technical summary<a></td>
+        <td align="center"><a href="#gear-installation">⚙️ Installation<a></td>
+        <td align="center"><a href="#file_folder-sources">📁 Sources<a></td>
+        <td align="center"><a href="#cop-license">👮 License<a></td>
     </tr> 
 </table>
 
