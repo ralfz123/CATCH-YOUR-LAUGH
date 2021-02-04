@@ -26,6 +26,8 @@ In this course I will learn to build a web application _without_ frameworks or u
 ## :heart_eyes: Concept
 Het wordt een applicatie waarbij er afbeeldingen van katten :cat: worden laten zien in combinatie met een mop. Deze combinatie zal leiden tot een eindeloos gelach van de gebruiker. Dit is namelijk een applicatie die je kan gebruiken als de sfeer niet lekker meer is, of er is even geen gesprekstof, of je wilt gewoon even goed hard lachen. Dan is dit dé oplossing!
 
+- LOCALSTORAGE!
+
 ### :bulb: Idea
 <img src="" alt="sketch" width="800px">
 
