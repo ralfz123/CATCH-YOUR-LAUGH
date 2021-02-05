@@ -28,6 +28,8 @@ Het wordt een applicatie waarbij er afbeeldingen van katten :cat: worden laten z
 
 - LOCALSTORAGE!
 
+Je kan ook de combinatie als favoriet toevoegen. Op het moment dat hij in je favolist staat, kan je erop klikken. Dan verschijnt er een detailpage met de cat imgage en de joke.
+
 ### :bulb: Idea
 <img src="" alt="sketch" width="800px">
 
