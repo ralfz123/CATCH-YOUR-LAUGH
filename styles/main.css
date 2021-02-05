@@ -39,6 +39,10 @@ main {
   grid-auto-rows: minmax(35vh, auto);
   /* grid-template-rows: 1fr 1fr; */
   grid-gap: 20px;
+
+  width: 80vw;
+  /* margin: 0 auto; */
+  position: relative;
 }
 
 #cat-images {
@@ -74,32 +78,69 @@ main {
   font-weight: normal;
 }
 
-/* ------ LIKE ------- */
+/* ------ FAVO LIST ------- */
 
-#likes {
+#favourites-list {
   grid-area: like;
   background-color: #98dffb70;
 }
 
-#likes h2 {
+#favourites-list h2 {
   margin-top: 5px;
 }
 
-#likes #likeButton {
+#favourites-list #likeButton {
   font-size: 4rem;
   background: none;
   border: none;
   box-shadow: 3px 4px 6px 0px #17161694;
   border-radius: 5px;
   margin: 10px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-#likes #likeButton:active {
+#favourites-list #likeButton:active {
   transform: translateY(5px);
 }
 
-#likes #likeButton:focus {
+#favourites-list #likeButton:focus {
   outline: 0;
+}
+
+#favourites-list #fav-items div {
+  color: red;
+}
+
+#favourites-list #fav-items div:hover {
+  color: green;
+}
+
+/* ------- FAVO ITEM - DETAIL PAGE ------- */
+
+main > #fav-item-detail {
+  grid-area: cats;
+  position: absolute;
+
+  opacity: 0;
+  background-color: #fffffff5;
+  text-align: center;
+  width: 80vw;
+  transition: 0.2s;
+}
+
+main > #fav-item-detail img {
+  width: 50%;
+  height: auto;
+}
+
+main > #fav-item-detail .disappear-button {
+  position: absolute;
+  z-index: 1;
+  justify-self: right;
+  margin: 0.5em;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 /* ------------------------------------------- */

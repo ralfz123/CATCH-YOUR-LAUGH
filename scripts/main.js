@@ -2,7 +2,11 @@
 // 2. Dynamic data via virtualDOM
 // 3. favoritesList
 // 4. Like adds item (cat+joke) to favList
-// 5. Localstorage
+// 5. Localstorage (remembers all fav's from the client)
+
+import { clickLikeButton } from './functionalities/like.js';
+import { clickReloadButton } from './functionalities/reloadPage.js';
+import { checkChild } from './functionalities/detailPage.js';
 
 // API #1 FETCH
 let endpoint = 'https://api.thecatapi.com/v1/images/search';
@@ -36,22 +40,4 @@ function getDataTwo(url) {
         )
       )
     );
-}
-
-// Reload page
-function reloadPage() {
-  location.reload();
-}
-
-// Liked button
-let likeButton = document.getElementById('likeButton');
-
-likeButton.addEventListener('click', check);
-
-function check() {
-  const newDiv = document.createElement('div');
-  const newContent = document.createTextNode('Liked: {cat-item} + {joke-item}');
-  newDiv.appendChild(newContent);
-  const currentDiv = document.getElementById('likeArea');
-  currentDiv.appendChild(newDiv);
 }

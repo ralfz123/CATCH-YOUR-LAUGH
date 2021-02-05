@@ -87,6 +87,11 @@ The data variables I used, are:
 This app is built, using:
 - [Functional Programming Patterns](https://github.com/ralfz123/frontend-data/wiki/Functional-Patterns)
 
+### :nerd_face: To-Do's
+- [ ] Modules
+- [ ] Async fetch
+
+
 ## :gear: Installation
 1. Clone the repository:  
 ```
