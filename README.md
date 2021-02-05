@@ -88,8 +88,16 @@ This app is built, using:
 - [Functional Programming Patterns](https://github.com/ralfz123/frontend-data/wiki/Functional-Patterns)
 
 ### :nerd_face: To-Do's
-- [ ] Modules
-- [ ] Async fetch
+- [x] Modules
+- [ ] Async fetch (async await)
+- Params function
+
+#### Uitdagingen/uitvindingen:
+##### 2 API's fetchen (uitdaging)
+##### Modules (uitvinding)
+##### Async await toepassen (uitvinding)
+
+
 
 
 ## :gear: Installation

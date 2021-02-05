@@ -1,17 +1,24 @@
-// Like button - makes a new item in the favourites-list
-let likeButton = document.getElementById('likeButton');
+let likeBtn = document.getElementById('likeBtn');
 
-function clickLikeButton() {
-  likeButton.addEventListener('click', function check() {
-    const newDiv = document.createElement('div');
-    const newContent = document.createTextNode(
-      'Liked: {cat-item} + {joke-item}'
-    );
-    newDiv.appendChild(newContent);
-    const currentDiv = document.getElementById('fav-items');
-    currentDiv.appendChild(newDiv);
+// Makes a new item in the favourites-list
+function clickLikeBtn() {
+  likeBtn.addEventListener('click', function check() {
+    let newFav = document.createElement('li');
+    newFav.setAttribute('id', 'fav-item');
+
+    // This 4 lines can be used if you want to show the image and the joke
+    // let newCatImg = document.createElement('img');
+    // let newJoke = document.createElement('p');
+    // newFav.appendChild(newCatImg);
+    // newFav.appendChild(newJoke);
+
+    let newContent = document.createTextNode('{cat-item} + {joke-item}');
+    newFav.appendChild(newContent);
+
+    let currentContainer = document.getElementById('fav-items');
+    currentContainer.appendChild(newFav);
   });
 }
 
-clickLikeButton();
-export { clickLikeButton };
+clickLikeBtn();
+export { clickLikeBtn };

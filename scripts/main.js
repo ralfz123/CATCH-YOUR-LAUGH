@@ -4,9 +4,9 @@
 // 4. Like adds item (cat+joke) to favList
 // 5. Localstorage (remembers all fav's from the client)
 
-import { clickLikeButton } from './functionalities/like.js';
+import { clickLikeBtn } from './functionalities/like.js';
 import { clickReloadButton } from './functionalities/reloadPage.js';
-import { checkChild } from './functionalities/detailPage.js';
+// import { clickFavItem } from './modules/detailPage.js';
 
 // API #1 FETCH
 let endpoint = 'https://api.thecatapi.com/v1/images/search';

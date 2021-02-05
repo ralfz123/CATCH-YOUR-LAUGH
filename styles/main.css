@@ -89,7 +89,7 @@ main {
   margin-top: 5px;
 }
 
-#favourites-list #likeButton {
+#favourites-list #likeBtn {
   font-size: 4rem;
   background: none;
   border: none;
@@ -100,41 +100,54 @@ main {
   transition: 0.2s;
 }
 
-#favourites-list #likeButton:active {
+#favourites-list #likeBtn:active {
   transform: translateY(5px);
 }
 
-#favourites-list #likeButton:focus {
+#favourites-list #likeBtn:focus {
   outline: 0;
 }
 
-#favourites-list #fav-items div {
-  color: red;
+#favourites-list #fav-items {
+  list-style: none;
+  padding-left: 0px;
 }
 
-#favourites-list #fav-items div:hover {
-  color: green;
+#favourites-list #fav-items #fav-item {
+  color: rgb(0, 0, 0);
+  background-color: rgb(213, 213, 213);
+  transition: 0.2s;
+}
+
+#favourites-list #fav-items #fav-item:hover {
+  font-weight: 700;
+  color: crimson;
+  cursor: pointer;
 }
 
 /* ------- FAVO ITEM - DETAIL PAGE ------- */
 
-main > #fav-item-detail {
+#fav-item-detail {
   grid-area: cats;
   position: absolute;
 
-  opacity: 0;
+  visibility: hidden;
   background-color: #fffffff5;
   text-align: center;
   width: 80vw;
   transition: 0.2s;
 }
 
-main > #fav-item-detail img {
+.fav-item-detail-active {
+  visibility: visible;
+}
+
+#fav-item-detail img {
   width: 50%;
   height: auto;
 }
 
-main > #fav-item-detail .disappear-button {
+#fav-item-detail .disappear-button {
   position: absolute;
   z-index: 1;
   justify-self: right;
