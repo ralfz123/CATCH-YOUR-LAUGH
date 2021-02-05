@@ -1,43 +1,46 @@
-// 1. Data fetch (getdata)
-// 2. Dynamic data via virtualDOM
-// 3. favoritesList
-// 4. Like adds item (cat+joke) to favList
-// 5. Localstorage (remembers all fav's from the client)
+import { clickLikeBtn } from './modules/like.js';
+import { clickReloadButton } from './modules/reloadPage.js';
+import { clickDisapearBtn } from './modules/detailPage.js';
 
-import { clickLikeBtn } from './functionalities/like.js';
-import { clickReloadButton } from './functionalities/reloadPage.js';
-// import { clickFavItem } from './modules/detailPage.js';
+getData();
 
-// API #1 FETCH
-let endpoint = 'https://api.thecatapi.com/v1/images/search';
-getData(endpoint);
-
-function getData(url) {
-  let image = document.getElementById('image-cat');
-
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => (image.src = data[0].url));
+// Fetching data and parses to JSON
+async function fetchData(url) {
+  const dataResponse = await fetch(url);
+  console.log('🌐 Fetching data...'); // Feedback to user while fetching data
+  const jsonData = await dataResponse.json();
+  return jsonData;
 }
 
-// API #2 FETCH
-let endpointTwo = 'https://official-joke-api.appspot.com/jokes/random';
+// Starting application - getting data from endpoints and invoke functions with that data
+export async function getData() {
+  const endpointCats = 'https://api.thecatapi.com/v1/images/search';
+  const endpointJokes = 'https://official-joke-api.appspot.com/jokes/random';
 
-getDataTwo(endpointTwo);
+  const dataCatImages = await fetchData(endpointCats);
+  const dataJokes = await fetchData(endpointJokes);
 
-function getDataTwo(url) {
+  renderCatImages(dataCatImages);
+  renderJokes(dataJokes);
+}
+
+// Must be in modules?
+// Renders the data (cat images) in the HTML
+function renderCatImages(data) {
+  let image = document.getElementById('image-cat');
+  image.src = data[0].url;
+  console.log('😺 Cat data rendered');
+}
+
+// Must be in modules?
+// Renders the data (jokes) in the HTML
+function renderJokes(data) {
   let joke = document.getElementById('joke');
   let punchline = document.getElementById('punchline');
   let id = document.getElementById('joke-id');
 
-  fetch(url)
-    .then((response) => response.json())
-    .then(
-      (data) => (
-        (joke.innerHTML = data.setup),
-        (punchline.innerHTML = data.punchline)(
-          (id.innerHTML = 'id: ' + data.id)
-        )
-      )
-    );
+  joke.innerHTML = data.setup;
+  punchline.innerHTML = data.punchline;
+  id.innerHTML = 'id: ' + data.id;
+  console.log('🤣 Joke data rendered');
 }

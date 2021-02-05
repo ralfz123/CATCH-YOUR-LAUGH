@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <h1>Funniest joke generator (cat + meme) 🤣</h1>
+      <h1>Cat & joke generator 🤣</h1>
       <button id="reloadButton">Another combo!</button>
     </header>
 
@@ -21,14 +21,31 @@
       <section id="fav-item-detail">
         <p class="disappear-button">X</p>
 
-        <h2>Favorite item</h2>
-        <!-- dummy img source: https://nl.pinterest.com/pin/215609900881356215/ -->
-        <img
-          src="https://i.pinimg.com/originals/73/44/c6/7344c6eb343fb4c6ad415a579c35fd83.gif"
-          alt=""
-        />
+        <ul>
+          <li>
+            <!-- dummy img source: https://nl.pinterest.com/pin/215609900881356215/ -->
+            <img
+              src="https://i.pinimg.com/originals/73/44/c6/7344c6eb343fb4c6ad415a579c35fd83.gif"
+              alt=""
+            />
 
-        <p>{joke}</p>
+            <p>{joke}</p>
+
+            <button id="deleteBtn">Delete</button>
+          </li>
+
+          <li>
+            <!-- dummy img source: https://nl.pinterest.com/pin/215609900881356215/ -->
+            <img
+              src="https://i.pinimg.com/originals/73/44/c6/7344c6eb343fb4c6ad415a579c35fd83.gif"
+              alt=""
+            />
+
+            <p>{joke}</p>
+
+            <button>Delete</button>
+          </li>
+        </ul>
       </section>
 
       <section id="cat-images">
@@ -44,7 +61,7 @@
       <section id="favourites-list">
         <h2>Favourites</h2>
         <button id="likeBtn">❤️</button>
-        <ul id="fav-items"></ul>
+        <ol id="fav-items"></ol>
       </section>
     </main>
 

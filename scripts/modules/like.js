@@ -11,7 +11,6 @@ function clickLikeBtn() {
     // let newJoke = document.createElement('p');
     // newFav.appendChild(newCatImg);
     // newFav.appendChild(newJoke);
-
     let newContent = document.createTextNode('{cat-item} + {joke-item}');
     newFav.appendChild(newContent);
 

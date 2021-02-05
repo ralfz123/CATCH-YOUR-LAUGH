@@ -88,9 +88,20 @@ This app is built, using:
 - [Functional Programming Patterns](https://github.com/ralfz123/frontend-data/wiki/Functional-Patterns)
 
 ### :nerd_face: To-Do's
+- [x] Data fetch (getdata)
+- [x] Dynamic data via virtualDOM
+- [ ] FavoritesList
+- [ ] Like adds item (cat+joke) to favList
+- [ ] Localstorage (remembers all fav's from the client)
+
 - [x] Modules
-- [ ] Async fetch (async await)
-- Params function
+- [x] Async fetch (async await)
+- [ ] Params function
+- [ ] Feedback to user while fetching data
+
+
+
+
 
 #### Uitdagingen/uitvindingen:
 ##### 2 API's fetchen (uitdaging)
