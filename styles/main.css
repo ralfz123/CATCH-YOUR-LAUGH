@@ -25,6 +25,11 @@ body {
 /*                   HEADER                    */
 /* ------------------------------------------- */
 
+header {
+  margin: 0 auto;
+  text-align: center;
+}
+
 header #reloadBtn {
   background-color: #1f1b1b;
   border: none;
