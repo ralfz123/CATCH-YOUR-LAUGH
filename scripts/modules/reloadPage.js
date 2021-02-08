@@ -1,11 +1,11 @@
 // Reload page - triggered by button, then reloads page
-let reloadButton = document.getElementById('reloadButton');
+let reloadBtn = document.getElementById('reloadBtn');
 
-function clickReloadButton() {
-  reloadButton.addEventListener('click', function reloadPage() {
+function clickReloadBtn() {
+  reloadBtn.addEventListener('click', function reloadPage() {
     location.reload();
   });
 }
 
-clickReloadButton();
-export { clickReloadButton };
+clickReloadBtn();
+export { clickReloadBtn };

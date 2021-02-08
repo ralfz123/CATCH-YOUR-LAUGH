@@ -25,6 +25,29 @@ body {
 /*                   HEADER                    */
 /* ------------------------------------------- */
 
+header #reloadBtn {
+  background-color: #1f1b1b;
+  border: none;
+  color: white;
+  padding: 8px 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background-color 0.1s;
+  width: 150px;
+  margin: 10px;
+}
+
+header #reloadBtn:hover {
+  background-color: #1f1b1b69;
+  cursor: pointer;
+}
+
+header #reloadBtn:focus {
+  outline: none;
+}
+
 /* ------------------------------------------- */
 /*                   MAIN                      */
 /* ------------------------------------------- */
@@ -41,9 +64,11 @@ main {
   grid-gap: 20px;
 
   width: 80vw;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   position: relative;
 }
+
+/* ------ CATS ------- */
 
 #cat-images {
   grid-area: cats;
@@ -78,7 +103,7 @@ main {
   font-weight: normal;
 }
 
-/* ------ FAVO LIST ------- */
+/* ------ FAVOURITES LIST ------- */
 
 #favourites-list {
   grid-area: like;
@@ -135,7 +160,28 @@ main {
   background-color: #fffffff5;
   text-align: center;
   width: 80vw;
+  height: 73vh;
   transition: 0.2s;
+}
+
+#fav-item-detail .disappear-button {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  margin: 0.5em;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-color: rgb(65, 65, 65);
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  color: white;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+#fav-item-detail .disappear-button:hover {
+  background-color: black;
 }
 
 .fav-item-detail-active {
@@ -145,43 +191,64 @@ main {
 #fav-item-detail ul {
   list-style: none;
   padding-left: 0px;
-
-  /* display: grid;
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 100px auto; */
+  margin: 0;
 }
 
 #fav-item-detail ul li {
   width: 100%;
-  /* margin-left: 37px; */
-  transition: 0.1s;
+  display: grid;
+  grid-template-columns: 30% 50% 20%;
+  /* grid-template-columns: 30vw 30vw 20vw; */
+  grid-template-rows: 100px auto;
+  align-items: center;
+  transition: background 0.1s;
 }
 
 #fav-item-detail ul li:nth-child(even) {
-  background-color: #e6e6e6;
+  background: #e6e6e6;
 }
 
 #fav-item-detail ul li:hover {
-  background-color: darkgray;
+  background: rgba(169, 169, 169, 0.119);
 }
 
 #fav-item-detail ul li img {
-  width: 30%;
+  width: 100px;
   height: auto;
-  display: inline-block;
 }
 
 #fav-item-detail ul li p {
-  display: inline;
+  justify-self: left;
+  text-align: left;
+  margin: 0;
+  font-size: 0.8rem;
 }
 
-#fav-item-detail .disappear-button {
-  position: absolute;
-  z-index: 1;
-  justify-self: right;
-  margin: 0.5em;
-  font-size: 1.3rem;
+#fav-item-detail ul li p:nth-child(2) {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#fav-item-detail ul li #deleteBtn {
+  background-color: #c40000;
+  border: none;
+  color: white;
+  padding: 8px 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background-color 0.1s;
+  width: 100px;
+}
+
+#fav-item-detail ul li #deleteBtn:focus {
+  outline: 0;
+}
+
+#fav-item-detail ul li #deleteBtn:hover {
   cursor: pointer;
+  background-color: #820202;
 }
 
 /* ------------------------------------------- */
@@ -190,6 +257,7 @@ main {
 footer {
   background-color: #767c7f1d;
   font-size: 0.8rem;
+  text-align: center;
 }
 
 footer p a {

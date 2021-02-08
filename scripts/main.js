@@ -1,5 +1,5 @@
 import { clickLikeBtn } from './modules/like.js';
-import { clickReloadButton } from './modules/reloadPage.js';
+import { clickReloadBtn } from './modules/reloadPage.js';
 import { clickDisapearBtn } from './modules/detailPage.js';
 
 getData();
@@ -14,11 +14,19 @@ async function fetchData(url) {
 
 // Starting application - getting data from endpoints and invoke functions with that data
 export async function getData() {
-  const endpointCats = 'https://api.thecatapi.com/v1/images/search';
-  const endpointJokes = 'https://official-joke-api.appspot.com/jokes/random';
 
-  const dataCatImages = await fetchData(endpointCats);
-  const dataJokes = await fetchData(endpointJokes);
+  // API - Cats
+  const endpointCats = 'https://api.thecatapi.com';
+  const pathCats = 'v1/images/search';
+  const urlCats = `${endpointCats}/${pathCats}`;
+
+  // API - Jokes
+  const endpointJokes = 'https://official-joke-api.appspot.com/';
+  const pathJokes = 'jokes/random';
+  const urlJokes = `${endpointJokes}/${pathJokes}`;
+
+  const dataCatImages = await fetchData(urlCats);
+  const dataJokes = await fetchData(urlJokes);
 
   renderCatImages(dataCatImages);
   renderJokes(dataJokes);

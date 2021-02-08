@@ -86,6 +86,7 @@ The data variables I used, are:
 ## :nerd_face: Technical summary
 This app is built, using:
 - [Functional Programming Patterns](https://github.com/ralfz123/frontend-data/wiki/Functional-Patterns)
+- Module patterns
 
 ### :nerd_face: To-Do's
 - [x] Data fetch (getdata)

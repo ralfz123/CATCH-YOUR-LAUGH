@@ -14,12 +14,14 @@
   <body>
     <header>
       <h1>Cat & joke generator 🤣</h1>
-      <button id="reloadButton">Another combo!</button>
+      <button id="reloadBtn">Another combo!</button>
     </header>
 
     <main>
       <section id="fav-item-detail">
         <p class="disappear-button">X</p>
+
+        <h1>Favourites</h1>
 
         <ul>
           <li>
@@ -28,8 +30,10 @@
               src="https://i.pinimg.com/originals/73/44/c6/7344c6eb343fb4c6ad415a579c35fd83.gif"
               alt=""
             />
-
-            <p>{joke}</p>
+            <div>
+              <p>What kind of dog lives in a particle accelerator?</p>
+              <p>A Fermilabrador Retriever.</p>
+            </div>
 
             <button id="deleteBtn">Delete</button>
           </li>
@@ -41,9 +45,12 @@
               alt=""
             />
 
-            <p>{joke}</p>
+            <div>
+              <p>What kind of dog lives in a particle accelerator?</p>
+              <p>A Fermilabrador Retriever.</p>
+            </div>
 
-            <button>Delete</button>
+            <button id="deleteBtn">Delete</button>
           </li>
         </ul>
       </section>
