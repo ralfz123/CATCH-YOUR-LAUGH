@@ -19,6 +19,7 @@ body {
   margin: 0 auto;
   margin: 20px;
   padding: 0;
+  overflow-y: hidden;
 }
 
 /* ------------------------------------------- */
@@ -130,34 +131,65 @@ main {
   transition: 0.2s;
 }
 
+#favourites-list #likeBtn:hover {
+  box-shadow: 3px 4px 6px 0px #8a101094;
+}
+
 #favourites-list #likeBtn:active {
   transform: translateY(5px);
+  box-shadow: 3px 4px 6px 0px #8a101094;
 }
 
 #favourites-list #likeBtn:focus {
   outline: 0;
 }
 
-#favourites-list #fav-items {
-  list-style: none;
-  padding-left: 0px;
-}
-
-#favourites-list #fav-items #fav-item {
+/* #favourites-list #fav-items .fav-item {
   color: rgb(0, 0, 0);
   background-color: rgb(213, 213, 213);
   transition: 0.2s;
 }
 
-#favourites-list #fav-items #fav-item:hover {
+#favourites-list #fav-items .fav-item:hover {
   font-weight: 700;
   color: crimson;
   cursor: pointer;
+} */
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #98dffb70;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #98dffb70;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #56cfff;
 }
 
 /* ------- FAVO ITEM - DETAIL PAGE ------- */
 
-#fav-item-detail {
+#show {
+  visibility: visible;
+}
+
+#hide {
+  visibility: hidden;
+}
+
+.fav-item-detail {
   grid-area: cats;
   position: absolute;
 
@@ -169,7 +201,7 @@ main {
   transition: 0.2s;
 }
 
-#fav-item-detail .disappear-button {
+.fav-item-detail .disappearBtn {
   position: absolute;
   z-index: 1;
   right: 0;
@@ -185,21 +217,20 @@ main {
   transition: background-color 0.2s;
 }
 
-#fav-item-detail .disappear-button:hover {
+.fav-item-detail .disappearBtn:hover {
   background-color: black;
 }
 
-.fav-item-detail-active {
-  visibility: visible;
-}
-
-#fav-item-detail ul {
+.fav-item-detail ol {
   list-style: none;
   padding-left: 0px;
   margin: 0;
+  height: 60vh;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
-#fav-item-detail ul li {
+.fav-item-detail ol li {
   width: 100%;
   display: grid;
   grid-template-columns: 30% 50% 20%;
@@ -209,32 +240,32 @@ main {
   transition: background 0.1s;
 }
 
-#fav-item-detail ul li:nth-child(even) {
+.fav-item-detail ol li:nth-child(even) {
   background: #e6e6e6;
 }
 
-#fav-item-detail ul li:hover {
+.fav-item-detail ol li:hover {
   background: rgba(169, 169, 169, 0.119);
 }
 
-#fav-item-detail ul li img {
+.fav-item-detail ol li img {
   width: 100px;
   height: auto;
 }
 
-#fav-item-detail ul li p {
+.fav-item-detail ol li p {
   justify-self: left;
   text-align: left;
   margin: 0;
   font-size: 0.8rem;
 }
 
-#fav-item-detail ul li p:nth-child(2) {
+.fav-item-detail ol li p:nth-child(2) {
   font-weight: bold;
   margin-top: 10px;
 }
 
-#fav-item-detail ul li #deleteBtn {
+.fav-item-detail ol li #deleteBtn {
   background-color: #c40000;
   border: none;
   color: white;
@@ -247,11 +278,11 @@ main {
   width: 100px;
 }
 
-#fav-item-detail ul li #deleteBtn:focus {
+.fav-item-detail ol li #deleteBtn:focus {
   outline: 0;
 }
 
-#fav-item-detail ul li #deleteBtn:hover {
+.fav-item-detail ol li #deleteBtn:hover {
   cursor: pointer;
   background-color: #820202;
 }
@@ -301,3 +332,23 @@ footer p a:hover {
     transform: rotate(360deg);
   }
 } */
+
+.feedback-like {
+  color: red;
+  font-weight: bold;
+  animation: fadeOut 1.5s ease-in-out;
+  position: absolute;
+  z-index: 2;
+  margin-top: 50px;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

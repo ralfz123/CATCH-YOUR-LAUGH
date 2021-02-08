@@ -1,6 +1,6 @@
 import { clickLikeBtn } from './modules/like.js';
 import { clickReloadBtn } from './modules/reloadPage.js';
-import { clickDisapearBtn } from './modules/detailPage.js';
+import { clickDisapearBtn, checkFavourites } from './modules/detailPage.js';
 
 getData();
 
@@ -14,7 +14,6 @@ async function fetchData(url) {
 
 // Starting application - getting data from endpoints and invoke functions with that data
 export async function getData() {
-
   // API - Cats
   const endpointCats = 'https://api.thecatapi.com';
   const pathCats = 'v1/images/search';

@@ -18,12 +18,12 @@
     </header>
 
     <main>
-      <section id="fav-item-detail">
-        <p class="disappear-button">X</p>
+      <section class="fav-item-detail">
+        <p class="disappearBtn">Back</p>
 
         <h1>Favourites</h1>
 
-        <ul>
+        <ol>
           <li>
             <!-- dummy img source: https://nl.pinterest.com/pin/215609900881356215/ -->
             <img
@@ -37,22 +37,7 @@
 
             <button id="deleteBtn">Delete</button>
           </li>
-
-          <li>
-            <!-- dummy img source: https://nl.pinterest.com/pin/215609900881356215/ -->
-            <img
-              src="https://i.pinimg.com/originals/73/44/c6/7344c6eb343fb4c6ad415a579c35fd83.gif"
-              alt=""
-            />
-
-            <div>
-              <p>What kind of dog lives in a particle accelerator?</p>
-              <p>A Fermilabrador Retriever.</p>
-            </div>
-
-            <button id="deleteBtn">Delete</button>
-          </li>
-        </ul>
+        </ol>
       </section>
 
       <section id="cat-images">
@@ -68,7 +53,7 @@
       <section id="favourites-list">
         <h2>Favourites</h2>
         <button id="likeBtn">❤️</button>
-        <ol id="fav-items"></ol>
+        <button id="checkFavoBtn">Check Favourites</button>
       </section>
     </main>
 
@@ -91,5 +76,6 @@
     </footer>
 
     <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/modules/routie.js"></script>
   </body>
 </html>

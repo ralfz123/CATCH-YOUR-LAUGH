@@ -1,39 +1,33 @@
-let favItems = document.getElementById('fav-items');
-let favItem = document.getElementById('fav-item');
-let favDetail = document.getElementById('fav-item-detail');
+let favDetail = document.querySelector('.fav-item-detail');
 let deleteBtn = document.getElementById('deleteBtn');
-let disapearBtn = document.querySelector('.disappear-button');
+let disapearBtn = document.querySelector('.disappearBtn');
+let checkFavBtn = document.getElementById('checkFavoBtn');
 
-function clickDisapearBtn() {
-  disapearBtn.addEventListener('click', function click() {
-    let favDetail = document.getElementById('fav-item-detail');
-    // favDetail.setAttribute('class', 'fav-item-detail-inactive');
-    favDetail.style.visibility = 'hidden';
+function checkFavourites() {
+  checkFavBtn.addEventListener('click', function () {
+    favDetail.setAttribute('id', 'show');
   });
 }
 
-// DOES NOT WORK YET - Detailpage appears when clicked on fav-item
-function clickFavItem() {
-  // Troubling to catch the fav-item HTML element.
-  if (favItems.hasChildNodes()) {
-    favItem = favItems.childNodes;
-    console.log(favItem);
-
-    favItem.addEventListener('click', function click() {
-      favDetail.setAttribute('class', 'fav-item-detail-active');
-    });
-  }
+function clickDisapearBtn() {
+  disapearBtn.addEventListener('click', function click() {
+    favDetail.removeAttribute('id', 'show');
+    favDetail.setAttribute('id', 'hide');
+  });
 }
 
 // DOES NOT WORK YET - Removes fav-item from list
-function clickDeleteBtn() {
+function deleteFav() {
   deleteBtn.addEventListener('click', function click() {
     // Deletes current fav-item
   });
 }
 
-clickFavItem();
-clickDisapearBtn();
-clickDeleteBtn();
+// Back button to overview - fix it with Routie.js (!)
+// function here <...>
 
-export { clickDisapearBtn };
+clickDisapearBtn();
+// deleteFav();
+checkFavourites();
+
+export { clickDisapearBtn, checkFavourites };

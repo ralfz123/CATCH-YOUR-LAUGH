@@ -89,16 +89,25 @@ This app is built, using:
 - Module patterns
 
 ### :nerd_face: To-Do's
+App-based:
 - [x] Data fetch (getdata)
 - [x] Dynamic data via virtualDOM
 - [ ] FavoritesList
 - [ ] Like adds item (cat+joke) to favList
 - [ ] Localstorage (remembers all fav's from the client)
 
+Code-based:
 - [x] Modules
 - [x] Async fetch (async await)
 - [ ] Params function
 - [ ] Feedback to user while fetching data
+- [x] Split API-url in chunks
+- [ ] Routing
+- [ ] Templating
+- [ ] Global data variable
+
+Readme:
+- [ ] Transform to English language
 
 
 
