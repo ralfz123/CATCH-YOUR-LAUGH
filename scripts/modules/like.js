@@ -7,14 +7,26 @@ function clickLikeBtn() {
     newFav.setAttribute('class', 'fav-item');
 
     // Makes new item in favo-list
+    // Image
     let newCatImg = document.createElement('img');
-    let jokeContainer = document.createElement('div');
-    let newJoke = document.createElement('p');
-    let newJokePunchline = document.createElement('p');
+    newCatImg.src = 'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png'
     newFav.appendChild(newCatImg);
-    jokeContainer.appendChild(newJoke);
-    jokeContainer.appendChild(newJokePunchline);
+
+    // Joke container
+    let jokeContainer = document.createElement('div');
     newFav.appendChild(jokeContainer);
+
+    // Joke
+    let newJoke = document.createElement('p');
+    let joke = document.createTextNode('{joke}');
+    newJoke.appendChild(joke);
+    jokeContainer.appendChild(newJoke);
+
+    // Punchline
+    let newJokePunchline = document.createElement('p');
+    let punchline = document.createTextNode('{punchline}');
+    newJokePunchline.appendChild(punchline);
+    jokeContainer.appendChild(newJokePunchline);
 
     // Delete button to delete the fav-item
     let deleteBtn = document.createElement('button');
