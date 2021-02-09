@@ -135,24 +135,34 @@ main {
 }
 
 #favourites-list #likeBtn:active {
-  transform: scale(.7);
+  transform: scale(0.7);
 }
 
 #favourites-list #likeBtn:focus {
   outline: 0;
 }
 
-/* #favourites-list #fav-items .fav-item {
-  color: rgb(0, 0, 0);
-  background-color: rgb(213, 213, 213);
-  transition: 0.2s;
+.feedback-like {
+  position: absolute;
+  z-index: 2;
+  margin-top: 50px;
+  margin: 0 auto;
+  color: crimson;
+  font-weight: bold;
+  font-size: 3rem;
+  animation: fadeOut 1.5s ease-in-out;
 }
 
-#favourites-list #fav-items .fav-item:hover {
-  font-weight: 700;
-  color: crimson;
-  cursor: pointer;
-} */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
 
 /* SCROLLBAR */
 
@@ -196,7 +206,7 @@ main {
   text-align: center;
   width: 80vw;
   height: 73vh;
-  transition: 0.2s;
+  /* transition: 0.2s; */
 }
 
 .fav-item-detail .disappearBtn {
@@ -330,23 +340,3 @@ footer p a:hover {
     transform: rotate(360deg);
   }
 } */
-
-.feedback-like {
-  color: red;
-  font-weight: bold;
-  animation: fadeOut 1.5s ease-in-out;
-  position: absolute;
-  z-index: 2;
-  margin-top: 50px;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-}

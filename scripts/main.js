@@ -5,6 +5,7 @@ import { clickDisapearBtn, deleteFavItem, checkFavourites } from './modules/deta
 
 getData();
 
+
 // Fetching data and parses to JSON
 async function fetchData(url) {
   const dataResponse = await fetch(url);
@@ -25,8 +26,13 @@ export async function getData() {
   const pathJokes = 'jokes/random';
   const urlJokes = `${endpointJokes}/${pathJokes}`;
 
+  let likeBtn = document.querySelector('section:nth-child(4) button:nth-child(3)'); 
+  likeBtn.setAttribute('disabled', true); // Set variable to disabled so that you're not able to like the unfetched combo data
+
   const dataCatImages = await fetchData(urlCats);
   const dataJokes = await fetchData(urlJokes);
+  likeBtn.removeAttribute('disabled', true); // Data is fetched, so you can hit the like button
+
   clickLikeBtn(dataCatImages, dataJokes)
   
   renderCatImages(dataCatImages);
@@ -37,12 +43,7 @@ export async function getData() {
 // Renders the data (cat images) in the HTML
 function renderCatImages(data) {
   let image = document.getElementById('image-cat');
-  let id = document.getElementById('cat-id');
-  let url = document.getElementById('cat-url');
-
   image.src = data[0].url;
-  id.innerHTML = 'id: ' + data[0].id;
-  url.innerHTML = 'URL: ' + data[0].url;
   console.log('😺 Cat data rendered');
 }
 
@@ -51,10 +52,7 @@ function renderCatImages(data) {
 function renderJokes(data) {
   let joke = document.getElementById('joke');
   let punchline = document.getElementById('punchline');
-  let id = document.getElementById('joke-id');
-
   joke.innerHTML = data.setup;
   punchline.innerHTML = data.punchline;
-  id.innerHTML = 'id: ' + data.id;
   console.log('🤣 Joke data rendered');
 }

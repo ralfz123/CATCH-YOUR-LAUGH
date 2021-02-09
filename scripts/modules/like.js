@@ -6,6 +6,10 @@ function clickLikeBtn(catData, jokeData) {
     
     // Only perform this function if the data is present
     if (catData && jokeData) {
+
+      // Delete empty state 
+      let emptyStateElement = document.querySelector('ol p');
+      emptyStateElement.remove()
       
       // Makes new li in the list
       let newFav = document.createElement('li');
