@@ -236,5 +236,5 @@ likeBtn.addEventListener('click', function () {
 
 let disappearBtn = document.querySelector('.disappearBtn');
 disappearBtn.addEventListener('click', function () {
-  routie('');
+  routie('/');
 });

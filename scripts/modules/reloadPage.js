@@ -2,7 +2,7 @@
 let reloadBtn = document.getElementById('reloadBtn');
 
 function clickReloadBtn() {
-  reloadBtn.addEventListener('click', function reloadPage() {
+  reloadBtn.addEventListener('click', function () {
     location.reload();
   });
 }

@@ -1,10 +1,9 @@
 import { clickLikeBtn } from './modules/like.js';
 import { clickReloadBtn } from './modules/reloadPage.js';
-import { clickDisapearBtn, deleteFavItem, checkFavourites } from './modules/detailPage.js';
+import { clickDisapearBtn, checkFavourites } from './modules/detailPage.js';
 
 
 getData();
-
 
 // Fetching data and parses to JSON
 async function fetchData(url) {
@@ -26,17 +25,19 @@ export async function getData() {
   const pathJokes = 'jokes/random';
   const urlJokes = `${endpointJokes}/${pathJokes}`;
 
-  let likeBtn = document.querySelector('section:nth-child(4) button:nth-child(3)'); 
+  let likeBtn = document.querySelector(
+    'section:nth-child(4) button:nth-child(3)'
+  );
   likeBtn.setAttribute('disabled', true); // Set variable to disabled so that you're not able to like the unfetched combo data
 
   const dataCatImages = await fetchData(urlCats);
   const dataJokes = await fetchData(urlJokes);
   likeBtn.removeAttribute('disabled', true); // Data is fetched, so you can hit the like button
 
-  clickLikeBtn(dataCatImages, dataJokes)
-  
   renderCatImages(dataCatImages);
   renderJokes(dataJokes);
+
+  clickLikeBtn(dataCatImages, dataJokes);
 }
 
 // Must be in modules?

@@ -85,6 +85,7 @@ main {
 #cat-images img {
   width: 100%;
   height: auto; /* Has to be a size that the window will not scale */
+  max-height: 35vh;
 }
 
 /* ------ JOKES ------- */
@@ -111,16 +112,39 @@ main {
 
 /* ------ FAVOURITES LIST ------- */
 
-#favourites-list {
+#favourites {
   grid-area: like;
   background-color: #98dffb70;
 }
 
-#favourites-list h2 {
+#favourites h2 {
   margin-top: 5px;
 }
 
-#favourites-list #likeBtn {
+#favourites #checkFavoBtn {
+  background-color: #1f1b1b;
+  border: none;
+  color: white;
+  padding: 8px 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background-color 0.1s;
+  width: 150px;
+  margin: 10px;
+}
+
+#favourites #checkFavoBtn:hover {
+  background-color: #1f1b1b69;
+  cursor: pointer;
+}
+
+#favourites #checkFavoBtn:focus {
+  outline: none;
+}
+
+#favourites #likeBtn {
   font-size: 2rem;
   background: none;
   border: none;
@@ -130,15 +154,15 @@ main {
   transition: 0.2s;
 }
 
-#favourites-list #likeBtn:hover {
+#favourites #likeBtn:hover {
   transform: scale(1.5);
 }
 
-#favourites-list #likeBtn:active {
+#favourites #likeBtn:active {
   transform: scale(0.7);
 }
 
-#favourites-list #likeBtn:focus {
+#favourites #likeBtn:focus {
   outline: 0;
 }
 
@@ -147,9 +171,9 @@ main {
   z-index: 2;
   margin-top: 50px;
   margin: 0 auto;
-  color: crimson;
+  color: #fa3e31;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
   animation: fadeOut 1.5s ease-in-out;
 }
 
@@ -229,6 +253,29 @@ main {
   background-color: black;
 }
 
+.fav-item-detail .delete-all-btn {
+  background-color: #c40000;
+  border: none;
+  color: white;
+  padding: 8px 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background-color 0.1s;
+  width: 150px;
+  margin: 10px;
+}
+
+.fav-item-detail .delete-all-btn:hover {
+  background-color: #820202;
+  cursor: pointer;
+}
+
+.fav-item-detail .delete-all-btn:focus {
+  outline: none;
+}
+
 .fav-item-detail ol {
   list-style: none;
   padding-left: 0px;
@@ -236,6 +283,14 @@ main {
   height: 60vh;
   overflow: scroll;
   overflow-x: hidden;
+}
+
+.emptyStateShow {
+  visibility: visible;
+}
+
+.emptyStateHide {
+  visibility: hidden;
 }
 
 .fav-item-detail ol li {
@@ -273,7 +328,7 @@ main {
   margin-top: 10px;
 }
 
-.fav-item-detail ol li .deleteBtn {
+.fav-item-detail ol li .delete-button {
   background-color: #c40000;
   border: none;
   color: white;
@@ -283,14 +338,15 @@ main {
   font-size: 16px;
   border-radius: 10px;
   transition: background-color 0.1s;
-  width: 100px;
+  width: 78px;
+  justify-self: center;
 }
 
-.fav-item-detail ol li .deleteBtn:focus {
+.fav-item-detail ol li .delete-button:focus {
   outline: 0;
 }
 
-.fav-item-detail ol li .deleteBtn:hover {
+.fav-item-detail ol li .delete-button:hover {
   cursor: pointer;
   background-color: #820202;
 }

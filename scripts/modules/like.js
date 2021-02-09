@@ -1,16 +1,22 @@
+import { deleteFavItem } from './deleteFav.js';
+
 let likeBtn = document.getElementById('likeBtn');
 
 // Makes a new item in the favourites-list
 function clickLikeBtn(catData, jokeData) {
   likeBtn.addEventListener('click', function () {
-    
     // Only perform this function if the data is present
-    if (catData && jokeData) {
 
-      // Delete empty state 
-      let emptyStateElement = document.querySelector('ol p');
-      emptyStateElement.remove()
-      
+    if (catData && jokeData) {
+      // Hide empty state
+      let listItems = document.querySelector('ol').childNodes.length;
+      const emptyStateElement = document.querySelector('ol p');
+
+      if (listItems > 1) {
+        console.log('Empty state - OFF 🔴');
+        emptyStateElement.classList.toggle('emptyStateHide');
+      }
+
       // Makes new li in the list
       let newFav = document.createElement('li');
       newFav.setAttribute('class', 'fav-item');
@@ -36,7 +42,7 @@ function clickLikeBtn(catData, jokeData) {
 
       // Delete button to delete the fav-item
       let deleteBtn = document.createElement('button');
-      deleteBtn.setAttribute('class', 'deleteBtn');
+      deleteBtn.setAttribute('class', 'delete-button');
       let btnText = document.createTextNode('Delete');
       deleteBtn.appendChild(btnText);
       newFav.appendChild(deleteBtn);
@@ -48,15 +54,17 @@ function clickLikeBtn(catData, jokeData) {
       // Feedback from the 'like' to the user
       let feedbackLike = document.createElement('p');
       feedbackLike.setAttribute('class', 'feedback-like');
-      let newContent = document.createTextNode('Liked ❤️');
+      let newContent = document.createTextNode('Liked');
       feedbackLike.appendChild(newContent);
-      let container = document.getElementById('favourites-list');
+      let container = document.getElementById('favourites');
       container.appendChild(feedbackLike);
 
       // Removes HTML feedback element that is made up here
       setTimeout(function () {
         feedbackLike.remove();
       }, 1500);
+
+      deleteFavItem(catData, jokeData);
     }
   });
 }
