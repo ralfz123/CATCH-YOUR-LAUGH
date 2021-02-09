@@ -17,13 +17,13 @@ function clickDisapearBtn() {
 // DOES NOT WORK YET - Removes fav-item from list
 
 function deleteFavItem() {
-  let deleteBtn = document.querySelector('.deleteBtn');
+  // let deleteBtn = document.querySelector('.deleteBtn');
 
-  deleteBtn.addEventListener('click', function () {
-    event.stopPropagation();
-    let favItem = document.querySelector('.fav-item');
-    favItem.remove();
-  });
+  // deleteBtn.addEventListener('click', function () {
+  //   event.stopPropagation();
+  //   let favItem = document.querySelector('.fav-item');
+  //   favItem.remove();
+  // });
 }
 
 // Back button to overview - fix it with Routie.js (!)

@@ -27,7 +27,8 @@ export async function getData() {
 
   const dataCatImages = await fetchData(urlCats);
   const dataJokes = await fetchData(urlJokes);
-
+  clickLikeBtn(dataCatImages, dataJokes)
+  
   renderCatImages(dataCatImages);
   renderJokes(dataJokes);
 }
