@@ -265,7 +265,7 @@ main {
   margin-top: 10px;
 }
 
-.fav-item-detail ol li #deleteBtn {
+.fav-item-detail ol li .deleteBtn {
   background-color: #c40000;
   border: none;
   color: white;
@@ -278,11 +278,11 @@ main {
   width: 100px;
 }
 
-.fav-item-detail ol li #deleteBtn:focus {
+.fav-item-detail ol li .deleteBtn:focus {
   outline: 0;
 }
 
-.fav-item-detail ol li #deleteBtn:hover {
+.fav-item-detail ol li .deleteBtn:hover {
   cursor: pointer;
   background-color: #820202;
 }

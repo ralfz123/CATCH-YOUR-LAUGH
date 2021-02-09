@@ -10,6 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/modules/router.js" defer></script>
   </head>
   <body>
     <header>
@@ -19,13 +21,13 @@
 
     <main>
       <section class="fav-item-detail">
-        <p class="disappearBtn">Back</p>
+        <p class="disappearBtn">x</p>
 
         <h1>Favourites</h1>
+        <!-- dummy img source: https://nl.pinterest.com/pin/215609900881356215/ -->
 
         <ol>
           <li>
-            <!-- dummy img source: https://nl.pinterest.com/pin/215609900881356215/ -->
             <img
               src="https://i.pinimg.com/originals/73/44/c6/7344c6eb343fb4c6ad415a579c35fd83.gif"
               alt=""
@@ -35,19 +37,21 @@
               <p>A Fermilabrador Retriever.</p>
             </div>
 
-            <button id="deleteBtn">Delete</button>
+            <button class="deleteBtn">Delete</button>
           </li>
         </ol>
       </section>
 
       <section id="cat-images">
         <img id="image-cat" src="" alt="random-cat-image" />
+        <p id="cat-id" style="font-size: 0.8rem">...</p>
+        <p id="cat-url" style="font-size: 0.8rem">...</p>
       </section>
 
       <section id="jokes">
         <h2 id="joke">...</h2>
         <h2 id="punchline">...</h2>
-        <h4 id="joke-id">...</h4>
+        <p id="joke-id">...</p>
       </section>
 
       <section id="favourites-list">
@@ -74,8 +78,5 @@
         >
       </p>
     </footer>
-
-    <script src="scripts/main.js" type="module"></script>
-    <script src="scripts/modules/routie.js"></script>
   </body>
 </html>

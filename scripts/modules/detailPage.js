@@ -1,25 +1,28 @@
 let favDetail = document.querySelector('.fav-item-detail');
-let deleteBtn = document.getElementById('deleteBtn');
 let disapearBtn = document.querySelector('.disappearBtn');
 let checkFavBtn = document.getElementById('checkFavoBtn');
 
 function checkFavourites() {
   checkFavBtn.addEventListener('click', function () {
-    favDetail.setAttribute('id', 'show');
+    favDetail.id = 'show'
   });
 }
 
 function clickDisapearBtn() {
-  disapearBtn.addEventListener('click', function click() {
-    favDetail.removeAttribute('id', 'show');
-    favDetail.setAttribute('id', 'hide');
+  disapearBtn.addEventListener('click', function () {
+    favDetail.id = 'hide'
   });
 }
 
 // DOES NOT WORK YET - Removes fav-item from list
-function deleteFav() {
-  deleteBtn.addEventListener('click', function click() {
-    // Deletes current fav-item
+
+function deleteFavItem() {
+  let deleteBtn = document.querySelector('.deleteBtn');
+
+  deleteBtn.addEventListener('click', function () {
+    event.stopPropagation();
+    let favItem = document.querySelector('.fav-item');
+    favItem.remove();
   });
 }
 
@@ -27,7 +30,7 @@ function deleteFav() {
 // function here <...>
 
 clickDisapearBtn();
-// deleteFav();
+deleteFavItem();
 checkFavourites();
 
-export { clickDisapearBtn, checkFavourites };
+export { clickDisapearBtn, deleteFavItem, checkFavourites };

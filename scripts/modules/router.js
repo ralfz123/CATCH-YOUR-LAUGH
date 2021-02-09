@@ -230,11 +230,11 @@ if (typeof module == 'undefined') {
 // ***************** End routie download code *****************
 
 let likeBtn = document.getElementById('checkFavoBtn');
-likeBtn.addEventListener('click', function router() {
+likeBtn.addEventListener('click', function () {
   routie('favourites');
 });
 
 let disappearBtn = document.querySelector('.disappearBtn');
-disappearBtn.addEventListener('click', function router() {
+disappearBtn.addEventListener('click', function () {
   routie('');
 });

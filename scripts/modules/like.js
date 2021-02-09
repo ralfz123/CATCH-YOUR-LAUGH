@@ -2,7 +2,7 @@ let likeBtn = document.getElementById('likeBtn');
 
 // Makes a new item in the favourites-list
 function clickLikeBtn() {
-  likeBtn.addEventListener('click', function check() {
+  likeBtn.addEventListener('click', function () {
     let newFav = document.createElement('li');
     newFav.setAttribute('class', 'fav-item');
 
@@ -16,13 +16,20 @@ function clickLikeBtn() {
     jokeContainer.appendChild(newJokePunchline);
     newFav.appendChild(jokeContainer);
 
+    // Delete button to delete the fav-item
+    let deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('class', 'deleteBtn');
+    let btnText = document.createTextNode('Delete');
+    deleteBtn.appendChild(btnText);
+    newFav.appendChild(deleteBtn);
+
     let currentContainer = document.querySelector('ol');
     currentContainer.appendChild(newFav);
 
     // Feedback from the 'like' to the user
     let feedbackLike = document.createElement('p');
     feedbackLike.setAttribute('class', 'feedback-like');
-    let newContent = document.createTextNode('Liked!');
+    let newContent = document.createTextNode('Liked ❤️');
     feedbackLike.appendChild(newContent);
     let container = document.getElementById('favourites-list');
     container.appendChild(feedbackLike);
@@ -33,8 +40,6 @@ function clickLikeBtn() {
     }, 1500);
   });
 }
-
-console.log();
 
 clickLikeBtn();
 export { clickLikeBtn };

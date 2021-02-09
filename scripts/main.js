@@ -1,6 +1,7 @@
 import { clickLikeBtn } from './modules/like.js';
 import { clickReloadBtn } from './modules/reloadPage.js';
-import { clickDisapearBtn, checkFavourites } from './modules/detailPage.js';
+import { clickDisapearBtn, deleteFavItem, checkFavourites } from './modules/detailPage.js';
+
 
 getData();
 
@@ -35,7 +36,12 @@ export async function getData() {
 // Renders the data (cat images) in the HTML
 function renderCatImages(data) {
   let image = document.getElementById('image-cat');
+  let id = document.getElementById('cat-id');
+  let url = document.getElementById('cat-url');
+
   image.src = data[0].url;
+  id.innerHTML = 'id: ' + data[0].id;
+  url.innerHTML = 'URL: ' + data[0].url;
   console.log('😺 Cat data rendered');
 }
 
