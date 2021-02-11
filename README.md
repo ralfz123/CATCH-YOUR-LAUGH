@@ -42,6 +42,17 @@ In deze app kan je:
 - Je favoriete combinatie 'liken'
 - Favoriete lijst aanmaken met jouw favoriete combinaties van kat & mop
 
+#### Actor diagram
+<img src="assets/README/actordiagram.jpg" width="900px" />
+
+Questions:
+- Have I have to handle overview and detail routes in the diagram?
+
+#### Interaction diagram
+Not finished yet.
+<img src="assets/README/interaction_diagram.png" width="700px" />
+
+- Have I have to handle localStorage methods() in the diagram?
 
 ## :1234: Data  
 ### APIs are:
@@ -95,16 +106,16 @@ App-based:
 - [ ] FavoritesList
 - [ ] Like adds item (cat+joke) to favList
 - [ ] Localstorage (remembers all fav's from the client)
+- [ ] Store data in array and array in localStorage
 
 Code-based:
 - [x] Modules
 - [x] Async fetch (async await)
 - [ ] Params function
-- [ ] Feedback to user while fetching data
+- [ ] Feedback (Loader) to user while fetching data
 - [x] Split API-url in chunks
 - [ ] Routing
 - [ ] Templating
-- [ ] Global data variable
 
 Readme:
 - [ ] Transform to English language

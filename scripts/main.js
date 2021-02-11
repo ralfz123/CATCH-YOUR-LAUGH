@@ -2,8 +2,7 @@ import { clickLikeBtn } from './modules/like.js';
 import { clickReloadBtn } from './modules/reloadPage.js';
 import { clickDisapearBtn, checkFavourites } from './modules/detailPage.js';
 
-
-getData();
+getData(); // Starts application 
 
 // Fetching data and parses to JSON
 async function fetchData(url) {
@@ -34,26 +33,19 @@ export async function getData() {
   const dataJokes = await fetchData(urlJokes);
   likeBtn.removeAttribute('disabled', true); // Data is fetched, so you can hit the like button
 
-  renderCatImages(dataCatImages);
-  renderJokes(dataJokes);
-
+  renderData(dataCatImages, dataJokes);
   clickLikeBtn(dataCatImages, dataJokes);
 }
 
 // Must be in modules?
-// Renders the data (cat images) in the HTML
-function renderCatImages(data) {
+// Renders the data (cat images & jokes) in the HTML
+function renderData(catData, jokeData) {
   let image = document.getElementById('image-cat');
-  image.src = data[0].url;
-  console.log('😺 Cat data rendered');
-}
-
-// Must be in modules?
-// Renders the data (jokes) in the HTML
-function renderJokes(data) {
   let joke = document.getElementById('joke');
   let punchline = document.getElementById('punchline');
-  joke.innerHTML = data.setup;
-  punchline.innerHTML = data.punchline;
-  console.log('🤣 Joke data rendered');
+
+  image.src = catData[0].url;
+  joke.innerHTML = jokeData.setup;
+  punchline.innerHTML = jokeData.punchline;
+  console.log('✅ Data rendered');
 }
