@@ -78,27 +78,23 @@ var Routie = function (w, isModule) {
       .concat(strict ? '' : '/?')
       .replace(/\/\(/g, '(?:/')
       .replace(/\+/g, '__plus__')
-      .replace(/(\/)?(\.)?:(\w+)(?:(\(.*?\)))?(\?)?/g, function (
-        _,
-        slash,
-        format,
-        key,
-        capture,
-        optional
-      ) {
-        keys.push({ name: key, optional: !!optional });
-        slash = slash || '';
-        return (
-          '' +
-          (optional ? '' : slash) +
-          '(?:' +
-          (optional ? slash : '') +
-          (format || '') +
-          (capture || (format && '([^/.]+?)') || '([^/]+?)') +
-          ')' +
-          (optional || '')
-        );
-      })
+      .replace(
+        /(\/)?(\.)?:(\w+)(?:(\(.*?\)))?(\?)?/g,
+        function (_, slash, format, key, capture, optional) {
+          keys.push({ name: key, optional: !!optional });
+          slash = slash || '';
+          return (
+            '' +
+            (optional ? '' : slash) +
+            '(?:' +
+            (optional ? slash : '') +
+            (format || '') +
+            (capture || (format && '([^/.]+?)') || '([^/]+?)') +
+            ')' +
+            (optional || '')
+          );
+        }
+      )
       .replace(/([\/.])/g, '\\$1')
       .replace(/__plus__/g, '(.+)')
       .replace(/\*/g, '(.*)');
@@ -226,15 +222,3 @@ if (typeof module == 'undefined') {
 } else {
   module.exports = Routie(window, true);
 }
-
-// ***************** End routie download code *****************
-
-let likeBtn = document.getElementById('checkFavoBtn');
-likeBtn.addEventListener('click', function () {
-  routie('favourites');
-});
-
-let disappearBtn = document.querySelector('.disappearBtn');
-disappearBtn.addEventListener('click', function () {
-  routie('/');
-});

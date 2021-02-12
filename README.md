@@ -115,7 +115,8 @@ Code-based:
 - [ ] Feedback (Loader) to user while fetching data
 - [x] Split API-url in chunks
 - [ ] Routing
-- [ ] Templating
+- [ ] Templating 
+- [ ] Script folder structure (helpers/utils/components)
 
 Readme:
 - [ ] Transform to English language
