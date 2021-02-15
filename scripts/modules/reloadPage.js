@@ -1,10 +1,10 @@
-// Reload page - triggered by button, then reloads page
-function clickReloadBtn() {
-  let reloadBtn = document.getElementById('reloadBtn');
-  reloadBtn.addEventListener('click', function () {
+// Reload page - triggered by button, then fetches and renders again
+function clickComboBtn() {
+  let comboBtn = document.getElementById('reloadBtn');
+  comboBtn.addEventListener('click', function () {
     location.reload();
   });
 }
 
-clickReloadBtn();
-export { clickReloadBtn };
+clickComboBtn();
+export { clickComboBtn };

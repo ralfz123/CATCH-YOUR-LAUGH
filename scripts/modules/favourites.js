@@ -5,6 +5,7 @@ function checkFavourites() {
 
   checkFavBtn.addEventListener('click', function () {
     favDetail.id = 'show';
+    location.hash = 'favourites';
   });
 }
 
@@ -12,16 +13,12 @@ function checkFavourites() {
 function clickDisapearBtn() {
   let favDetail = document.querySelector('.fav-item-detail');
   let disapearBtn = document.querySelector('.disappearBtn');
-  
+
   disapearBtn.addEventListener('click', function () {
     favDetail.id = 'hide';
   });
 }
 
-// DOES NOT WORK YET - Removes fav-item from list
-
-// Back button to overview - fix it with Routie.js (!)
-// function here <...>
 
 clickDisapearBtn();
 checkFavourites();

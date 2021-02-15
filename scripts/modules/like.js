@@ -1,4 +1,4 @@
-import { deleteFavItem } from './deleteFav.js';
+import { clickDetailFav, deleteFavItem } from './favItem.js';
 import { feedback } from './feedback.js';
 
 // Makes a new item in the favourites-list
@@ -9,13 +9,13 @@ function clickLikeBtn(catData, jokeData) {
 
     if (catData && jokeData) {
       // Hide empty state
-      let listItems = document.querySelector('ol').childNodes.length;
-      const emptyStateElement = document.querySelector('ol p');
+      // let listItems = document.querySelector('ol').childNodes.length;
+      // const emptyStateElement = document.querySelector('ol p');
 
-      if (listItems > 1) {
-        console.log('Empty state - OFF 🔴');
-        emptyStateElement.classList.toggle('emptyStateHide');
-      }
+      // if (listItems > 1) {
+      //   console.log('Empty state - OFF 🔴');
+      //   emptyStateElement.classList.toggle('emptyStateHide');
+      // }
 
       // Makes new li in the list
       let newFav = document.createElement('li');
@@ -47,12 +47,21 @@ function clickLikeBtn(catData, jokeData) {
       deleteBtn.appendChild(btnText);
       newFav.appendChild(deleteBtn);
 
+      // Check button to check the fav-item
+      let checkBtn = document.createElement('button');
+      checkBtn.setAttribute('class', 'add-button');
+      let checkBtnTxt = document.createTextNode('Check');
+      checkBtn.appendChild(checkBtnTxt);
+      newFav.appendChild(checkBtn);
+
       // Append all elements up here to the existing ordered-list
       let currentContainer = document.querySelector('ol');
       currentContainer.appendChild(newFav);
 
       feedback();
       deleteFavItem(catData, jokeData);
+      clickDetailFav(catData, jokeData);
+
     }
   });
 }

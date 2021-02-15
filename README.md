@@ -118,6 +118,7 @@ Code-based:
 - [ ] Templating 
 - [ ] Script folder structure (helpers/utils/components)
 - [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
+- Arrow function
 
 Readme:
 - [ ] Transform to English language

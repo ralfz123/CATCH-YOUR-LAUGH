@@ -1,11 +1,20 @@
 import './routie.js';
 
-let likeBtn = document.getElementById('checkFavoBtn');
-likeBtn.addEventListener('click', function () {
-  routie('favourites');
-});
+function handleRoutes() {
+  routie({
+    '': function () {
+      console.log('Home');
+    },
+    favourites: function () {
+      console.log('Favourites');
 
-let disappearBtn = document.querySelector('.disappearBtn');
-disappearBtn.addEventListener('click', function () {
-  routie('/');
-});
+      // let favDetail = document.querySelector('.fav-item-detail');
+      // favDetail.id = 'show';
+    },
+    'favourites/*': function () {
+      console.log('Favourite-detail');
+    },
+  });
+}
+
+handleRoutes();
