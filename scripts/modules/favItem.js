@@ -1,5 +1,5 @@
 function clickDetailFav() {
-  let checkFavItemBtn = document.querySelector('.add-button');
+  let checkFavItemBtn = document.querySelector('.checkBtn');
   checkFavItemBtn.addEventListener('click', () => {
     let container = document.querySelector('ol');
     console.log(container.childNodes.length);
@@ -17,7 +17,7 @@ function deleteFavItem(catData, jokeData) {
   // Only perform this function if the data is present
   if (catData && jokeData) {
     let deleteBtn = document.querySelector(
-      '.fav-item-detail ol li .delete-button'
+      '.favourites ol li .deleteBtn'
     );
     deleteBtn.addEventListener('click', function () {
       console.log('Deleted');

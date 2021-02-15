@@ -1,5 +1,5 @@
-import { renderData } from './render.js';
-import { loader } from './loader.js';
+import { renderData } from '../modules/render.js';
+import { loader } from '../modules/loader.js';
 
 // Fetching data and parses to JSON
 async function fetchData(url) {

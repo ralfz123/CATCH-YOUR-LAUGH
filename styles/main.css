@@ -10,7 +10,9 @@
 html {
   background: #f7f7f7;
   /* background: #202026; */
-  font-family: 'Quicksand', sans-serif;
+  --font-headers: 'Quicksand', sans-serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-headers);
 }
 
 /* ------------------------------------------- */
@@ -33,27 +35,8 @@ header {
   text-align: center;
 }
 
-header #reloadBtn {
-  background-color: #1f1b1b;
-  border: none;
-  color: white;
-  padding: 8px 2px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: background-color 0.1s;
-  width: 150px;
-  margin: 10px;
-}
-
-header #reloadBtn:hover {
-  background-color: #1f1b1b69;
-  cursor: pointer;
-}
-
-header #reloadBtn:focus {
-  outline: none;
+header h1 {
+  font-weight: 100;
 }
 
 /* ------------------------------------------- */
@@ -64,7 +47,7 @@ main {
   display: grid;
   grid-template-areas:
     'cats   jokes'
-    'cats   like';
+    'button   like';
 
   grid-template-columns: 1.5fr 1fr;
   grid-auto-rows: minmax(35vh, auto);
@@ -91,6 +74,10 @@ main {
   border-radius: 5px;
 }
 
+#cat-images img[alt] {
+  color: rgba(0, 0, 0, 0.339);
+}
+
 /* ------ JOKES ------- */
 
 #jokes {
@@ -98,7 +85,6 @@ main {
   padding: 5px;
   border: 1px solid grey;
   border-radius: 5px;
-  font-family: monospace;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -118,23 +104,23 @@ main {
 
 /* ------ FAVOURITES LIST ------- */
 
-#favourites {
+#like-area {
   grid-area: like;
   padding: 5px;
   border: 1px solid crimson;
   border-radius: 5px;
 }
 
-#favourites h2 {
+#like-area h2 {
   margin-top: 5px;
   transition: 0.2s;
 }
 
-#favourites h2:hover ~ #likeBtn {
+#like-area h2:hover ~ #likeBtn {
   box-shadow: 0px 0px 9px 3px #b7050594;
 }
 
-#favourites #checkFavoBtn {
+#like-area #checkFavoBtn {
   display: block;
   background-color: #1f1b1b;
   border: none;
@@ -147,18 +133,19 @@ main {
   transition: background-color 0.1s;
   width: 150px;
   margin: 10px;
+  font-family: var(--font-body);
 }
 
-#favourites #checkFavoBtn:hover {
+#like-area #checkFavoBtn:hover {
   background-color: #1f1b1b69;
   cursor: pointer;
 }
 
-#favourites #checkFavoBtn:focus {
+#like-area #checkFavoBtn:focus {
   outline: none;
 }
 
-/* #favourites #likeBtn {
+/* #like-area #likeBtn {
   font-size: 2rem;
   background: none;
   border: none;
@@ -168,7 +155,7 @@ main {
   transition: 0.2s;
 } */
 
-#favourites #likeBtn {
+#like-area #likeBtn {
   font-size: 2rem;
   background: none;
   border: 3px solid crimson;
@@ -198,19 +185,19 @@ main {
   }
 }
 
-#favourites #likeBtn:hover {
+#like-area #likeBtn:hover {
   /* transform: scale(1.5); */
   transform: translateY(-5px);
   background: #778899b7;
   animation: none;
 }
 
-#favourites #likeBtn:active {
+#like-area #likeBtn:active {
   /* transform: scale(0.7); */
   transform: translateY(5px);
 }
 
-#favourites #likeBtn:focus {
+#like-area #likeBtn:focus {
   outline: 0;
 }
 
@@ -236,30 +223,38 @@ main {
   }
 }
 
-/* SCROLLBAR */
+/* ------ Another combo button ------- */
 
-::-webkit-scrollbar {
-  width: 8px;
+#comboBtn {
+  grid-area: button;
+  justify-self: center;
+  align-self: center;
+  /* width: 150px;
+  height: 38px; */
+  padding: 8px 10px;
+
+  background-color: #372f2f;
+  border: none;
+  color: white;
+  box-shadow: 0px 0px 9px 3px #544f4f94;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  border-radius: 5px;
+  transition: background-color 0.1s;
+  font-family: var(--font-body);
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #98dffb70;
-  border-radius: 10px;
+#comboBtn:hover {
+  background-color: #1f1b1b69;
+  cursor: pointer;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #98dffb70;
-  border-radius: 10px;
+#comboBtn:focus {
+  outline: none;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #56cfff;
-}
-
-/* ------- FAVO ITEM - DETAIL PAGE ------- */
+/* ------- FAVOURITES ------- */
 
 #show {
   visibility: visible;
@@ -269,7 +264,7 @@ main {
   visibility: hidden;
 }
 
-.fav-item-detail {
+.favourites {
   grid-area: cats;
   position: absolute;
 
@@ -281,7 +276,7 @@ main {
   /* transition: 0.2s; */
 }
 
-.fav-item-detail .disappearBtn {
+.favourites .disappearBtn {
   position: absolute;
   z-index: 1;
   right: 0;
@@ -295,13 +290,26 @@ main {
   color: white;
   border-radius: 50%;
   transition: background-color 0.2s;
+  font-family: var(--font-body);
 }
 
-.fav-item-detail .disappearBtn:hover {
+.favourites .disappearBtn:hover {
   background-color: black;
 }
 
-.fav-item-detail .delete-all-btn {
+/* Add button */
+.favourites .checkBtn {
+  display: block;
+  background: chartreuse;
+}
+
+.favourites .checkBtn:hover {
+}
+
+.favourites .checkBtn:focus {
+}
+
+.favourites .delete-all-btn {
   background-color: #c40000;
   border: none;
   color: white;
@@ -313,18 +321,19 @@ main {
   transition: background-color 0.1s;
   width: 150px;
   margin: 10px;
+  font-family: var(--font-body);
 }
 
-.fav-item-detail .delete-all-btn:hover {
+.favourites .delete-all-btn:hover {
   background-color: #820202;
   cursor: pointer;
 }
 
-.fav-item-detail .delete-all-btn:focus {
+.favourites .delete-all-btn:focus {
   outline: none;
 }
 
-.fav-item-detail ol {
+.favourites ol {
   list-style: none;
   padding-left: 0px;
   margin: 0;
@@ -341,7 +350,7 @@ main {
   visibility: hidden;
 }
 
-.fav-item-detail ol li {
+.favourites ol li {
   width: 100%;
   display: grid;
   grid-template-columns: 30% 50% 20%;
@@ -351,52 +360,85 @@ main {
   transition: background 0.1s;
 }
 
-.fav-item-detail ol li:nth-child(even) {
+.favourites ol li:nth-child(even) {
   background: #e6e6e6;
 }
 
-.fav-item-detail ol li:hover {
+.favourites ol li:hover {
   background: rgba(169, 169, 169, 0.119);
 }
 
-.fav-item-detail ol li img {
+.favourites ol li img {
   width: 100px;
   height: 100px;
 }
 
-.fav-item-detail ol li p {
+.favourites ol li p {
   justify-self: left;
   text-align: left;
   margin: 0;
   font-size: 0.8rem;
 }
 
-.fav-item-detail ol li p:nth-child(2) {
+.favourites ol li p:nth-child(2) {
   font-weight: bold;
   margin-top: 10px;
 }
 
-.fav-item-detail ol li .delete-button {
-  background-color: #c40000;
+.favourites ol li div:nth-child(3) {
+  margin: 0 auto;
+}
+
+.favourites ol li .deleteBtn,
+.favourites ol li .checkBtn {
+  padding: 5px 8px;
+  margin: 0;
+  margin: 8px;
+  width: 68px;
+  font-family: var(--font-body);
   border: none;
   color: white;
-  padding: 8px 2px;
-  text-align: center;
   text-decoration: none;
   font-size: 16px;
   border-radius: 10px;
   transition: background-color 0.1s;
-  width: 78px;
-  justify-self: center;
 }
 
-.fav-item-detail ol li .delete-button:focus {
+.favourites ol li .deleteBtn {
+  background-color: #c40000;
+}
+
+.favourites ol li .checkBtn {
+  background-color: #12a83a;
+}
+
+.favourites ol li .deleteBtn:focus,
+.favourites ol li .checkBtn:focus {
   outline: 0;
 }
 
-.fav-item-detail ol li .delete-button:hover {
+.favourites ol li .deleteBtn:hover {
   cursor: pointer;
   background-color: #820202;
+}
+
+.favourites ol li .checkBtn:hover {
+  cursor: pointer;
+  background-color: #02825e;
+}
+
+/* ------- FAVOURITE ITEM (DETAIL PAGE) ------- */
+
+#fav-item {
+  grid-area: cats;
+  background: #f7f7f7;
+  position: absolute;
+  z-index: 100;
+  width: 80vw;
+  height: 73vh;
+  text-align: center;
+  box-shadow: 0px 0px 9px 3px #b7050594;
+  visibility: hidden;
 }
 
 /* ------------------------------------------- */
@@ -425,8 +467,28 @@ footer p a:hover {
   color: rgb(34, 34, 147);
 }
 
-/* loader while fetching data */
+/* --/* ----- LOADER ---/* - */
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #98dffb70;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #98dffb70;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #56cfff;
+}
 .loader {
   display: inline-block;
   width: 80px;
@@ -455,4 +517,27 @@ footer p a:hover {
 }
 .loader-hide {
   display: none;
+}
+
+/* --/* ----- SCROLLBAR ---/* - */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #98dffb70;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #98dffb70;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #56cfff;
 }

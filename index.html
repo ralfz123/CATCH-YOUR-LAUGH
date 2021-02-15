@@ -14,12 +14,30 @@
   </head>
   <body>
     <header>
-      <h1>Cat & joke generator 🤣</h1>
-      <button id="reloadBtn">Another combo!</button>
+      <h1><strong>CAT</strong>CH YOUR LAUGH 😹</h1>
     </header>
 
     <main>
-      <section class="fav-item-detail">
+      <button id="comboBtn">Another combo!</button>
+
+      <section id="cat-images">
+        <div class="loader"></div>
+        <img id="image-cat" src="" alt="Image of a cat" />
+      </section>
+
+      <section id="jokes">
+        <!-- <div class="loader"></div> -->
+        <h3 id="joke"></h3>
+        <h3 id="punchline"></h3>
+      </section>
+
+      <section id="like-area">
+        <h2>Like this combo!</h2>
+        <button id="likeBtn">❤️</button>
+        <button id="checkFavoBtn">Check Favourites</button>
+      </section>
+
+      <section class="favourites">
         <button class="disappearBtn">x</button>
 
         <h1>Favourites</h1>
@@ -30,21 +48,14 @@
         </ol>
       </section>
 
-      <section id="cat-images">
-        <div class="loader"></div>
-        <img id="image-cat" src="" />
-      </section>
+      <section id="fav-item">
+        <img src="" alt="fav-cat-image" />
+        <p>Joke</p>
+        <p>punchline</p>
+        <a href="">← Back</a>
 
-      <section id="jokes">
-        <!-- <div class="loader"></div> -->
-        <h3 id="joke"></h3>
-        <h3 id="punchline"></h3>
-      </section>
-
-      <section id="favourites">
-        <h2>Like this combo!</h2>
-        <button id="likeBtn">❤️</button>
-        <button id="checkFavoBtn">Check Favourites</button>
+        <h4>Delen met</h4>
+        <p>facebook</p>
       </section>
     </main>
 

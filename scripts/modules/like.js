@@ -40,19 +40,23 @@ function clickLikeBtn(catData, jokeData) {
       newJokePunchline.innerHTML = jokeData.punchline;
       jokeContainer.appendChild(newJokePunchline);
 
-      // Delete button to delete the fav-item
-      let deleteBtn = document.createElement('button');
-      deleteBtn.setAttribute('class', 'delete-button');
-      let btnText = document.createTextNode('Delete');
-      deleteBtn.appendChild(btnText);
-      newFav.appendChild(deleteBtn);
+      // Buttons container
+      let btnsContainer = document.createElement('div');
+      newFav.appendChild(btnsContainer);
 
       // Check button to check the fav-item
       let checkBtn = document.createElement('button');
-      checkBtn.setAttribute('class', 'add-button');
+      checkBtn.setAttribute('class', 'checkBtn');
       let checkBtnTxt = document.createTextNode('Check');
       checkBtn.appendChild(checkBtnTxt);
-      newFav.appendChild(checkBtn);
+      btnsContainer.appendChild(checkBtn);
+
+      // Delete button to delete the fav-item
+      let deleteBtn = document.createElement('button');
+      deleteBtn.setAttribute('class', 'deleteBtn');
+      let btnText = document.createTextNode('Delete');
+      deleteBtn.appendChild(btnText);
+      btnsContainer.appendChild(deleteBtn);
 
       // Append all elements up here to the existing ordered-list
       let currentContainer = document.querySelector('ol');
@@ -61,7 +65,6 @@ function clickLikeBtn(catData, jokeData) {
       feedback();
       deleteFavItem(catData, jokeData);
       clickDetailFav(catData, jokeData);
-
     }
   });
 }

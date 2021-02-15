@@ -1,4 +1,4 @@
-import './routie.js';
+import '../vendor/routie.js';
 
 function handleRoutes() {
   routie({

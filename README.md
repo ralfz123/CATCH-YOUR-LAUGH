@@ -4,7 +4,7 @@
 
 [Link to live version :rocket:](https://ralfz123.github.io/web-app-from-scratch-2021)
 
-# -Title project-
+# **CAT**CH YOUR LAUGH
 _Web App From Scratch, a course of the minor Web Design & Development. It is a minor of the third year from the study [CMD](https://www.cmd-amsterdam.nl/)._
 
 ### Table of Contents
@@ -103,10 +103,9 @@ This app is built, using:
 App-based:
 - [x] Data fetch (getdata)
 - [x] Dynamic data via virtualDOM
-- [ ] FavoritesList
-- [ ] Like adds item (cat+joke) to favList
-- [ ] Localstorage (remembers all fav's from the client)
-- [ ] Store data in array and array in localStorage
+- [x] FavoritesList
+- [x] Like adds item (cat+joke) to favList
+- [ ] Not the same combo's in the favourites list
 
 Code-based:
 - [x] Modules
@@ -118,7 +117,8 @@ Code-based:
 - [ ] Templating 
 - [ ] Script folder structure (helpers/utils/components)
 - [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
-- Arrow function
+- [ ] Arrow function
+- 
 
 Readme:
 - [ ] Transform to English language

@@ -4,7 +4,7 @@ function feedback() {
   feedbackLike.setAttribute('class', 'feedback-like');
   let newContent = document.createTextNode('Liked');
   feedbackLike.appendChild(newContent);
-  let container = document.getElementById('favourites');
+  let container = document.getElementById('like-area');
   container.appendChild(feedbackLike);
 
   // Removes HTML feedback element that is made up here

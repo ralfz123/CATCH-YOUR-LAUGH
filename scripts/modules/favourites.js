@@ -1,6 +1,6 @@
 // When you click on this button, the detail page (Favourites) appears
 function checkFavourites() {
-  let favDetail = document.querySelector('.fav-item-detail');
+  let favDetail = document.querySelector('.favourites');
   let checkFavBtn = document.getElementById('checkFavoBtn');
 
   checkFavBtn.addEventListener('click', function () {
@@ -11,7 +11,7 @@ function checkFavourites() {
 
 // When you click on this button, the detail page (Favourites) disappears
 function clickDisapearBtn() {
-  let favDetail = document.querySelector('.fav-item-detail');
+  let favDetail = document.querySelector('.favourites');
   let disapearBtn = document.querySelector('.disappearBtn');
 
   disapearBtn.addEventListener('click', function () {
