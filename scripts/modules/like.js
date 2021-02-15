@@ -1,9 +1,9 @@
 import { deleteFavItem } from './deleteFav.js';
-
-let likeBtn = document.getElementById('likeBtn');
+import { feedback } from './feedback.js';
 
 // Makes a new item in the favourites-list
 function clickLikeBtn(catData, jokeData) {
+  let likeBtn = document.getElementById('likeBtn');
   likeBtn.addEventListener('click', function () {
     // Only perform this function if the data is present
 
@@ -51,23 +51,10 @@ function clickLikeBtn(catData, jokeData) {
       let currentContainer = document.querySelector('ol');
       currentContainer.appendChild(newFav);
 
-      // Feedback from the 'like' to the user
-      let feedbackLike = document.createElement('p');
-      feedbackLike.setAttribute('class', 'feedback-like');
-      let newContent = document.createTextNode('Liked');
-      feedbackLike.appendChild(newContent);
-      let container = document.getElementById('favourites');
-      container.appendChild(feedbackLike);
-
-      // Removes HTML feedback element that is made up here
-      setTimeout(function () {
-        feedbackLike.remove();
-      }, 1500);
-
+      feedback();
       deleteFavItem(catData, jokeData);
     }
   });
 }
 
-clickLikeBtn();
 export { clickLikeBtn };

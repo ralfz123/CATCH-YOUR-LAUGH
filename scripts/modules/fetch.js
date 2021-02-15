@@ -1,11 +1,15 @@
 import { renderData } from './render.js';
 import { clickLikeBtn } from './like.js';
+import { loader } from './loader.js';
 
 // Fetching data and parses to JSON
 async function fetchData(url) {
   const dataResponse = await fetch(url);
+  // let catSection = document.getElementById('cat-images');
+  // catSection.classList.add('loaderDiv')
   console.log('🌐 Fetching data...'); // Feedback to user while fetching data
   const jsonData = await dataResponse.json();
+  loader();
   return jsonData;
 }
 

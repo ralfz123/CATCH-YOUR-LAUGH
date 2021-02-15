@@ -1,7 +1,6 @@
 // Reload page - triggered by button, then reloads page
-let reloadBtn = document.getElementById('reloadBtn');
-
 function clickReloadBtn() {
+  let reloadBtn = document.getElementById('reloadBtn');
   reloadBtn.addEventListener('click', function () {
     location.reload();
   });

@@ -9,6 +9,7 @@
 
 html {
   background: #f7f7f7;
+  /* background: #202026; */
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -20,6 +21,7 @@ body {
   margin: 20px;
   padding: 0;
   overflow-y: hidden;
+  /* color: white; */
 }
 
 /* ------------------------------------------- */
@@ -39,7 +41,7 @@ header #reloadBtn {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: background-color 0.1s;
   width: 150px;
   margin: 10px;
@@ -78,7 +80,7 @@ main {
 
 #cat-images {
   grid-area: cats;
-  background-color: #244b5b70;
+  /* background-color: #244b5b70; */
   text-align: center;
 }
 
@@ -86,14 +88,18 @@ main {
   width: 100%;
   height: auto; /* Has to be a size that the window will not scale */
   max-height: 35vh;
+  border-radius: 5px;
 }
 
 /* ------ JOKES ------- */
 
 #jokes {
   grid-area: jokes;
-  background-color: #98dffb70;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
   font-family: monospace;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #jokes #joke {
@@ -114,14 +120,22 @@ main {
 
 #favourites {
   grid-area: like;
-  background-color: #98dffb70;
+  padding: 5px;
+  border: 1px solid crimson;
+  border-radius: 5px;
 }
 
 #favourites h2 {
   margin-top: 5px;
+  transition: 0.2s;
+}
+
+#favourites h2:hover ~ #likeBtn {
+  box-shadow: 0px 0px 9px 3px #b7050594;
 }
 
 #favourites #checkFavoBtn {
+  display: block;
   background-color: #1f1b1b;
   border: none;
   color: white;
@@ -129,7 +143,7 @@ main {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: background-color 0.1s;
   width: 150px;
   margin: 10px;
@@ -144,7 +158,7 @@ main {
   outline: none;
 }
 
-#favourites #likeBtn {
+/* #favourites #likeBtn {
   font-size: 2rem;
   background: none;
   border: none;
@@ -152,14 +166,48 @@ main {
   margin: 10px;
   cursor: pointer;
   transition: 0.2s;
+} */
+
+#favourites #likeBtn {
+  font-size: 2rem;
+  background: none;
+  border: 3px solid crimson;
+  background: #77889957;
+  /* width: 85px; */
+  width: 3em;
+  height: 1.8em;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.1s;
+  animation: glow 10000ms infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 -5px #b7050594;
+  }
+  40% {
+    box-shadow: 0 0 20px #b7050594;
+  }
+  60% {
+    box-shadow: 0 0 20px #b7050594;
+  }
+  100% {
+    box-shadow: 0 0 -5px #b7050594;
+  }
 }
 
 #favourites #likeBtn:hover {
-  transform: scale(1.5);
+  /* transform: scale(1.5); */
+  transform: translateY(-5px);
+  background: #778899b7;
+  animation: none;
 }
 
 #favourites #likeBtn:active {
-  transform: scale(0.7);
+  /* transform: scale(0.7); */
+  transform: translateY(5px);
 }
 
 #favourites #likeBtn:focus {
@@ -355,9 +403,15 @@ main {
 /*                   FOOTER                    */
 /* ------------------------------------------- */
 footer {
-  background-color: #767c7f1d;
+  background-color: #767c7f0d;
   font-size: 0.8rem;
   text-align: center;
+  padding: 5px 0px;
+  margin-top: 10px;
+}
+
+footer p {
+  margin: 3px 0px;
 }
 
 footer p a {
@@ -372,27 +426,33 @@ footer p a:hover {
 }
 
 /* loader while fetching data */
-/* .loaderDiv {
+
+.loader {
   display: inline-block;
   width: 80px;
   height: 80px;
+  position: absolute;
+  z-index: 10;
 }
-.loaderDiv:after {
-  content: " ";
+.loader:after {
+  content: ' ';
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: loaderDiv 1.2s linear infinite;
+  border: 6px solid rgb(28, 27, 27);
+  border-color: rgb(28, 27, 27) transparent rgb(28, 27, 27) transparent;
+  animation: loader 1.2s linear infinite;
 }
-@keyframes loaderDiv {
+@keyframes loader {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-} */
+}
+.loader-hide {
+  display: none;
+}
