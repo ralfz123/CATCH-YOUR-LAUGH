@@ -26,7 +26,6 @@ In this course I will learn to build a web application _without_ frameworks or u
 ## :heart_eyes: Concept
 Het wordt een applicatie waarbij er afbeeldingen van katten :cat: worden laten zien in combinatie met een mop. Deze combinatie zal leiden tot een eindeloos gelach van de gebruiker. Dit is namelijk een applicatie die je kan gebruiken als de sfeer niet lekker meer is, of er is even geen gesprekstof, of je wilt gewoon even goed hard lachen. Dan is dit dé oplossing!
 
-- LOCALSTORAGE!
 
 Je kan ook de combinatie als favoriet toevoegen. Op het moment dat hij in je favolist staat, kan je erop klikken. Dan verschijnt er een detailpage met de cat imgage en de joke.
 
@@ -106,19 +105,21 @@ App-based:
 - [x] FavoritesList
 - [x] Like adds item (cat+joke) to favList
 - [ ] Not the same combo's in the favourites list
+- [x] Favourite item (detail page)
 
 Code-based:
 - [x] Modules
 - [x] Async fetch (async await)
 - [ ] Params function
-- [ ] Feedback (Loader) to user while fetching data
+- [x] Feedback (Loader) to user while fetching data
 - [x] Split API-url in chunks
 - [ ] Routing
 - [ ] Templating 
-- [ ] Script folder structure (helpers/utils/components)
+- [x] Script folder structure (helpers/utils/components)
 - [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
 - [ ] Arrow function
-- 
+- [ ] Map/filter/reduce: use 1 of the 3
+- [ ] init app and functions in a right way
 
 Readme:
 - [ ] Transform to English language

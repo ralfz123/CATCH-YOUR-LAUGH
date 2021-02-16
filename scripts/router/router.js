@@ -1,20 +1,36 @@
 import '../vendor/routie.js';
 
-function handleRoutes() {
+function routeHandler() {
   routie({
     '': function () {
       console.log('Home');
+      sectionToggler('combo-generator');
     },
     favourites: function () {
       console.log('Favourites');
-
-      // let favDetail = document.querySelector('.fav-item-detail');
-      // favDetail.id = 'show';
+      sectionToggler('favourites');
     },
     'favourites/*': function () {
       console.log('Favourite-detail');
+      sectionToggler('fav-item');
     },
   });
 }
 
-handleRoutes();
+function sectionToggler(page) {
+  const allSections = document.querySelectorAll('section');
+  const activeSection = document.querySelector(`#${page}`);
+
+  allSections.forEach((section) => {
+    section.classList.remove('active');
+    // section.setAttribute("aria-hidden", "true");
+    section.hidden = true;
+  });
+
+  activeSection.classList.add('active');
+  // activeSection.setAttribute('aria-hidden', 'false');
+  activeSection.hidden = false;
+}
+
+routeHandler();
+export { routeHandler };

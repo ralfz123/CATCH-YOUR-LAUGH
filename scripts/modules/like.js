@@ -1,4 +1,4 @@
-import { clickDetailFav, deleteFavItem } from './favItem.js';
+import { clickDetailFav, clickBack, deleteFavItem } from './favItem.js';
 import { feedback } from './feedback.js';
 
 // Makes a new item in the favourites-list
@@ -65,6 +65,7 @@ function clickLikeBtn(catData, jokeData) {
       feedback();
       deleteFavItem(catData, jokeData);
       clickDetailFav(catData, jokeData);
+      clickBack(catData, jokeData)
     }
   });
 }

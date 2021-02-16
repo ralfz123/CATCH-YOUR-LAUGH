@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joke generator</title>
+    <title>CATCH YOUR LAUGH</title>
     <link rel="shortcut icon" type="image/svg" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles/main.css" />
     <link
@@ -18,26 +18,28 @@
     </header>
 
     <main>
-      <button id="comboBtn">Another combo!</button>
+      <section id="combo-generator" class="active">
+        <button id="comboBtn">Another combo!</button>
 
-      <section id="cat-images">
-        <div class="loader"></div>
-        <img id="image-cat" src="" alt="Image of a cat" />
+        <article id="cat-images">
+          <div class="loader"></div>
+          <img id="image-cat" src="" alt="Image of a cat" />
+        </article>
+
+        <article id="jokes">
+          <!-- <div class="loader"></div> -->
+          <h3 id="joke"></h3>
+          <h3 id="punchline"></h3>
+        </article>
+
+        <article id="like-area">
+          <h2>Like this combo!</h2>
+          <button id="likeBtn">❤️</button>
+          <button id="checkFavoBtn">Check Favourites</button>
+        </article>
       </section>
 
-      <section id="jokes">
-        <!-- <div class="loader"></div> -->
-        <h3 id="joke"></h3>
-        <h3 id="punchline"></h3>
-      </section>
-
-      <section id="like-area">
-        <h2>Like this combo!</h2>
-        <button id="likeBtn">❤️</button>
-        <button id="checkFavoBtn">Check Favourites</button>
-      </section>
-
-      <section class="favourites">
+      <section id="favourites" class="active">
         <button class="disappearBtn">x</button>
 
         <h1>Favourites</h1>
@@ -48,11 +50,11 @@
         </ol>
       </section>
 
-      <section id="fav-item">
+      <section id="fav-item" class="active">
         <img src="" alt="fav-cat-image" />
         <p>Joke</p>
         <p>punchline</p>
-        <a href="">← Back</a>
+        <a href="#favourites">Back</a>
 
         <h4>Delen met</h4>
         <p>facebook</p>

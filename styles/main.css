@@ -4,7 +4,6 @@
 
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 html {
@@ -43,7 +42,33 @@ header h1 {
 /*                   MAIN                      */
 /* ------------------------------------------- */
 
-main {
+/* --/* --  Default Button styling --/* -- */
+
+main button {
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  font-family: var(--font-body);
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: 0.1s;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+main button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+main button:focus {
+  transform: scale(1.02);
+  outline: none;
+}
+
+#combo-generator.active {
   display: grid;
   grid-template-areas:
     'cats   jokes'
@@ -123,49 +148,24 @@ main {
 #like-area #checkFavoBtn {
   display: block;
   background-color: #1f1b1b;
-  border: none;
-  color: white;
   padding: 8px 2px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px;
   transition: background-color 0.1s;
   width: 150px;
   margin: 10px;
-  font-family: var(--font-body);
 }
 
 #like-area #checkFavoBtn:hover {
   background-color: #1f1b1b69;
-  cursor: pointer;
 }
-
-#like-area #checkFavoBtn:focus {
-  outline: none;
-}
-
-/* #like-area #likeBtn {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  border-radius: 5px;
-  margin: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-} */
 
 #like-area #likeBtn {
   font-size: 2rem;
   background: none;
   border: 3px solid crimson;
   background: #77889957;
-  /* width: 85px; */
   width: 3em;
   height: 1.8em;
-  border-radius: 5px;
   margin: 10px;
-  cursor: pointer;
   transition: 0.1s;
   animation: glow 10000ms infinite;
 }
@@ -186,14 +186,12 @@ main {
 }
 
 #like-area #likeBtn:hover {
-  /* transform: scale(1.5); */
   transform: translateY(-5px);
   background: #778899b7;
   animation: none;
 }
 
 #like-area #likeBtn:active {
-  /* transform: scale(0.7); */
   transform: translateY(5px);
 }
 
@@ -256,84 +254,53 @@ main {
 
 /* ------- FAVOURITES ------- */
 
-#show {
-  visibility: visible;
-}
-
-#hide {
-  visibility: hidden;
-}
-
-.favourites {
+#favourites {
   grid-area: cats;
-  position: absolute;
 
-  visibility: hidden;
-  background-color: #fffffff5;
+  /* visibility: hidden; */
+  /* background-color: #fffffff5; */
   text-align: center;
   width: 80vw;
   height: 73vh;
+  border: 1px solid grey;
+
   /* transition: 0.2s; */
 }
 
-.favourites .disappearBtn {
-  position: absolute;
-  z-index: 1;
+#favourites .disappearBtn {
+  /* position: absolute;
+  z-index: 1; */
   right: 0;
   margin: 0.5em;
   font-size: 1.3rem;
-  cursor: pointer;
-  background-color: rgb(65, 65, 65);
   width: 30px;
   height: 30px;
   padding: 0;
-  color: white;
   border-radius: 50%;
-  transition: background-color 0.2s;
-  font-family: var(--font-body);
 }
 
-.favourites .disappearBtn:hover {
+#favourites .disappearBtn:hover {
   background-color: black;
 }
 
 /* Add button */
-.favourites .checkBtn {
+#favourites .checkBtn {
   display: block;
   background: chartreuse;
 }
 
-.favourites .checkBtn:hover {
-}
-
-.favourites .checkBtn:focus {
-}
-
-.favourites .delete-all-btn {
-  background-color: #c40000;
-  border: none;
-  color: white;
+#favourites .delete-all-btn {
   padding: 8px 2px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 10px;
-  transition: background-color 0.1s;
   width: 150px;
   margin: 10px;
-  font-family: var(--font-body);
+  background-color: #c40000;
 }
 
-.favourites .delete-all-btn:hover {
+#favourites .delete-all-btn:hover {
   background-color: #820202;
-  cursor: pointer;
 }
 
-.favourites .delete-all-btn:focus {
-  outline: none;
-}
-
-.favourites ol {
+#favourites ol {
   list-style: none;
   padding-left: 0px;
   margin: 0;
@@ -350,7 +317,7 @@ main {
   visibility: hidden;
 }
 
-.favourites ol li {
+#favourites ol li {
   width: 100%;
   display: grid;
   grid-template-columns: 30% 50% 20%;
@@ -360,70 +327,56 @@ main {
   transition: background 0.1s;
 }
 
-.favourites ol li:nth-child(even) {
+#favourites ol li:nth-child(even) {
   background: #e6e6e6;
 }
 
-.favourites ol li:hover {
+#favourites ol li:hover {
   background: rgba(169, 169, 169, 0.119);
 }
 
-.favourites ol li img {
+#favourites ol li img {
   width: 100px;
   height: 100px;
 }
 
-.favourites ol li p {
+#favourites ol li p {
   justify-self: left;
   text-align: left;
   margin: 0;
   font-size: 0.8rem;
 }
 
-.favourites ol li p:nth-child(2) {
+#favourites ol li p:nth-child(2) {
   font-weight: bold;
   margin-top: 10px;
 }
 
-.favourites ol li div:nth-child(3) {
+#favourites ol li div:nth-child(3) {
   margin: 0 auto;
 }
 
-.favourites ol li .deleteBtn,
-.favourites ol li .checkBtn {
+#favourites ol li .deleteBtn,
+#favourites ol li .checkBtn {
   padding: 5px 8px;
-  margin: 0;
   margin: 8px;
   width: 68px;
-  font-family: var(--font-body);
-  border: none;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 10px;
-  transition: background-color 0.1s;
+  transition: none;
 }
 
-.favourites ol li .deleteBtn {
+#favourites ol li .deleteBtn {
   background-color: #c40000;
 }
 
-.favourites ol li .checkBtn {
+#favourites ol li .checkBtn {
   background-color: #12a83a;
 }
 
-.favourites ol li .deleteBtn:focus,
-.favourites ol li .checkBtn:focus {
-  outline: 0;
-}
-
-.favourites ol li .deleteBtn:hover {
-  cursor: pointer;
+#favourites ol li .deleteBtn:focus {
   background-color: #820202;
 }
 
-.favourites ol li .checkBtn:hover {
-  cursor: pointer;
+#favourites ol li .checkBtn:focus {
   background-color: #02825e;
 }
 
@@ -431,14 +384,12 @@ main {
 
 #fav-item {
   grid-area: cats;
-  background: #f7f7f7;
-  position: absolute;
-  z-index: 100;
+  /* background: #f7f7f7; */
   width: 80vw;
   height: 73vh;
   text-align: center;
-  box-shadow: 0px 0px 9px 3px #b7050594;
-  visibility: hidden;
+  border: 1px solid grey;
+  /* visibility: hidden; */
 }
 
 /* ------------------------------------------- */
@@ -467,7 +418,7 @@ footer p a:hover {
   color: rgb(34, 34, 147);
 }
 
-/* --/* ----- LOADER ---/* - */
+/* --/* ----- SCROLLBAR ---/* - */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -489,6 +440,9 @@ footer p a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #56cfff;
 }
+
+/* --/* ----- LOADER ---/* - */
+
 .loader {
   display: inline-block;
   width: 80px;
@@ -541,3 +495,7 @@ footer p a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #56cfff;
 }
+
+/* .active {
+  visibility: visible;
+} */

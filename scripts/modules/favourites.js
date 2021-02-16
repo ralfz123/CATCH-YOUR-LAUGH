@@ -4,21 +4,21 @@ function checkFavourites() {
   let checkFavBtn = document.getElementById('checkFavoBtn');
 
   checkFavBtn.addEventListener('click', function () {
-    favDetail.id = 'show';
+    // favDetail.id = 'show';
     location.hash = 'favourites';
   });
 }
 
 // When you click on this button, the detail page (Favourites) disappears
 function clickDisapearBtn() {
-  let favDetail = document.querySelector('.favourites');
+  let favDetail = document.getElementById('favourites');
   let disapearBtn = document.querySelector('.disappearBtn');
 
   disapearBtn.addEventListener('click', function () {
-    favDetail.id = 'hide';
+    // favDetail.id = 'hide';
+    location.hash = '';
   });
 }
-
 
 clickDisapearBtn();
 checkFavourites();

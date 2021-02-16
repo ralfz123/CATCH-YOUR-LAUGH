@@ -25,7 +25,7 @@ async function getData() {
   const urlJokes = `${endpointJokes}/${pathJokes}`;
 
   let likeBtn = document.querySelector(
-    'section:nth-child(4) button:nth-child(3)'
+    'article:nth-child(4) button:nth-child(3)'
   );
   likeBtn.setAttribute('disabled', true); // Set variable to disabled so that you're not able to like the unfetched combo data
 
