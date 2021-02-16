@@ -323,11 +323,14 @@ main button:focus {
 #favourites ol li {
   width: 100%;
   display: grid;
-  grid-template-columns: 30% 50% 20%;
+  /* grid-template-columns: 30% 50% 20%; */
+  grid-template-columns: 100px 300px 50px;
   /* grid-template-columns: 30vw 30vw 20vw; */
   grid-template-rows: 100px auto;
+  grid-gap: 10px;
   align-items: center;
   transition: background 0.1s;
+  padding: 8px;
 }
 
 #favourites ol li:nth-child(even) {
@@ -341,6 +344,7 @@ main button:focus {
 #favourites ol li img {
   width: 100px;
   height: 100px;
+  border-radius: 10px;
 }
 
 #favourites ol li p {
@@ -384,7 +388,7 @@ main button:focus {
 }
 
 #favourites ol li .checkBtn:hover {
-  box-shadow: 0 0 3px 1px #04dc50;
+  box-shadow: 0 0 3px 1px #08943a;
   transform: none;
 }
 
