@@ -76,16 +76,20 @@ main button:focus {
   display: grid;
   grid-template-areas:
     'cats   jokes'
-    'button   like';
+    'button   button'
+    'like   like';
 
-  grid-template-columns: 1.5fr 1fr;
-  grid-auto-rows: minmax(35vh, auto);
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(15vh, auto);
   /* grid-template-rows: 1fr 1fr; */
-  grid-gap: 20px;
+  grid-gap: 5px;
 
-  width: 80vw;
+  /* width: 50vw; */
+  width: 50em;
+  /* padding: 0 20px; */
   margin: 0 auto;
   position: relative;
+  justify-items: center;
 }
 
 /* ------ CATS ------- */
@@ -94,31 +98,40 @@ main button:focus {
   grid-area: cats;
   /* background-color: #244b5b70; */
   text-align: center;
+  height: 35vh;
 }
 
 #cat-images img {
   width: 100%;
-  height: auto; /* Has to be a size that the window will not scale */
-  max-height: 35vh;
+  /* height: auto;  */
+  /* max-height: 35vh; */
+  height: 35vh;
   border-radius: 5px;
 }
 
 #cat-images img[alt] {
-  color: rgba(0, 0, 0, 0.339);
+  color: transparent;
 }
 
 /* ------ JOKES ------- */
 
 #jokes {
   grid-area: jokes;
-  padding: 5px;
-  border: 1px solid grey;
+  padding: 10px;
+  border: 3px dashed rgb(178, 178, 178);
   border-radius: 5px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-body);
+  width: 100%;
+  height: 100%;
+}
+
+#jokes h3 {
+  margin: 0;
 }
 
 #jokes #joke {
   font-weight: normal;
+  margin-bottom: 15px;
 }
 
 #jokes #punchline {
@@ -136,12 +149,14 @@ main button:focus {
 #like-area {
   grid-area: like;
   padding: 5px;
-  border: 1px solid crimson;
   border-radius: 5px;
+  width: 100%;
+  text-align: center;
 }
 
 #like-area h2 {
-  margin-top: 5px;
+  /* margin-top: 5px; */
+  margin: 0;
   transition: 0.2s;
 }
 
@@ -155,7 +170,7 @@ main button:focus {
   padding: 8px 2px;
   transition: background-color 0.1s;
   width: 150px;
-  margin: 10px;
+  margin: 0 auto;
 }
 
 #like-area #checkFavoBtn:hover {
@@ -163,13 +178,14 @@ main button:focus {
 }
 
 #like-area #likeBtn {
-  font-size: 2rem;
+  font-size: 4rem;
+  width: 3em;
+  height: 1.6em;
+  margin: 10px;
+  padding: 0;
   background: none;
   border: 3px solid crimson;
   background: #77889957;
-  width: 3em;
-  height: 1.8em;
-  margin: 10px;
   transition: 0.1s;
   animation: glow 10000ms infinite;
 }
@@ -204,14 +220,23 @@ main button:focus {
 }
 
 .feedback-like {
+  grid-area: cats;
   position: absolute;
   z-index: 2;
-  margin-top: 50px;
+  font-size: 16rem;
+  width: 2em;
+  top: 0.5em;
+  left: 0.5em;
   margin: 0 auto;
-  color: #fa3e31;
-  font-weight: bold;
-  font-size: 2rem;
+  /* margin-top: -1.5em; */
+  /* display: block; */
+  /* color: #fa3e31; */
+  /* font-weight: bold; */
+  background: #828282;
+  /* background: #f7f7f7; */
   animation: fadeOut 1.5s ease-in-out;
+  border-radius: 48px;
+  box-shadow: 0 0 20px 4px #0c0a0a;
 }
 
 @keyframes fadeOut {
@@ -234,7 +259,7 @@ main button:focus {
   /* width: 150px;
   height: 38px; */
   padding: 8px 10px;
-  font-size: 2rem;
+  font-size: 1.6rem;
   box-shadow: 0px 0px 9px 3px #544f4f94;
   transition: 0.2s;
   background-image: linear-gradient(
@@ -244,7 +269,6 @@ main button:focus {
     #70e1f5 100%
   );
   background-size: 200% auto;
-
   box-shadow: 0 0 10px rgb(122, 122, 122);
   text-transform: uppercase;
   color: #006979;
@@ -254,21 +278,26 @@ main button:focus {
 #comboBtn:hover {
   background-position: right center;
   opacity: 1;
-
   color: #001215;
   box-shadow: 0 0 20px #70e1f5;
+}
+
+#comboBtn:focus {
+  transform: scale(0.8);
 }
 
 /* ------- FAVOURITES ------- */
 
 #favourites {
-  grid-area: cats;
+  /* grid-area: cats; */
+  margin: 0 auto;
+  position: relative;
+  width: 50em;
+  /* height: 73vh; */
   visibility: visible;
   text-align: center;
-  width: 80vw;
-  /* height: 73vh; */
-  border: 1px solid grey;
-  position: relative;
+  /* border: 1px solid grey; */
+  border-radius: 10px;
   /* transition: 0.2s; */
 }
 
@@ -330,11 +359,10 @@ main button:focus {
 #favourites ol li {
   width: 100%;
   display: grid;
-  /* grid-template-columns: 30% 50% 20%; */
-  grid-template-columns: 100px 300px 50px;
+  grid-template-columns: 30% 50% 20%;
+  /* grid-template-columns: 100px 300px 50px; */
   /* grid-template-columns: 30vw 30vw 20vw; */
   grid-template-rows: 100px auto;
-  grid-gap: 10px;
   align-items: center;
   transition: background 0.1s;
   padding: 8px;
@@ -345,7 +373,7 @@ main button:focus {
 }
 
 #favourites ol li:hover {
-  background: rgba(169, 169, 169, 0.119);
+  background: rgba(169, 169, 169, 0.065);
 }
 
 #favourites ol li img {
@@ -368,6 +396,7 @@ main button:focus {
 
 #favourites ol li div:nth-child(3) {
   margin: 0 auto;
+  align-items: flex-end;
 }
 
 #favourites ol li .deleteBtn,
@@ -407,12 +436,64 @@ main button:focus {
 /* ------- FAVOURITE ITEM (DETAIL PAGE) ------- */
 
 #fav-item {
-  grid-area: cats;
-  width: 80vw;
+  /* grid-area: cats; */
+  /* visibility: hidden; */
+  position: relative;
+  margin: 0 auto;
+  width: 50em;
   height: 73vh;
   text-align: center;
-  border: 1px solid grey;
-  /* visibility: hidden; */
+  /* border: 1px solid grey; */
+  border-radius: 10px;
+}
+
+#fav-item a {
+  padding: 0.5em 0.75em;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+#fav-item a:hover {
+  background: linear-gradient(#70e1f5 30%, #ffd194 100%);
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+#fav-item img {
+  width: 200px;
+  max-height: 450px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#fav-item div {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#fav-item div p:first-child {
+  padding: 10px 58px;
+  background: #eaeaea;
+
+  font-weight: normal;
+  line-height: 1.5em;
+}
+
+#fav-item div p:nth-child(2) {
+  padding: 10px 58px;
+  background: #dadada;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /* ------------------------------------------- */

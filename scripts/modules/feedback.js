@@ -2,7 +2,7 @@
 function feedback() {
   let feedbackLike = document.createElement('p');
   feedbackLike.setAttribute('class', 'feedback-like');
-  let newContent = document.createTextNode('Liked');
+  let newContent = document.createTextNode('❤️');
   feedbackLike.appendChild(newContent);
   let container = document.getElementById('like-area');
   container.appendChild(feedbackLike);

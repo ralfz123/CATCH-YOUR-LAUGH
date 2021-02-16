@@ -107,7 +107,9 @@ App-based:
 - [ ] Not the same combo's in the favourites list
 - [x] Favourite item (detail page)
 - [ ] Data rendered in favourite item (detail page)
-- [ ] "Another combo" button fetches again without page reload
+- [ ] "Another combo" button fetches again without page reload (only invoking yet)
+- [ ] UI is loaded when data is fetched
+- [ ] Another section has to be to `display:none;` when page is loaded
 
 Code-based:
 - [x] Modules
@@ -115,13 +117,14 @@ Code-based:
 - [ ] Params function
 - [x] Feedback (Loader) to user while fetching data
 - [x] Split API-url in chunks
-- [ ] Routing
+- [x] Routing
 - [ ] Templating 
 - [x] Script folder structure (helpers/utils/components)
 - [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
 - [ ] Arrow function
 - [ ] Map/filter/reduce: use 1 of the 3
 - [ ] init app and functions in a right way
+
 
 Readme:
 - [ ] Transform to English language
