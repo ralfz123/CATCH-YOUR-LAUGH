@@ -68,6 +68,10 @@ main button:focus {
   outline: none;
 }
 
+/* main section {
+  display: none;
+} */
+
 #combo-generator.active {
   display: grid;
   grid-template-areas:
@@ -244,10 +248,13 @@ main button:focus {
   box-shadow: 0 0 10px rgb(122, 122, 122);
   text-transform: uppercase;
   color: #006979;
+  opacity: 0.8;
 }
 
 #comboBtn:hover {
   background-position: right center;
+  opacity: 1;
+
   color: #001215;
   box-shadow: 0 0 20px #70e1f5;
 }
@@ -256,7 +263,7 @@ main button:focus {
 
 #favourites {
   grid-area: cats;
-  /* visibility: hidden; */
+  visibility: visible;
   text-align: center;
   width: 80vw;
   /* height: 73vh; */
@@ -389,6 +396,11 @@ main button:focus {
 
 #favourites ol li .checkBtn:hover {
   box-shadow: 0 0 3px 1px #08943a;
+  transform: none;
+}
+
+#favourites ol li .checkBtn:focus,
+#favourites ol li .deleteBtn:focus {
   transform: none;
 }
 

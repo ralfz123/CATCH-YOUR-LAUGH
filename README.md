@@ -107,6 +107,7 @@ App-based:
 - [ ] Not the same combo's in the favourites list
 - [x] Favourite item (detail page)
 - [ ] Data rendered in favourite item (detail page)
+- [ ] "Another combo" button fetches again without page reload
 
 Code-based:
 - [x] Modules
@@ -164,6 +165,7 @@ Credits to [Joost Faber](https://github.com/joostf) && [Koop](https://github.com
 
 ### LOREM sources
 - **example** Lorem. (n.d.). Documentation Lorem. - Lorem Inc. Retrieved 28 December 2020, from https://Lorem.com/
+- Array.prototype.splice() - MDN. Retrieved 16 February 2021, from https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
 ### Other sources
 - Stackoverflow (n.d.). Searching for answers on dev questions - Stackoverflow. Retrieved 02 February 2021 from https://www.stackoverflow.com
@@ -175,6 +177,7 @@ This project from [Ralf](https://github.com/ralfz123) has a [MIT © License](htt
 
 ### Tasklist
 - [ ] Video about Async data fetching, because I had no grip/understanding on that subject.
+
 <!-- end -->
 
 

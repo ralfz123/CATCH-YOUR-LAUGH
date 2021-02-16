@@ -1,6 +1,6 @@
 import { getData } from './utils/fetch.js';
 import { clickComboBtn } from './modules/reloadPage.js';
-import { clickDisapearBtn, checkFavourites } from './modules/favourites.js';
+import { checkFavourites } from './modules/favourites.js';
 import './router/router.js';
 
 getData(); // Starts application

@@ -1,11 +1,10 @@
 import { renderData } from '../modules/render.js';
 import { loader } from '../modules/loader.js';
+import { cleanData } from './filter.js';
 
 // Fetching data and parses to JSON
 async function fetchData(url) {
   const dataResponse = await fetch(url);
-  // let catSection = document.getElementById('cat-images');
-  // catSection.classList.add('loaderDiv')
   // console.log('🌐 Fetching data...'); // Feedback to user while fetching data
   const jsonData = await dataResponse.json();
   loader();
@@ -31,8 +30,9 @@ async function getData() {
 
   const dataCatImages = await fetchData(urlCats);
   const dataJokes = await fetchData(urlJokes);
-  likeBtn.removeAttribute('disabled', true); // Data is fetched, so you can hit the like button
+  likeBtn.removeAttribute('disabled', true); // Data is fetched, so now you can hit the like button
 
+  // cleanData(dataCatImages, dataJokes); // NOT WORKING
   renderData(dataCatImages, dataJokes);
 }
 

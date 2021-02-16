@@ -1,5 +1,7 @@
-import { clickDetailFav, clickBack, deleteFavItem } from './favItem.js';
+import { clickDetailFav, deleteFavItem } from './favItem.js';
 import { feedback } from './feedback.js';
+
+let favouritesArray = []; // Empty array for keeping up the favourites data
 
 // Makes a new item in the favourites-list
 function clickLikeBtn(catData, jokeData) {
@@ -8,6 +10,11 @@ function clickLikeBtn(catData, jokeData) {
     // Only perform this function if the data is present
 
     if (catData && jokeData) {
+      let object = { catData: catData[0], jokeData: jokeData };
+      favouritesArray.push(object);
+
+      renderLiData(favouritesArray);
+
       // Hide empty state
       // let listItems = document.querySelector('ol').childNodes.length;
       // const emptyStateElement = document.querySelector('ol p');
@@ -17,56 +24,62 @@ function clickLikeBtn(catData, jokeData) {
       //   emptyStateElement.classList.toggle('emptyStateHide');
       // }
 
-      // Makes new li in the list
-      let newFav = document.createElement('li');
-      newFav.setAttribute('class', 'fav-item');
-
-      // Image
-      let newCatImg = document.createElement('img');
-      newCatImg.src = catData[0].url;
-      newFav.appendChild(newCatImg);
-
-      // Joke container
-      let jokeContainer = document.createElement('div');
-      newFav.appendChild(jokeContainer);
-
-      // Joke
-      let newJoke = document.createElement('p');
-      newJoke.innerHTML = jokeData.setup;
-      jokeContainer.appendChild(newJoke);
-
-      // Punchline
-      let newJokePunchline = document.createElement('p');
-      newJokePunchline.innerHTML = jokeData.punchline;
-      jokeContainer.appendChild(newJokePunchline);
-
-      // Buttons container
-      let btnsContainer = document.createElement('div');
-      newFav.appendChild(btnsContainer);
-
-      // Check button to check the fav-item
-      let checkBtn = document.createElement('button');
-      checkBtn.setAttribute('class', 'checkBtn');
-      // let checkBtnTxt = document.createTextNode('Check');
-      // checkBtn.appendChild(checkBtnTxt);
-      btnsContainer.appendChild(checkBtn);
-
-      // Delete button to delete the fav-item
-      let deleteBtn = document.createElement('button');
-      deleteBtn.setAttribute('class', 'deleteBtn');
-      // let btnText = document.createTextNode('Delete');
-      // deleteBtn.appendChild(btnText);
-      btnsContainer.appendChild(deleteBtn);
-
-      // Append all elements up here to the existing ordered-list
-      let currentContainer = document.querySelector('ol');
-      currentContainer.appendChild(newFav);
-
       feedback();
-      deleteFavItem(catData, jokeData);
-      clickDetailFav(catData, jokeData);
-      clickBack(catData, jokeData)
+
+      // deleteFavItem(catData, jokeData);
+      // clickDetailFav(catData, jokeData);
+
+      clickDetailFav(favouritesArray);
+      deleteFavItem(favouritesArray);
+      console.log('Liked items', favouritesArray);
     }
+  });
+}
+
+// Makes a favourite item
+function renderLiData(arrayData) {
+  let currentContainer = document.querySelector('ol');
+  currentContainer.innerHTML = ''; // Make it empty before data will be rendered
+
+  arrayData.forEach((object) => {
+    // Makes new li in the list
+    let newFav = document.createElement('li');
+    newFav.setAttribute('class', 'fav-item');
+
+    // Image
+    let newCatImg = document.createElement('img');
+    newCatImg.src = object.catData.url;
+    newFav.appendChild(newCatImg);
+
+    // Joke container
+    let jokeContainer = document.createElement('div');
+    newFav.appendChild(jokeContainer);
+
+    // Joke
+    let newJoke = document.createElement('p');
+    newJoke.innerHTML = object.jokeData.setup;
+    jokeContainer.appendChild(newJoke);
+
+    // Punchline
+    let newJokePunchline = document.createElement('p');
+    newJokePunchline.innerHTML = object.jokeData.punchline;
+    jokeContainer.appendChild(newJokePunchline);
+
+    // Buttons container
+    let btnsContainer = document.createElement('div');
+    newFav.appendChild(btnsContainer);
+
+    // Check button to check the fav-item
+    let checkBtn = document.createElement('button');
+    checkBtn.setAttribute('class', 'checkBtn');
+    btnsContainer.appendChild(checkBtn);
+
+    // Delete button to delete the fav-item
+    let deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('class', 'deleteBtn');
+    btnsContainer.appendChild(deleteBtn);
+
+    currentContainer.appendChild(newFav);
   });
 }
 
