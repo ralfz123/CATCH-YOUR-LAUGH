@@ -106,6 +106,7 @@ App-based:
 - [x] Like adds item (cat+joke) to favList
 - [ ] Not the same combo's in the favourites list
 - [x] Favourite item (detail page)
+- [ ] Data rendered in favourite item (detail page)
 
 Code-based:
 - [x] Modules
@@ -123,6 +124,7 @@ Code-based:
 
 Readme:
 - [ ] Transform to English language
+- [ ] Screenshot app
 
 
 

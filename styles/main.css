@@ -230,57 +230,58 @@ main button:focus {
   /* width: 150px;
   height: 38px; */
   padding: 8px 10px;
-
-  background-color: #372f2f;
-  border: none;
-  color: white;
-  box-shadow: 0px 0px 9px 3px #544f4f94;
-  text-align: center;
-  text-decoration: none;
   font-size: 2rem;
-  border-radius: 5px;
-  transition: background-color 0.1s;
-  font-family: var(--font-body);
+  box-shadow: 0px 0px 9px 3px #544f4f94;
+  transition: 0.2s;
+  background-image: linear-gradient(
+    to right,
+    #70e1f5 0%,
+    #ffd194 51%,
+    #70e1f5 100%
+  );
+  background-size: 200% auto;
+
+  box-shadow: 0 0 10px rgb(122, 122, 122);
+  text-transform: uppercase;
+  color: #006979;
 }
 
 #comboBtn:hover {
-  background-color: #1f1b1b69;
-  cursor: pointer;
-}
-
-#comboBtn:focus {
-  outline: none;
+  background-position: right center;
+  color: #001215;
+  box-shadow: 0 0 20px #70e1f5;
 }
 
 /* ------- FAVOURITES ------- */
 
 #favourites {
   grid-area: cats;
-
   /* visibility: hidden; */
-  /* background-color: #fffffff5; */
   text-align: center;
   width: 80vw;
-  height: 73vh;
+  /* height: 73vh; */
   border: 1px solid grey;
-
+  position: relative;
   /* transition: 0.2s; */
 }
 
 #favourites .disappearBtn {
-  /* position: absolute;
-  z-index: 1; */
-  right: 0;
-  margin: 0.5em;
-  font-size: 1.3rem;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border-radius: 50%;
+  padding: 0.5em 0.75em;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }
 
 #favourites .disappearBtn:hover {
-  background-color: black;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 /* Add button */
@@ -290,9 +291,11 @@ main button:focus {
 }
 
 #favourites .delete-all-btn {
+  width: 146px;
+  margin: 0 auto;
+  margin-top: 2em;
   padding: 8px 2px;
-  width: 150px;
-  margin: 10px;
+  display: block;
   background-color: #c40000;
 }
 
@@ -358,33 +361,37 @@ main button:focus {
 
 #favourites ol li .deleteBtn,
 #favourites ol li .checkBtn {
-  padding: 5px 8px;
   margin: 8px;
-  width: 68px;
-  transition: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #favourites ol li .deleteBtn {
-  background-color: #c40000;
+  background-image: url('../assets/icons/trash.svg');
 }
 
 #favourites ol li .checkBtn {
-  background-color: #12a83a;
+  background-image: url('../assets/icons/info.svg');
 }
 
-#favourites ol li .deleteBtn:focus {
-  background-color: #820202;
+#favourites ol li .deleteBtn:hover {
+  box-shadow: 0 0 3px 1px #dc1010;
+  transform: none;
 }
 
-#favourites ol li .checkBtn:focus {
-  background-color: #02825e;
+#favourites ol li .checkBtn:hover {
+  box-shadow: 0 0 3px 1px #04dc50;
+  transform: none;
 }
 
 /* ------- FAVOURITE ITEM (DETAIL PAGE) ------- */
 
 #fav-item {
   grid-area: cats;
-  /* background: #f7f7f7; */
   width: 80vw;
   height: 73vh;
   text-align: center;
@@ -495,7 +502,3 @@ footer p a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #56cfff;
 }
-
-/* .active {
-  visibility: visible;
-} */

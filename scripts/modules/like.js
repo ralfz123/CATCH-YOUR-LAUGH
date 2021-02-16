@@ -47,15 +47,15 @@ function clickLikeBtn(catData, jokeData) {
       // Check button to check the fav-item
       let checkBtn = document.createElement('button');
       checkBtn.setAttribute('class', 'checkBtn');
-      let checkBtnTxt = document.createTextNode('Check');
-      checkBtn.appendChild(checkBtnTxt);
+      // let checkBtnTxt = document.createTextNode('Check');
+      // checkBtn.appendChild(checkBtnTxt);
       btnsContainer.appendChild(checkBtn);
 
       // Delete button to delete the fav-item
       let deleteBtn = document.createElement('button');
       deleteBtn.setAttribute('class', 'deleteBtn');
-      let btnText = document.createTextNode('Delete');
-      deleteBtn.appendChild(btnText);
+      // let btnText = document.createTextNode('Delete');
+      // deleteBtn.appendChild(btnText);
       btnsContainer.appendChild(deleteBtn);
 
       // Append all elements up here to the existing ordered-list

@@ -3,11 +3,9 @@ import '../vendor/routie.js';
 function routeHandler() {
   routie({
     '': function () {
-      console.log('Home');
       sectionToggler('combo-generator');
     },
     favourites: function () {
-      console.log('Favourites');
       sectionToggler('favourites');
     },
     'favourites/*': function () {
@@ -23,12 +21,12 @@ function sectionToggler(page) {
 
   allSections.forEach((section) => {
     section.classList.remove('active');
-    // section.setAttribute("aria-hidden", "true");
+    section.setAttribute("aria-hidden", "true");
     section.hidden = true;
   });
 
   activeSection.classList.add('active');
-  // activeSection.setAttribute('aria-hidden', 'false');
+  activeSection.setAttribute('aria-hidden', 'false');
   activeSection.hidden = false;
 }
 
