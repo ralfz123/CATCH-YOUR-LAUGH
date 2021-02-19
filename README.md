@@ -130,13 +130,12 @@ This app is built, using:
 - [ ] custom properties colors
 
 
-
-
 Readme:
 - [ ] Transform to English language
 - [ ] Screenshot app
 - [ ] Actor Diagram
 - [ ] Interaction Diagram
+- [ ] Uitdagingen/learnings uitleggen
 
 
 
