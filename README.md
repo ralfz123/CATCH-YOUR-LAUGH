@@ -51,8 +51,6 @@ Questions:
 Not finished yet.
 <img src="assets/README/interaction_diagram.png" width="700px" />
 
-- Have I have to handle localStorage methods() in the diagram?
-
 ## :1234: Data  
 ### APIs are:
 1. Cat images - https://thecatapi.com/
@@ -99,7 +97,7 @@ This app is built, using:
 - Module patterns
 
 ### :nerd_face: To-Do's
-App-based:
+#### App:
 - [x] Data fetch (getdata)
 - [x] Dynamic data via virtualDOM
 - [x] FavoritesList
@@ -109,9 +107,9 @@ App-based:
 - [ ] Data rendered in favourite item (detail page)
 - [ ] "Another combo" button fetches again without page reload (only invoking yet)
 - [ ] UI is loaded when data is fetched
-- [ ] Another section has to be to `display:none;` when page is loaded
+- [ ] Another section has to be to `display:none;` **when** page is loaded
 
-Code-based:
+#### Code:
 - [x] Modules
 - [x] Async fetch (async await)
 - [ ] Params function
@@ -120,15 +118,25 @@ Code-based:
 - [x] Routing
 - [ ] Templating 
 - [x] Script folder structure (helpers/utils/components)
-- [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
+- [ ] Init app and functions in a right way
+- [ ] Functions/modules always have to return something in stead of invoking other functions
+    - [ ] Do something based on the return of the function (fetch returns to main, in main invoke render function with data)
+    - [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
 - [ ] Arrow function
-- [ ] Map/filter/reduce: use 1 of the 3
-- [ ] init app and functions in a right way
+- [ ] **Map**/filter/reduce: use 1 of the 3
+- [ ] Check where to use `let` or `const`
+
+##### CSS:
+- [ ] custom properties colors
+
+
 
 
 Readme:
 - [ ] Transform to English language
 - [ ] Screenshot app
+- [ ] Actor Diagram
+- [ ] Interaction Diagram
 
 
 

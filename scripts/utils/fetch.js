@@ -20,14 +20,11 @@ async function getData() {
   const urlCats = `${endpointCats}/${pathCats}`;
 
   // API - Jokes
-  const endpointJokes =
-    'https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/';
+  const endpointJokes = 'https://official-joke-api.appspot.com/';
   const pathJokes = 'jokes/random';
   const urlJokes = `${endpointJokes}/${pathJokes}`;
 
-  let likeBtn = document.querySelector(
-    'article:nth-child(4) button:nth-child(3)'
-  );
+  const likeBtn = document.getElementById('likeBtn');
   likeBtn.setAttribute('disabled', true); // Set variable to disabled so that you're not able to like the unfetched combo data
 
   const dataCatImages = await fetchData(urlCats);

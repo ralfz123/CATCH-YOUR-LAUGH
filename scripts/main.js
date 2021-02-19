@@ -1,5 +1,4 @@
 import { getData } from './utils/fetch.js';
-import { checkFavourites } from './modules/favourites.js';
 import './router/router.js';
 
 getData(); // Starts application

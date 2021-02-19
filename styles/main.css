@@ -42,7 +42,7 @@ header h1 {
 /*                   MAIN                      */
 /* ------------------------------------------- */
 
-/* --/* --  Default Button styling --/* -- */
+/* --/* --  Default button styling --/* -- */
 
 main button {
   margin: 0;
@@ -66,6 +66,27 @@ main button:hover {
 main button:focus {
   transform: scale(1.02);
   outline: none;
+}
+
+/* --/* --  Default a styling --/* -- */
+
+main a {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  padding: 0.5em 0.75em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  /* position: absolute;
+  left: 10px;
+  top: 5px; */
+}
+
+main a:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
 }
 
 /* main section {
@@ -171,6 +192,7 @@ main button:focus {
   transition: background-color 0.1s;
   width: 150px;
   margin: 0 auto;
+  color: white;
 }
 
 #like-area #checkFavoBtn:hover {
@@ -302,13 +324,6 @@ main button:focus {
 }
 
 #favourites .disappearBtn {
-  padding: 0.5em 0.75em;
-  border-radius: 10px;
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid transparent;
   position: absolute;
   right: 10px;
   top: 5px;
@@ -448,13 +463,6 @@ main button:focus {
 }
 
 #fav-item a {
-  padding: 0.5em 0.75em;
-  border-radius: 10px;
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid transparent;
   position: absolute;
   left: 10px;
   top: 5px;
