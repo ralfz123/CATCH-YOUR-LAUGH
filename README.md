@@ -24,31 +24,34 @@ _Web App From Scratch, a course of the minor Web Design & Development. It is a m
 In this course I will learn to build a web application _without_ frameworks or unnecessary libraries, but with **_vanilla_ HTML**, **CSS** & **JavaScript** as much as possible. The end result is a modular, single page web app (SPA). Data will be retrieved from an external API of your choice, manipulated and finally shown in the UI of the App. I will learn different ways to structure code and develop my own coding style. With the gained knowledge I will be able to build interactive prototypes, based on real data. Also I will gain a better understanding of how API's, frameworks and libraries work.
 
 ## :heart_eyes: Concept
-Het wordt een applicatie waarbij er afbeeldingen van katten :cat: worden laten zien in combinatie met een mop. Deze combinatie zal leiden tot een eindeloos gelach van de gebruiker. Dit is namelijk een applicatie die je kan gebruiken als de sfeer niet lekker meer is, of er is even geen gesprekstof, of je wilt gewoon even goed hard lachen. Dan is dit dé oplossing!
+~ **CAT**CH YOUR LAUGH ~
+
+**CAT**CH YOUR LAUGH is an application where you can amuse pictures of cats in combination with jokes :cat: :laughing: . You can use this app when the atmosphere is no longer good, or there is no discussion material for a while, or you just want to laugh hard. Then this is the solution! This combination will lead to endless laughter from the user! 
+
+You may *like* the combination of the cat and the joke. It will be saved on the 'My Favourites' page and there you will see all your favourite combinations. You can also click on one of your favourites and you will be taken to the detail page where you will see your favourite in large format.
 
 
-Je kan ook de combinatie als favoriet toevoegen. Op het moment dat hij in je favolist staat, kan je erop klikken. Dan verschijnt er een detailpage met de cat imgage en de joke.
+<!-- ### :bulb: Idea
+<img src="" alt="sketch" width="800px"> -->
 
-### :bulb: Idea
-<img src="" alt="sketch" width="800px">
+### [Live version now](https://ralfz123.github.io/CATCH-YOUR-LAUGH)
 
-### [Live version now](https://ralfz123.github.io/web-app-from-scratch-2021)
-<img src="" alt="live-demo-screenshot" width="800px">
+<img src="assets/README/demo-screenshot.png" alt="live-demo-screenshot" width="700px">
 
 #### Features
-In deze app kan je:
-- Steeds een andere combinatie van kat & mop zien
-- Je favoriete combinatie 'liken'
-- Favoriete lijst aanmaken met jouw favoriete combinaties van kat & mop
+- By clicking on the 'ANOTHER COMBO' button you can see a different combination of cat and joke
+- Like your favourite combination of cat and joke
+- Create favourites list with your favourite combinations of cat & joke
 
 #### Actor diagram
+**Not finished yet.**
 <img src="assets/README/actordiagram.jpg" width="900px" />
 
 Questions:
 - Have I have to handle overview and detail routes in the diagram?
 
 #### Interaction diagram
-Not finished yet.
+**Not finished yet.**
 <img src="assets/README/interaction_diagram.png" width="700px" />
 
 ## :1234: Data  
@@ -65,7 +68,6 @@ The data variables I used, are:
 - `id`
 - `setup` 
 - `punchline`
-
 
 ### Dataset structure
 #### 1. Cat images
@@ -93,10 +95,10 @@ The data variables I used, are:
 
 ## :nerd_face: Technical summary
 This app is built, using:
-- [Functional Programming Patterns](https://github.com/ralfz123/frontend-data/wiki/Functional-Patterns)
+- `.map()`
 - Module patterns
 
-### :nerd_face: To-Do's
+### :file_folder: To-Do's
 #### App:
 - [x] Data fetch (getdata)
 - [x] Dynamic data via virtualDOM
@@ -104,7 +106,9 @@ This app is built, using:
 - [x] Like adds item (cat+joke) to favList
 - [ ] Not the same combo's in the favourites list
 - [x] Favourite item (detail page)
-- [ ] Data rendered in favourite item (detail page)
+- [ ] Delete favourite item from array and rerender UI
+- [ ] Redirect to detail page when clicking on unique favourite item
+- [ ] Data rendered in detail page (favourite item)
 - [ ] "Another combo" button fetches again without page reload (only invoking yet)
 - [ ] UI is loaded when data is fetched
 - [ ] Another section has to be to `display:none;` **when** page is loaded
@@ -130,29 +134,22 @@ This app is built, using:
 - [ ] custom properties colors
 
 
-Readme:
+##### Readme:
 - [ ] Transform to English language
 - [ ] Screenshot app
 - [ ] Actor Diagram
 - [ ] Interaction Diagram
 - [ ] Uitdagingen/learnings uitleggen
 
-
-
-
-
 #### Uitdagingen/uitvindingen:
 ##### 2 API's fetchen (uitdaging)
 ##### Modules (uitvinding)
 ##### Async await toepassen (uitvinding)
 
-
-
-
 ## :gear: Installation
 1. Clone the repository:  
 ```
-git clone https://github.com/ralfz123/web-app-from-scratch-2021.git
+git clone https://github.com/ralfz123/CATCH-YOUR-LAUGH.git
 ```
 
 2. Install dependencies   
@@ -174,7 +171,6 @@ http://localhost:8000/
 Credits to [Joost Faber](https://github.com/joostf) && [Koop](https://github.com/KoopReynders) && Suus for giving interesting lectures about Web Apps and JavaScript and how to deal with it.
 
 ### LOREM sources
-- **example** Lorem. (n.d.). Documentation Lorem. - Lorem Inc. Retrieved 28 December 2020, from https://Lorem.com/
 - Array.prototype.splice() - MDN. Retrieved 16 February 2021, from https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
 ### Other sources
@@ -184,11 +180,6 @@ Credits to [Joost Faber](https://github.com/joostf) && [Koop](https://github.com
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 This project from [Ralf](https://github.com/ralfz123) has a [MIT © License](https://github.com/ralfz123/web-app-from-scratch-2021/blob/main/LICENSE)
 
-
-### Tasklist
-- [ ] Video about Async data fetching, because I had no grip/understanding on that subject.
-
-<!-- end -->
 
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
