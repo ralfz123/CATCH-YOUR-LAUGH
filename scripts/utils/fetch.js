@@ -1,7 +1,7 @@
 import { renderData } from '../modules/render.js';
 import { loader } from '../modules/loader.js';
 import { cleanData } from './filter.js';
-import { clickComboBtn } from '../modules/refreshCombo.js';
+import '../modules/refreshCombo.js';
 
 // Fetching data and parses to JSON
 async function fetchData(url) {
@@ -20,7 +20,7 @@ async function getData() {
   const urlCats = `${endpointCats}/${pathCats}`;
 
   // API - Jokes
-  const endpointJokes = 'https://official-joke-api.appspot.com/';
+  const endpointJokes = 'https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/';
   const pathJokes = 'jokes/random';
   const urlJokes = `${endpointJokes}/${pathJokes}`;
 

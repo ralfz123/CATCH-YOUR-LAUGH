@@ -207,9 +207,16 @@ main a:hover {
   padding: 0;
   background: none;
   border: 3px solid crimson;
-  background: #77889957;
+  /* background: #77889957; */
   transition: 0.1s;
   animation: glow 10000ms infinite;
+  background-image: linear-gradient(
+    to right,
+    #70e1f5 0%,
+    #ffd194 51%,
+    #70e1f5 100%
+  );
+  background-size: 200% auto;
 }
 
 @keyframes glow {
@@ -229,8 +236,9 @@ main a:hover {
 
 #like-area #likeBtn:hover {
   transform: translateY(-5px);
-  background: #778899b7;
+  /* background: #778899b7; */
   animation: none;
+  background-position: right center;
 }
 
 #like-area #likeBtn:active {
@@ -304,9 +312,9 @@ main a:hover {
   box-shadow: 0 0 20px #70e1f5;
 }
 
-#comboBtn:focus {
+/* #comboBtn:focus {
   transform: scale(0.8);
-}
+} */
 
 /* ------- FAVOURITES ------- */
 

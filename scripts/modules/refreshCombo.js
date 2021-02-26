@@ -1,10 +1,9 @@
 import { getData } from '../utils/fetch.js';
 
 // Another combo - triggered by button, then fetches and renders again
-function clickComboBtn() {
-  console.log('Combo clicked');
-  let comboBtn = document.getElementById('comboBtn');
-  comboBtn.addEventListener('click', getData());
-}
+let comboBtn = document.getElementById('comboBtn');
+comboBtn.addEventListener('click', function () {
+  // empty static HTML first, so when you like, you like not the liked ones twice
 
-export { clickComboBtn };
+  getData(); // Fetches data again
+});

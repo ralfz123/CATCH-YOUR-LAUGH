@@ -26,7 +26,7 @@ function clickLikeBtn(catData, jokeData) {
       // }
 
       feedback(); // UX Feedback from the 'like'
-      clickDetailFav(favouritesArray);
+      clickDetailFav(favouritesArray, object);
       deleteFavItem(favouritesArray);
       console.log('Liked items', favouritesArray);
     }
@@ -34,25 +34,14 @@ function clickLikeBtn(catData, jokeData) {
 }
 
 // Checks if the liked combo is not a duplicate, then it will not be saved in the favourites list
-function checkDuplicateFav(object) {
-  // if (object.catData.url && object.jokeData.id) {
-  //   console.log('The same');
-  // }
-  if (object == object) {
+function checkDuplicateFav(data, currentObject) {
+  if (currentObject == currentObject) {
+    // (currentObject.catData.url && currentObject.jokeData.id)
     console.log('The same');
   } else {
     console.log('Not the same');
   }
 }
-
-
-const x = object.find(item => item.id === current.id);
-if (!x) {
-  return object.concat([current]);
-} else {
-  return acc;
-}
-
 
 // Makes a favourite item
 export function renderLiData(arrayData) {
