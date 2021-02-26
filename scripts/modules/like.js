@@ -1,7 +1,7 @@
 import { clickDetailFav, deleteFavItem } from './favItem.js';
 import { feedback } from './feedback.js';
 
-let favouritesArray = []; // Empty array for keeping up the favourites data
+export let favouritesArray = []; // Empty array for keeping up the favourites data
 
 // Makes a new item in the favourites-list
 function clickLikeBtn(catData, jokeData) {

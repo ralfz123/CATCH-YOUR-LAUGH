@@ -4,42 +4,13 @@ function renderDetail(arrayData) {
   currentContainer.innerHTML = ''; // Make it empty before data will be rendered
 
   arrayData.forEach((object) => {
-    // Makes new li in the list
-    let newFav = document.createElement('li');
-    newFav.setAttribute('class', 'fav-item');
+    let image = document.getElementBy('fav-item-image')
+    let joke = document.getElementBy('fav-item-joke')
+    let punchline = document.getElementBy('fav-item-punchline')
 
-    // Image
-    let newCatImg = document.createElement('img');
-    newCatImg.src = object.catData.url;
-    newFav.appendChild(newCatImg);
-
-    // Joke container
-    let jokeContainer = document.createElement('div');
-    newFav.appendChild(jokeContainer);
-
-    // Joke
-    let newJoke = document.createElement('p');
-    newJoke.innerHTML = object.jokeData.setup;
-    jokeContainer.appendChild(newJoke);
-
-    // Punchline
-    let newJokePunchline = document.createElement('p');
-    newJokePunchline.innerHTML = object.jokeData.punchline;
-    jokeContainer.appendChild(newJokePunchline);
-
-    // Buttons container
-    let btnsContainer = document.createElement('div');
-    newFav.appendChild(btnsContainer);
-
-    // Check button to check the fav-item
-    let checkBtn = document.createElement('button');
-    checkBtn.setAttribute('class', 'checkBtn');
-    btnsContainer.appendChild(checkBtn);
-
-    // Delete button to delete the fav-item
-    let deleteBtn = document.createElement('button');
-    deleteBtn.setAttribute('class', 'deleteBtn');
-    btnsContainer.appendChild(deleteBtn);
+    image.src = catData[0].url;
+    joke.innerHTML = jokeData.setup;
+    punchline.innerHTML = jokeData.punchline;
   });
 }
 
