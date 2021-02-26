@@ -325,7 +325,7 @@ main a:hover {
 
 #favourites .disappearBtn {
   position: absolute;
-  right: 10px;
+  left: 10px;
   top: 5px;
 }
 
@@ -341,7 +341,7 @@ main a:hover {
   background: chartreuse;
 }
 
-#favourites .delete-all-btn {
+#favourites .deleteAllBtn {
   width: 146px;
   margin: 0 auto;
   margin-top: 2em;
@@ -350,7 +350,7 @@ main a:hover {
   background-color: #c40000;
 }
 
-#favourites .delete-all-btn:hover {
+#favourites .deleteAllBtn:hover {
   background-color: #820202;
 }
 

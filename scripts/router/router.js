@@ -8,8 +8,7 @@ function routeHandler() {
     favourites: function () {
       sectionToggler('favourites');
     },
-    'favourites/*': function () {
-      console.log('Favourite-detail');
+    'favourites/:id': function () {
       sectionToggler('fav-item');
     },
   });

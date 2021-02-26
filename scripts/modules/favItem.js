@@ -1,24 +1,24 @@
-import { favouritesArray } from '../modules/like.js';
+import { favouritesArray, renderLiData } from './like.js';
+import { renderDetail } from './favDetail.js';
 
 function clickDetailFav(arrayData) {
   let checkFavItemBtn = document.querySelector('.checkBtn');
 
   checkFavItemBtn.addEventListener('click', () => {
-    console.log('array here =', favouritesArray);
-    // let container = document.querySelector('ol');
-    // console.log(container.childNodes.length);
-
-    console.log(favouritesArray[0].catData);
-    for (let i = 0; i < favouritesArray.length; i++) {
-      console.log(favouritesArray[i].catData);
-    }
+    // console.log(favouritesArray[0].catData);
+    // for (let i = 0; i < favouritesArray.length; i++) {
+    //   console.log(favouritesArray[i].catData);
+    // }
 
     // REMOVE THIS BELOW - Getting the value/countNumber of the LI in the OL
     // console.log(arrayData.indexOf);
     let li = document.querySelectorAll('ol li');
     let numberLi = li.length;
     // console.log(numberLi);
-    location.hash = `favourites/${numberLi}`;
+    // location.hash = `favourites/${numberLi}`;
+    location.hash = `favourites/${favouritesArray[0].jokeData.id}`;
+
+    renderDetail(favouritesArray);
   });
 }
 
@@ -45,12 +45,15 @@ function deleteFavItem(arrayData) {
   });
 }
 
-//  Deletes all favourites
-function deleteAllFavItems(arrayData) {
-  const deleteAllBtn = document.querySelector('.delete-all-btn');
+//  Deletes all favourites from favourites list
+function deleteAllFavItems() {
+  const deleteAllBtn = document.querySelector('.deleteAllBtn');
   deleteAllBtn.addEventListener('click', function () {
-    arrayData.splice(indexOf, 'all');
+    let favouritesArray = [];
+    renderLiData(favouritesArray);
   });
 }
+
+deleteAllFavItems();
 
 export { clickDetailFav, deleteFavItem };

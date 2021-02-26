@@ -1,19 +1,14 @@
 // Function that renders data on the detail page of the unique favourite item
 function renderDetail(arrayData) {
-  let currentContainer = document.querySelector('ol');
-  currentContainer.innerHTML = ''; // Make it empty before data will be rendered
+  let id = document.getElementById('fav-item-id')
+  let image = document.getElementById('fav-item-image');
+  let joke = document.getElementById('fav-item-joke');
+  let punchline = document.getElementById('fav-item-punchline');
 
-  arrayData.forEach((object) => {
-    let image = document.getElementBy('fav-item-image')
-    let joke = document.getElementBy('fav-item-joke')
-    let punchline = document.getElementBy('fav-item-punchline')
-
-    image.src = catData[0].url;
-    joke.innerHTML = jokeData.setup;
-    punchline.innerHTML = jokeData.punchline;
-  });
+  id.innerHTML = arrayData[0].jokeData.id
+  image.src = arrayData[0].catData.url;
+  joke.innerHTML =  arrayData[0].jokeData.setup;
+  punchline.innerHTML =  arrayData[0].jokeData.punchline;
 }
-
-renderDetail();
 
 export { renderDetail };
