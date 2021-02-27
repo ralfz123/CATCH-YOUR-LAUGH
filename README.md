@@ -122,7 +122,6 @@ This app is built, using:
 - [x] Feedback (Loader) to user while fetching data
 - [x] Split API-url in chunks
 - [x] Routing
-- [ ] Templating 
 - [x] Script folder structure (helpers/utils/components)
 - [ ] Init app and functions in a right way
 - [ ] Functions/modules always have to return something in stead of invoking other functions
@@ -131,22 +130,26 @@ This app is built, using:
 - [ ] Arrow function
 - [ ] **Map**/filter/reduce: use 1 of the 3
 - [ ] Check where to use `let` or `const`
+- [ ] BONUS: Templating 
 
 ##### CSS:
 - [ ] custom properties colors
 
-
 ##### Readme:
-- [ ] Transform to English language
-- [ ] Screenshot app
+- [x] Transform to English language
+- [x] Screenshot app
 - [ ] Actor Diagram
 - [ ] Interaction Diagram
 - [ ] Uitdagingen/learnings uitleggen
 
-#### Uitdagingen/uitvindingen:
-##### 2 API's fetchen (uitdaging)
-##### Modules (uitvinding)
-##### Async await toepassen (uitvinding)
+## Challenges / Inventions:
+### Fetch 2 API's (Challenge)
+lorem
+
+### Modules (Challenge)
+lorem
+### Apply `async await` (Invention)
+lorem
 
 ## :gear: Installation
 1. Clone the repository:  
