@@ -8,7 +8,6 @@
 
 html {
   background: #f7f7f7;
-  /* background: #202026; */
   --font-headers: 'Quicksand', sans-serif;
   --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-family: var(--font-headers);
@@ -22,7 +21,6 @@ body {
   margin: 20px;
   padding: 0;
   overflow-y: hidden;
-  /* color: white; */
 }
 
 /* ------------------------------------------- */
@@ -64,7 +62,6 @@ main button:hover {
 }
 
 main button:focus {
-  /* transform: scale(1.02); */
   outline: none;
 }
 
@@ -78,9 +75,6 @@ main a {
   text-decoration: none;
   border: 1px solid transparent;
   text-transform: uppercase;
-  /* position: absolute;
-  left: 10px;
-  top: 5px; */
 }
 
 main a:hover {
@@ -88,10 +82,6 @@ main a:hover {
   color: black;
   border: 1px solid black;
 }
-
-/* main section {
-  display: none;
-} */
 
 #combo-generator.active {
   display: grid;
@@ -102,12 +92,9 @@ main a:hover {
 
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: minmax(15vh, auto);
-  /* grid-template-rows: 1fr 1fr; */
   grid-gap: 5px;
 
-  /* width: 50vw; */
   width: 50em;
-  /* padding: 0 20px; */
   margin: 0 auto;
   position: relative;
   justify-items: center;
@@ -117,15 +104,12 @@ main a:hover {
 
 #cat-images {
   grid-area: cats;
-  /* background-color: #244b5b70; */
   text-align: center;
   height: 35vh;
 }
 
 #cat-images img {
   width: 100%;
-  /* height: auto;  */
-  /* max-height: 35vh; */
   height: 35vh;
   border-radius: 5px;
 }
@@ -176,7 +160,6 @@ main a:hover {
 }
 
 #like-area h2 {
-  /* margin-top: 5px; */
   margin: 0;
   transition: 0.2s;
 }
@@ -231,7 +214,6 @@ main a:hover {
 
 #like-area #likeBtn:hover {
   transform: translateY(-5px);
-  /* background: #778899b7; */
   animation: none;
   background-position: right center;
 }
@@ -253,12 +235,7 @@ main a:hover {
   top: 0.5em;
   left: 0.5em;
   margin: 0 auto;
-  /* margin-top: -1.5em; */
-  /* display: block; */
-  /* color: #fa3e31; */
-  /* font-weight: bold; */
   background: #828282;
-  /* background: #f7f7f7; */
   animation: fadeOut 1.5s ease-in-out;
   border-radius: 48px;
   box-shadow: 0 0 20px 4px #0c0a0a;
@@ -281,8 +258,6 @@ main a:hover {
   grid-area: button;
   justify-self: center;
   align-self: center;
-  /* width: 150px;
-  height: 38px; */
   padding: 8px 10px;
   font-size: 1.6rem;
   box-shadow: 0px 0px 9px 3px #544f4f94;
@@ -314,14 +289,11 @@ main a:hover {
 /* ------- FAVOURITES ------- */
 
 #favourites {
-  /* grid-area: cats; */
   margin: 0 auto;
   position: relative;
   width: 50em;
-  /* height: 73vh; */
   visibility: visible;
   text-align: center;
-  /* border: 1px solid grey; */
   border-radius: 10px;
   /* transition: 0.2s; */
 }
@@ -378,8 +350,6 @@ main a:hover {
   width: 100%;
   display: grid;
   grid-template-columns: 30% 50% 20%;
-  /* grid-template-columns: 100px 300px 50px; */
-  /* grid-template-columns: 30vw 30vw 20vw; */
   grid-template-rows: 100px auto;
   align-items: center;
   transition: background 0.1s;
@@ -454,14 +424,11 @@ main a:hover {
 /* ------- FAVOURITE ITEM (DETAIL PAGE) ------- */
 
 #fav-item {
-  /* grid-area: cats; */
-  /* visibility: hidden; */
   position: relative;
   margin: 0 auto;
   width: 50em;
   height: 73vh;
   text-align: center;
-  /* border: 1px solid grey; */
   border-radius: 10px;
 }
 

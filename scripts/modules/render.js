@@ -9,7 +9,6 @@ function renderData(catData, jokeData) {
   image.src = catData[0].url;
   joke.innerHTML = jokeData.setup;
   punchline.innerHTML = jokeData.punchline;
-  // console.log('✅ Data rendered');
 
   clickLikeBtn(catData, jokeData);
 }

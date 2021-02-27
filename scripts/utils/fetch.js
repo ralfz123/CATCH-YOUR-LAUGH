@@ -6,9 +6,8 @@ import '../modules/refreshCombo.js';
 // Fetching data and parses to JSON
 async function fetchData(url) {
   const dataResponse = await fetch(url);
-  // console.log('🌐 Fetching data...'); // Feedback to user while fetching data
   const jsonData = await dataResponse.json();
-  loader();
+  loader(); // Feedback to user while fetching data
   return jsonData;
 }
 
