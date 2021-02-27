@@ -1,4 +1,5 @@
 import '../vendor/routie.js';
+import { emptyStateHandler } from '../utils/emptyState.js';
 
 function routeHandler() {
   routie({
@@ -20,7 +21,7 @@ function sectionToggler(page) {
 
   allSections.forEach((section) => {
     section.classList.remove('active');
-    section.setAttribute("aria-hidden", "true");
+    section.setAttribute('aria-hidden', 'true');
     section.hidden = true;
   });
 
@@ -29,5 +30,5 @@ function sectionToggler(page) {
   activeSection.hidden = false;
 }
 
-routeHandler();
+emptyStateHandler();
 export { routeHandler };

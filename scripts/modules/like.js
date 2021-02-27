@@ -1,5 +1,5 @@
 import { clickDetailFav, deleteFavItem } from './favItem.js';
-import { feedback } from './feedback.js';
+import { feedback } from '../utils/feedback.js';
 
 export let favouritesArray = []; // Empty array for keeping up the favourites data
 
@@ -15,16 +15,6 @@ function clickLikeBtn(catData, jokeData) {
       favouritesArray.push(object);
 
       renderLiData(favouritesArray);
-
-      // Hide empty state
-      // let listItems = document.querySelector('ol').childNodes.length;
-      // const emptyStateElement = document.querySelector('ol p');
-
-      // if (listItems > 1) {
-      //   console.log('Empty state - OFF 🔴');
-      //   emptyStateElement.classList.toggle('emptyStateHide');
-      // }
-
       feedback(); // UX Feedback from the 'like'
       clickDetailFav(favouritesArray, object);
       deleteFavItem(favouritesArray);

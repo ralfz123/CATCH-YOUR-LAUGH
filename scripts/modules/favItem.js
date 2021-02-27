@@ -22,6 +22,7 @@ function clickDetailFav(arrayData) {
   });
 }
 
+// Removes one favourite item from favourites list
 function deleteFavItem(arrayData) {
   let deleteBtn = document.querySelector('#favourites ol li .deleteBtn');
   deleteBtn.addEventListener('click', function () {
@@ -33,19 +34,10 @@ function deleteFavItem(arrayData) {
     // Get index of li
     // Remove li (object) from array
     // arrayData.splice(indexOf, 1);
-
-    // EMPTY STATE HANDLER - Not dry, I know
-    //   let listItems = document.querySelector('ol').childNodes.length;
-    //   const emptyStateElement = document.querySelector('ol p');
-    //   if (listItems < 4) {
-    //     console.log('Empty state - ON 🟢');
-    //     emptyStateElement.classList.remove('emptyStateHide');
-    // emptyStateElement.setAttribute('hidden', true)
-    //   }
   });
 }
 
-//  Deletes all favourites from favourites list
+//  Removes all favourites from favourites list
 function deleteAllFavItems() {
   const deleteAllBtn = document.querySelector('.deleteAllBtn');
   deleteAllBtn.addEventListener('click', function () {

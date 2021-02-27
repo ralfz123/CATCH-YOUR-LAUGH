@@ -1,5 +1,5 @@
 import { renderData } from '../modules/render.js';
-import { loader } from '../modules/loader.js';
+import { loader } from './loader.js';
 import { cleanData } from './filter.js';
 import '../modules/refreshCombo.js';
 
@@ -20,7 +20,7 @@ async function getData() {
   const urlCats = `${endpointCats}/${pathCats}`;
 
   // API - Jokes
-  const endpointJokes = 'https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/';
+  const endpointJokes = 'https://official-joke-api.appspot.com/';
   const pathJokes = 'jokes/random';
   const urlJokes = `${endpointJokes}/${pathJokes}`;
 

@@ -1,15 +1,17 @@
 import { getData } from './utils/fetch.js';
-import './router/router.js';
-
-getData(); // Starts application
+import { routeHandler } from './router/router.js';
 
 // Function that starts the app, within all feature-functions [NOT FINISHED]
-// (function init() {
-//   getData(); // Starts application
+function init() {
+  // Router
+  routeHandler();
 
-//   // Router
+  // Get data (fetch and render)
+  getData();
 
-//   // render
+  // render
 
-//   // const data = await fetchData();
-// });
+  // const data = await fetchData();
+}
+
+init();
