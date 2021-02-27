@@ -1,40 +1,37 @@
 import { favouritesArray, renderLiData } from './like.js';
 import { renderDetail } from './favDetail.js';
+import { emptyStateHandler } from '../utils/emptyState.js';
 
 function clickDetailFav(arrayData) {
-  let checkFavItemBtn = document.querySelector('.checkBtn');
+  let checkFavItemBtns = document.querySelectorAll('.checkBtn');
 
-  checkFavItemBtn.addEventListener('click', () => {
-    // console.log(favouritesArray[0].catData);
-    // for (let i = 0; i < favouritesArray.length; i++) {
-    //   console.log(favouritesArray[i].catData);
-    // }
+  for (let i = 0; i < checkFavItemBtns.length; i++) {
+    checkFavItemBtns[i].addEventListener('click', () => {
+      // Determain which object in array it is
+      for (let i = 0; i < favouritesArray.length; i++) {
+        renderDetail(favouritesArray[i]);
+      }
 
-    // REMOVE THIS BELOW - Getting the value/countNumber of the LI in the OL
-    // console.log(arrayData.indexOf);
-    let li = document.querySelectorAll('ol li');
-    let numberLi = li.length;
-    // console.log(numberLi);
-    // location.hash = `favourites/${numberLi}`;
-    location.hash = `favourites/${favouritesArray[0].jokeData.id}`;
-
-    renderDetail(favouritesArray);
-  });
+      location.hash = `favourites/${favouritesArray[i].jokeData.id}`;
+    });
+  }
 }
 
 // Removes one favourite item from favourites list
 function deleteFavItem(arrayData) {
-  let deleteBtn = document.querySelector('#favourites ol li .deleteBtn');
-  deleteBtn.addEventListener('click', function () {
-    // Replace with code that removes item from array
-    let favItem = document.querySelector('.fav-item');
-    favItem.remove();
+  let deleteBtns = document.querySelectorAll('.deleteBtn');
 
-    // Get index of check button
-    // Get index of li
-    // Remove li (object) from array
-    // arrayData.splice(indexOf, 1);
-  });
+  for (let i = 0; i < deleteBtns.length; i++) {
+    deleteBtns[i].addEventListener('click', () => {
+      // Determain which object in array it is
+      let favItem = document.querySelector('.fav-item');
+      favItem.remove();
+
+      // Code to remove it from array
+      // Remove li (object) from array
+      // arrayData.splice(indexOf, 1);
+    });
+  }
 }
 
 //  Removes all favourites from favourites list
@@ -43,9 +40,11 @@ function deleteAllFavItems() {
   deleteAllBtn.addEventListener('click', function () {
     let favouritesArray = [];
     renderLiData(favouritesArray);
+    console.log('Removed ALL - array length:', favouritesArray.length);
+    // emptyStateHandler(favouritesArray.length)
   });
 }
 
 deleteAllFavItems();
 
-export { clickDetailFav, deleteFavItem };
+export { clickDetailFav, deleteFavItem, deleteAllFavItems };

@@ -17,7 +17,7 @@ function routeHandler() {
 
 function sectionToggler(page) {
   const allSections = document.querySelectorAll('section');
-  const activeSection = document.querySelector(`#${page}`);
+  const activeSection = document.getElementById(`${page}`);
 
   allSections.forEach((section) => {
     section.classList.remove('active');
@@ -30,5 +30,5 @@ function sectionToggler(page) {
   activeSection.hidden = false;
 }
 
-emptyStateHandler();
+// emptyStateHandler();
 export { routeHandler };

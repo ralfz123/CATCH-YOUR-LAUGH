@@ -1,4 +1,4 @@
-import { clickDetailFav, deleteFavItem } from './favItem.js';
+import { clickDetailFav, deleteFavItem, deleteAllFavItems } from './favItem.js';
 import { feedback } from '../utils/feedback.js';
 
 export let favouritesArray = []; // Empty array for keeping up the favourites data
@@ -6,32 +6,34 @@ export let favouritesArray = []; // Empty array for keeping up the favourites da
 // Makes a new item in the favourites-list
 function clickLikeBtn(catData, jokeData) {
   let likeBtn = document.getElementById('likeBtn');
+
   likeBtn.addEventListener('click', function () {
     // Only perform this function if the data is present
-
     if (catData && jokeData) {
       let object = { catData: catData[0], jokeData: jokeData };
-      checkDuplicateFav(object);
+      // checkDuplicateFav(object);
       favouritesArray.push(object);
 
       renderLiData(favouritesArray);
       feedback(); // UX Feedback from the 'like'
       clickDetailFav(favouritesArray, object);
       deleteFavItem(favouritesArray);
+      // deleteAllFavItems();
+
       console.log('Liked items', favouritesArray);
     }
   });
 }
 
 // Checks if the liked combo is not a duplicate, then it will not be saved in the favourites list
-function checkDuplicateFav(data, currentObject) {
-  if (currentObject == currentObject) {
-    // (currentObject.catData.url && currentObject.jokeData.id)
-    console.log('The same');
-  } else {
-    console.log('Not the same');
-  }
-}
+// function checkDuplicateFav(data, currentObject) {
+//   if (currentObject == currentObject) {
+//     // (currentObject.catData.url && currentObject.jokeData.id)
+//     console.log('The same');
+//   } else {
+//     console.log('Not the same');
+//   }
+// }
 
 // Makes a favourite item
 export function renderLiData(arrayData) {

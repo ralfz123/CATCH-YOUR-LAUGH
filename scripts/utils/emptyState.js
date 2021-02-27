@@ -1,26 +1,24 @@
 import { favouritesArray } from '../modules/like.js';
 
-// EMPTY STATE HANDLER - Not dry, I know
-function emptyStateHandler() {
-  let listItems = document.querySelector('ol').childNodes;
+// EMPTY STATE HANDLER
+function emptyStateHandler(numberFavItems) {
   const emptyStateElement = document.querySelector('ol p');
-  let array = favouritesArray;
-  console.log(array.length);
+  console.log(numberFavItems);
 
   // Show empty state - If array is empty
-  if (array.length == 0) {
+  if (numberFavItems == 0) {
     console.log('Empty state - ON 🟢');
-    // emptyStateElement.setAttribute('aria-hidden', 'true');
-    // emptyStateElement.hidden = true;
+    emptyStateElement.setAttribute('aria-hidden', 'true');
+    emptyStateElement.hidden = true;
   }
 
   // Hide empty state - If array has minimal one element
-  if (array.length !== 0) {
+  else if (numberFavItems > 0) {
     console.log('Empty state - OFF 🔴');
-    // emptyStateElement.setAttribute('aria-hidden', 'false');
-    // emptyStateElement.hidden = false;
+    emptyStateElement.setAttribute('aria-hidden', 'false');
+    emptyStateElement.hidden = false;
   }
 }
 
-emptyStateHandler();
+// emptyStateHandler();
 export { emptyStateHandler };
