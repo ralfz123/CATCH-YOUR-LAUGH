@@ -109,8 +109,8 @@ This app is built, using:
 - [ ] Delete favourite item from array and rerender UI
 - [x] Delete all favourites from array and rerender UI
 - [ ] Redirect to detail page when clicking on unique favourite item
-- [ ] Data rendered in detail page (favourite item)
-- [ ] "Another combo" button fetches again without page reload (only invoking yet)
+- [x] Data rendered in detail page (favourite item)
+- [x] "Another combo" button fetches again without page reload (only invoking yet)
 - [ ] UI is loaded when data is fetched
 - [ ] Another section has to be to `display:none;` **when** page is loaded
 - [ ] Empty state favourites UI

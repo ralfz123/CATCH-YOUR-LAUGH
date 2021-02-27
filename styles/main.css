@@ -64,7 +64,7 @@ main button:hover {
 }
 
 main button:focus {
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
   outline: none;
 }
 
@@ -181,10 +181,6 @@ main a:hover {
   transition: 0.2s;
 }
 
-#like-area h2:hover ~ #likeBtn {
-  box-shadow: 0px 0px 9px 3px #b7050594;
-}
-
 #like-area #checkFavoBtn {
   display: block;
   background-color: #1f1b1b;
@@ -206,8 +202,7 @@ main a:hover {
   margin: 10px;
   padding: 0;
   background: none;
-  border: 3px solid crimson;
-  /* background: #77889957; */
+  border: 2px solid crimson;
   transition: 0.1s;
   animation: glow 10000ms infinite;
   background-image: linear-gradient(
@@ -312,9 +307,9 @@ main a:hover {
   box-shadow: 0 0 20px #70e1f5;
 }
 
-/* #comboBtn:focus {
-  transform: scale(0.8);
-} */
+#comboBtn:active {
+  transform: scale(0.9);
+}
 
 /* ------- FAVOURITES ------- */
 
