@@ -1,6 +1,6 @@
 import { renderData } from '../modules/render.js';
 import { loader } from './loader.js';
-import { cleanData } from './filter.js';
+import { filterCatData, filterJokeData } from './filter.js';
 import '../modules/refreshCombo.js';
 
 // Fetching data and parses to JSON
@@ -28,10 +28,18 @@ async function getData() {
 
   const dataCatImages = await fetchData(urlCats);
   const dataJokes = await fetchData(urlJokes);
-  likeBtn.removeAttribute('disabled', true); // Data is fetched, so now you can hit the like button
+
+  // Filter data - NOT WORKING
+  // let filteredDataCat = filterData(dataCatImages);
+  // let filteredDataJoke = filterData(dataJokes);
+  // console.log(filterCatData(dataCatImages))
+  // console.log(filterJokeData(dataJokes))
+
+  likeBtn.removeAttribute('disabled', true); // Data is fetched, so now the like button is enabled
 
   // cleanData(dataCatImages, dataJokes); // NOT WORKING
   renderData(dataCatImages, dataJokes);
+  // renderData(filteredDataCat, filteredDataJoke);
 }
 
 export { getData };
