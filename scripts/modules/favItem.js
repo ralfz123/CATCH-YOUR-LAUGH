@@ -23,13 +23,22 @@ function deleteFavItem(arrayData) {
 
   for (let i = 0; i < deleteBtns.length; i++) {
     deleteBtns[i].addEventListener('click', () => {
-      // Determain which object in array it is
-      let favItem = document.querySelector('.fav-item');
-      favItem.remove();
+      // let num = 0;
+      // let button = deleteBtns[i];
+      // let numIndex = button - 1;
 
-      // Code to remove it from array
-      // Remove li (object) from array
-      // arrayData.splice(indexOf, 1);
+      let buttonSpecific = document.querySelector('ol li .deleteBtn').length
+      
+
+      console.log(buttonSpecific);
+      // Determain which object in array it is
+      // let favItem = document.querySelector('.fav-item');
+      // favItem.remove();
+
+      //----  Code to remove it from array:
+      // Count li (object) from ol
+      // Count li.number - 1
+      // Take that value and remove object out array (arrayData.splice(indexOf, 1))
     });
   }
 }

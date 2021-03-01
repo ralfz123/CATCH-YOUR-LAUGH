@@ -156,6 +156,9 @@ lorem
 ### Apply `async await` (Invention)
 lorem
 
+### reduce() & some()
+lorem
+
 ## :gear: Installation
 1. Clone the repository:  
 ```

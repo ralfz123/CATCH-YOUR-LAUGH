@@ -12,19 +12,7 @@ function clickLikeBtn(catData, jokeData) {
     if (catData && jokeData) {
       let object = { catData: catData[0], jokeData: jokeData };
       favouritesArray.push(object);
-      // checkDuplicateFav(favouritesArray, object);
-      // checkDuplicateFav();
-
-      favouritesArray.reduce((newArray, likedCombo) => {
-        if (
-          !newArray.some(
-            (element) => element.catData.url == likedCombo.catData.url
-          )
-        )
-          // favouritesArray.push(likedCombo);
-          console.log(likedCombo.catData.url)
-        return newArray;
-      }, []); // [] = newArray
+      checkDuplicateFav();
 
       renderFavItem(favouritesArray);
       feedbackLike(); // UX Feedback from the 'like'
@@ -39,22 +27,20 @@ function clickLikeBtn(catData, jokeData) {
 
 // Checks if the liked combo is not a duplicate, then it won't be saved in the favourites list
 function checkDuplicateFav() {
-  // param(allObjects, currentObject)
-  // object.catData.url, object.jokeData.id)
-
   const newArray = favouritesArray.reduce((newArray, currentValue) => {
     if (
       !newArray.some(
         (element) => element.catData.url === currentValue.catData.url
       )
     )
-      favouritesArray.push(currentValue);
+      newArray.push(currentValue);
     return newArray;
-  }, []); // [] = newArray
+  }, []);
+  favouritesArray = newArray;
 }
 
 // Creates a favourite item and renders the data
-export function renderFavItem(arrayData) {
+function renderFavItem(arrayData) {
   let currentContainer = document.querySelector('ol');
   currentContainer.innerHTML = ''; // Make it empty before data will be rendered
 
@@ -100,4 +86,4 @@ export function renderFavItem(arrayData) {
   });
 }
 
-export { clickLikeBtn };
+export { renderFavItem, clickLikeBtn };
