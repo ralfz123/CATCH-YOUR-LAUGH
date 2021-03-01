@@ -7,22 +7,16 @@ function clickDetailFav(arrayData) {
 
   for (let i = 0; i < checkFavItemBtns.length; i++) {
     checkFavItemBtns[i].addEventListener('click', () => {
-      // Determain which object in array it is
+      // for (let i = 0; i < favouritesArray.length; i++) {
+      const indexFav = favouritesArray
+        .map(function (object) {
+          return object.jokeData.id;
+        })
+        .indexOf(favouritesArray[i].jokeData.id); // What's the purpose of this code?
 
-      for (let i = 0; i < favouritesArray.length; i++) {
-        // favouritesArray[i].jokeData.id
-
-        var elementPos = favouritesArray
-          .map(function (x) {
-            return x.jokeData.id;
-          })
-          .indexOf(favouritesArray[i].jokeData.id);
-        var objectFound = favouritesArray[elementPos];
-        console.log(elementPos);
-
-        renderDetail(favouritesArray[i]);
-        location.hash = `favourites/${favouritesArray[i].jokeData.id}`;
-      }
+      renderDetail(favouritesArray[indexFav]);
+      location.hash = `favourites/${favouritesArray[indexFav].jokeData.id}`;
+      // } // end curly brace of for loop
     });
   }
 }
