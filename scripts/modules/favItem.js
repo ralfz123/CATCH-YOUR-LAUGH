@@ -8,11 +8,21 @@ function clickDetailFav(arrayData) {
   for (let i = 0; i < checkFavItemBtns.length; i++) {
     checkFavItemBtns[i].addEventListener('click', () => {
       // Determain which object in array it is
-      for (let i = 0; i < favouritesArray.length; i++) {
-        renderDetail(favouritesArray[i]);
-      }
 
-      location.hash = `favourites/${favouritesArray[i].jokeData.id}`;
+      for (let i = 0; i < favouritesArray.length; i++) {
+        // favouritesArray[i].jokeData.id
+
+        var elementPos = favouritesArray
+          .map(function (x) {
+            return x.jokeData.id;
+          })
+          .indexOf(favouritesArray[i].jokeData.id);
+        var objectFound = favouritesArray[elementPos];
+        console.log(elementPos);
+
+        renderDetail(favouritesArray[i]);
+        location.hash = `favourites/${favouritesArray[i].jokeData.id}`;
+      }
     });
   }
 }
@@ -26,11 +36,15 @@ function deleteFavItem(arrayData) {
       // let num = 0;
       // let button = deleteBtns[i];
       // let numIndex = button - 1;
+      console.log(arrayData);
+      let buttonSpecific = document.querySelectorAll('ol li .deleteBtn').length;
+      // console.log(buttonSpecific);
+      let index = buttonSpecific - 1;
+      console.log(index);
+      arrayData.splice(index, 1);
+      console.log(arrayData);
+      renderFavItem(arrayData);
 
-      let buttonSpecific = document.querySelector('ol li .deleteBtn').length
-      
-
-      console.log(buttonSpecific);
       // Determain which object in array it is
       // let favItem = document.querySelector('.fav-item');
       // favItem.remove();
@@ -39,6 +53,32 @@ function deleteFavItem(arrayData) {
       // Count li (object) from ol
       // Count li.number - 1
       // Take that value and remove object out array (arrayData.splice(indexOf, 1))
+
+      // // get favorites from local storage or empty array
+      // var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      // // add class 'fav' to each favorite
+      // favorites.forEach(function (favorite) {
+      //   document.getElementById(favorite).className = 'fav';
+      // });
+      // // register click event listener
+      // document.querySelector('.list').addEventListener('click', function (e) {
+      //   var id = e.target.id,
+      //     item = e.target,
+      //     index = favorites.indexOf(id);
+      //   // return if target doesn't have an id (shouldn't happen)
+      //   if (!id) return;
+      //   // item is not favorite
+      //   if (index == -1) {
+      //     favorites.push(id);
+      //     item.className = 'fav';
+      //     // item is already favorite
+      //   } else {
+      //     favorites.splice(index, 1);
+      //     item.className = '';
+      //   }
+      //   // store array in local storage
+      //   localStorage.setItem('favorites', JSON.stringify(favorites));
+      // });
     });
   }
 }

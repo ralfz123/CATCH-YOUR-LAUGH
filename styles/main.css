@@ -226,6 +226,16 @@ main a:hover {
   outline: 0;
 }
 
+#like-area #likeBtn:disabled {
+  opacity: 0.3;
+}
+
+#like-area #likeBtn:disabled:hover {
+  cursor: default;
+  transform: none;
+  background-position: left center;
+}
+
 .feedback-like {
   grid-area: cats;
   position: absolute;

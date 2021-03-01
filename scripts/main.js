@@ -1,17 +1,15 @@
 import { getData } from './utils/fetch.js';
+import { renderData } from './modules/render.js';
 import { routeHandler } from './router/router.js';
 
-// Function that starts the app, within all feature-functions [NOT FINISHED]
-function init() {
+// IIFE Function that starts the app, within all feature-functions
+(async function init() {
   // Router
   routeHandler();
 
-  // Get data (fetch and render)
-  getData();
+  // Get data through fetch and put in a variable called recei
+  const receivedData = await getData();
 
-  // render
-
-  // const data = await fetchData();
-}
-
-init();
+  // Render that data
+  renderData(receivedData.filteredDataCat, receivedData.filteredDataJoke);
+})();

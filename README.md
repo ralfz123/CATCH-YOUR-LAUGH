@@ -107,7 +107,7 @@ This app is built, using:
 - [x] Dynamic data via virtualDOM
 - [x] FavoritesList
 - [x] Like adds item (cat+joke) to favList
-- [ ] Not the same combo's in the favourites list
+- [x] Not the same combo's in the favourites list
 - [x] Favourite item (detail page)
 - [ ] Delete favourite item from array and rerender UI
 - [x] Delete all favourites from array and rerender UI
@@ -126,13 +126,13 @@ This app is built, using:
 - [x] Split API-url in chunks
 - [x] Routing
 - [x] Script folder structure (helpers/utils/components)
-- [ ] Init app and functions in a right way
-- [ ] Functions/modules always have to return something in stead of invoking other functions
-    - [ ] Do something based on the return of the function (fetch returns to main, in main invoke render function with data)
-    - [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
+- [x] Init app and functions in a right way
+- [x] Functions/modules always have to return something in stead of invoking other functions
+    - [x] Do something based on the return of the function (fetch returns to main, in main invoke render function with data)
+    - [x] Invoking of functions in a correct way in a correct file (waterfall effect)
 - [ ] Arrow function
 - [x] **Map**/filter/reduce: use 1 of the 3
-- [ ] Check where to use `let` or `const`
+- [x] Check where to use `let` or `const`
 - [ ] BONUS: Templating 
 
 ##### CSS:
@@ -159,6 +159,9 @@ lorem
 ### reduce() & some()
 lorem
 
+
+### focus on that every function has to return something
+lorem
 ## :gear: Installation
 1. Clone the repository:  
 ```
