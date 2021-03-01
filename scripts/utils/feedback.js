@@ -1,5 +1,5 @@
 // Feedback from the 'like' to the user
-function feedback() {
+function feedbackLike() {
   let feedbackLike = document.createElement('p');
   feedbackLike.setAttribute('class', 'feedback-like');
   let newContent = document.createTextNode('❤️');
@@ -13,4 +13,4 @@ function feedback() {
   }, 1500);
 }
 
-export { feedback };
+export { feedbackLike };

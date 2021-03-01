@@ -3,7 +3,14 @@ import { loader } from './loader.js';
 import { filterCatData, filterJokeData } from './filter.js';
 import '../modules/refreshCombo.js';
 
-// Fetching data and parses to JSON
+/**
+ * Fetching data and parses to JSON
+ *
+ * @param {string} url - The url of the API endpoint
+ * @return {string} jsonData - JSON data
+ *
+ */
+
 async function fetchData(url) {
   const dataResponse = await fetch(url);
   const jsonData = await dataResponse.json();
@@ -11,8 +18,14 @@ async function fetchData(url) {
   return jsonData;
 }
 
-// Starting application - getting data from endpoints and invoke functions with that data
+/**
+ * Starting application - getting data from endpoints and invoke functions with that data
+ */
+
 async function getData() {
+  const likeBtn = document.getElementById('likeBtn');
+  likeBtn.setAttribute('disabled', true); // Set variable to disabled so that you're not able to like the unfetched data
+
   // API - Cats
   const endpointCats = 'https://api.thecatapi.com';
   const pathCats = 'v1/images/search';
@@ -23,23 +36,16 @@ async function getData() {
   const pathJokes = 'jokes/random';
   const urlJokes = `${endpointJokes}/${pathJokes}`;
 
-  const likeBtn = document.getElementById('likeBtn');
-  likeBtn.setAttribute('disabled', true); // Set variable to disabled so that you're not able to like the unfetched combo data
-
   const dataCatImages = await fetchData(urlCats);
   const dataJokes = await fetchData(urlJokes);
 
-  // Filter data - NOT WORKING
-  // let filteredDataCat = filterData(dataCatImages);
-  // let filteredDataJoke = filterData(dataJokes);
-  // console.log(filterCatData(dataCatImages))
-  // console.log(filterJokeData(dataJokes))
+  // Filter data
+  const filteredDataCat = filterCatData(dataCatImages);
+  const filteredDataJoke = filterJokeData(dataJokes);
 
   likeBtn.removeAttribute('disabled', true); // Data is fetched, so now the like button is enabled
 
-  // cleanData(dataCatImages, dataJokes); // NOT WORKING
-  renderData(dataCatImages, dataJokes);
-  // renderData(filteredDataCat, filteredDataJoke);
+  renderData(filteredDataCat, filteredDataJoke);
 }
 
 export { getData };

@@ -2,7 +2,7 @@
 
 ![Badge stating project is licensed under MIT license](https://img.shields.io/github/license/ralfz123/web-app-from-scratch-2021) ![Badge stating amount of issues open](https://img.shields.io/github/issues/ralfz123/web-app-from-scratch-2021) [![](https://img.shields.io/badge/site--status-up-success)](https://ralfz123.github.io/web-app-from-scratch-2021) [![Badges via shields.io](https://img.shields.io/badge/badges%20via-shields.io-brightgreen)](shields.io)
 
-[Link to live version :rocket:](https://ralfz123.github.io/web-app-from-scratch-2021)
+[Link to live version :rocket:](https://ralfz123.github.io/CATCH-YOUR-LAUGH/)
 
 # **CAT**CH YOUR LAUGH
 _Web App From Scratch, a course of the minor Web Design & Development. It is a minor of the third year from the study [CMD](https://www.cmd-amsterdam.nl/)._
@@ -96,9 +96,12 @@ The data variables I used, are:
 ## :nerd_face: Technical summary
 This app is built, using:
 - `.map()`
+- `.reduce()` (first time)
 - Module patterns
 
-### :file_folder: To-Do's
+<details>
+<summary>To-Do's</summary>
+
 #### App:
 - [x] Data fetch (getdata)
 - [x] Dynamic data via virtualDOM
@@ -128,7 +131,7 @@ This app is built, using:
     - [ ] Do something based on the return of the function (fetch returns to main, in main invoke render function with data)
     - [ ] Invoking of functions in a correct way in a correct file (waterfall effect)
 - [ ] Arrow function
-- [ ] **Map**/filter/reduce: use 1 of the 3
+- [x] **Map**/filter/reduce: use 1 of the 3
 - [ ] Check where to use `let` or `const`
 - [ ] BONUS: Templating 
 
@@ -141,6 +144,8 @@ This app is built, using:
 - [ ] Actor Diagram
 - [ ] Interaction Diagram
 - [ ] Uitdagingen/learnings uitleggen
+
+</details>
 
 ## Challenges / Inventions:
 ### Fetch 2 API's (Challenge)

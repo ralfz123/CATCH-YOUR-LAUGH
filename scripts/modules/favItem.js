@@ -1,4 +1,4 @@
-import { favouritesArray, renderLiData } from './like.js';
+import { favouritesArray, renderFavItem } from './like.js';
 import { renderDetail } from './favDetail.js';
 import { emptyStateHandler } from '../utils/emptyState.js';
 
@@ -39,8 +39,8 @@ function deleteAllFavItems() {
   const deleteAllBtn = document.querySelector('.deleteAllBtn');
   deleteAllBtn.addEventListener('click', function () {
     let favouritesArray = [];
-    renderLiData(favouritesArray);
-    console.log('Removed ALL - array length:', favouritesArray.length);
+    renderFavItem(favouritesArray);
+    console.log('Liked items:', favouritesArray);
     // emptyStateHandler(favouritesArray.length)
   });
 }

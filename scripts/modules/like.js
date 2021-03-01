@@ -1,5 +1,5 @@
 import { clickDetailFav, deleteFavItem, deleteAllFavItems } from './favItem.js';
-import { feedback } from '../utils/feedback.js';
+import { feedbackLike } from '../utils/feedback.js';
 
 export let favouritesArray = []; // Empty array for keeping up the favourites data
 
@@ -11,11 +11,23 @@ function clickLikeBtn(catData, jokeData) {
     // Only perform this function if the data is present
     if (catData && jokeData) {
       let object = { catData: catData[0], jokeData: jokeData };
-      // checkDuplicateFav(object);
       favouritesArray.push(object);
+      // checkDuplicateFav(favouritesArray, object);
+      // checkDuplicateFav();
 
-      renderLiData(favouritesArray);
-      feedback(); // UX Feedback from the 'like'
+      favouritesArray.reduce((newArray, likedCombo) => {
+        if (
+          !newArray.some(
+            (element) => element.catData.url == likedCombo.catData.url
+          )
+        )
+          // favouritesArray.push(likedCombo);
+          console.log(likedCombo.catData.url)
+        return newArray;
+      }, []); // [] = newArray
+
+      renderFavItem(favouritesArray);
+      feedbackLike(); // UX Feedback from the 'like'
       clickDetailFav(favouritesArray, object);
       deleteFavItem(favouritesArray);
       // deleteAllFavItems();
@@ -25,23 +37,29 @@ function clickLikeBtn(catData, jokeData) {
   });
 }
 
-// Checks if the liked combo is not a duplicate, then it will not be saved in the favourites list
-// function checkDuplicateFav(data, currentObject) {
-//   if (currentObject == currentObject) {
-//     // (currentObject.catData.url && currentObject.jokeData.id)
-//     console.log('The same');
-//   } else {
-//     console.log('Not the same');
-//   }
-// }
+// Checks if the liked combo is not a duplicate, then it won't be saved in the favourites list
+function checkDuplicateFav() {
+  // param(allObjects, currentObject)
+  // object.catData.url, object.jokeData.id)
 
-// Makes a favourite item
-export function renderLiData(arrayData) {
+  const newArray = favouritesArray.reduce((newArray, currentValue) => {
+    if (
+      !newArray.some(
+        (element) => element.catData.url === currentValue.catData.url
+      )
+    )
+      favouritesArray.push(currentValue);
+    return newArray;
+  }, []); // [] = newArray
+}
+
+// Creates a favourite item and renders the data
+export function renderFavItem(arrayData) {
   let currentContainer = document.querySelector('ol');
   currentContainer.innerHTML = ''; // Make it empty before data will be rendered
 
   arrayData.forEach((object) => {
-    // Makes new li in the list
+    // Creates new <li> in the list
     let newFav = document.createElement('li');
     newFav.setAttribute('class', 'fav-item');
 
