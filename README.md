@@ -111,7 +111,7 @@ This app is built, using:
 - [x] Favourite item (detail page)
 - [ ] Delete favourite item from array and rerender UI
 - [x] Delete all favourites from array and rerender UI
-- [ ] Redirect to detail page when clicking on unique favourite item
+- [x] Redirect to detail page when clicking on unique favourite item
 - [x] Data rendered in detail page (favourite item)
 - [x] "Another combo" button fetches again without page reload (only invoking yet)
 - [ ] UI is loaded when data is fetched
