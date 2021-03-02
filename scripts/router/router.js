@@ -1,5 +1,10 @@
 import '../vendor/routie.js';
 
+/**
+ * Handle the routes of all 'pages'
+ *
+ */
+
 function routeHandler() {
   routie({
     '': function () {
@@ -13,6 +18,13 @@ function routeHandler() {
     },
   });
 }
+
+/**
+ * Manages which pages will be displayed
+ *
+ * @param {string} page - Current page that has to be displayed
+ *
+ */
 
 function sectionToggler(page) {
   const allSections = document.querySelectorAll('section');
@@ -29,5 +41,4 @@ function sectionToggler(page) {
   activeSection.hidden = false;
 }
 
-// emptyStateHandler();
 export { routeHandler };

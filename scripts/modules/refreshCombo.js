@@ -1,7 +1,11 @@
 import { getData } from '../utils/fetch.js';
 import { renderData } from './render.js';
 
-// Another combo - triggered by button, then fetches and renders again
+/**
+ * A button that fetches and renders the data again
+ *
+ */
+
 const comboBtn = document.getElementById('comboBtn');
 comboBtn.addEventListener('click', async function () {
   // Fetches data again

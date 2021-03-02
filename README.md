@@ -109,7 +109,7 @@ This app is built, using:
 - [x] Like adds item (cat+joke) to favList
 - [x] Not the same combo's in the favourites list
 - [x] Favourite item (detail page)
-- [ ] Delete favourite item from array and rerender UI
+- [x] Delete favourite item from array and rerender UI
 - [x] Delete all favourites from array and rerender UI
 - [x] Redirect to detail page when clicking on unique favourite item
 - [x] Data rendered in detail page (favourite item)
@@ -121,7 +121,7 @@ This app is built, using:
 #### Code:
 - [x] Modules
 - [x] Async fetch (async await)
-- [ ] Params function
+- [x] Params function
 - [x] Feedback (Loader) to user while fetching data
 - [x] Split API-url in chunks
 - [x] Routing
@@ -133,6 +133,7 @@ This app is built, using:
 - [ ] Arrow function
 - [x] **Map**/filter/reduce: use 1 of the 3
 - [x] Check where to use `let` or `const`
+- [ ] Descriptive function/variable names
 - [ ] BONUS: Templating 
 
 ##### CSS:

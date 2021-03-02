@@ -21,6 +21,7 @@ body {
   margin: 20px;
   padding: 0;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* ------------------------------------------- */
@@ -51,8 +52,6 @@ main button {
   font-size: 1rem;
   border-radius: 10px;
   transition: 0.1s;
-  background: black;
-  color: white;
   text-align: center;
 }
 
@@ -69,8 +68,9 @@ main button:focus {
 
 main a {
   border-radius: 10px;
-  background-color: black;
+  background: #2c28bb;
   color: white;
+  font-weight: 500;
   padding: 0.5em 0.75em;
   text-decoration: none;
   border: 1px solid transparent;
@@ -78,9 +78,9 @@ main a {
 }
 
 main a:hover {
+  color: #2c28bb;
   background: white;
-  color: black;
-  border: 1px solid black;
+  border: 1px solid #2c28bb;
 }
 
 main section {
@@ -173,19 +173,12 @@ main section.active {
   transition: 0.2s;
 }
 
-#like-area #checkFavoBtn {
+#like-area a {
   display: block;
-  background-color: #1f1b1b;
   padding: 8px 2px;
   transition: background-color 0.1s;
-  width: 150px;
   width: 12em;
   margin: 0 auto;
-  color: white;
-}
-
-#like-area #checkFavoBtn:hover {
-  background-color: #1f1b1b69;
 }
 
 #like-area #likeBtn {
@@ -326,25 +319,12 @@ main section.active {
   visibility: visible;
   text-align: center;
   border-radius: 10px;
-  /* transition: 0.2s; */
 }
 
-#favourites .disappearBtn {
+#favourites a {
   position: absolute;
   left: 10px;
   top: 5px;
-}
-
-#favourites .disappearBtn:hover {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-}
-
-/* Add button */
-#favourites .checkBtn {
-  display: block;
-  background: chartreuse;
 }
 
 #favourites .deleteAllBtn {
@@ -353,7 +333,7 @@ main section.active {
   margin-top: 2em;
   padding: 8px 2px;
   display: block;
-  background-color: #c40000;
+  background-color: #a00808;
 }
 
 #favourites .deleteAllBtn:hover {
@@ -393,6 +373,7 @@ main section.active {
 
 #favourites ol li:hover {
   background: rgba(169, 169, 169, 0.065);
+  background: rgba(0, 80, 239, 0.156);
 }
 
 #favourites ol li img {
@@ -420,9 +401,10 @@ main section.active {
 
 #favourites ol li .deleteBtn,
 #favourites ol li .checkBtn {
-  margin: 8px;
+  margin: 17px 0px;
   width: 30px;
   height: 30px;
+  display: block;
   border-radius: 5px;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -467,13 +449,6 @@ main section.active {
   position: absolute;
   left: 10px;
   top: 5px;
-}
-
-#fav-item a:hover {
-  background: linear-gradient(#70e1f5 30%, #ffd194 100%);
-  background: white;
-  color: black;
-  border: 1px solid black;
 }
 
 #fav-item img {
@@ -594,17 +569,17 @@ footer p a:hover {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #98dffb70;
+  box-shadow: inset 0 0 5px #2d28bb91;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #98dffb70;
+  background: #2c28bb;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #56cfff;
+  background: #2c28bb;
 }

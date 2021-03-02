@@ -1,4 +1,8 @@
-// Feedback from the 'like' to the user
+/**
+ * Feedback from the 'like' to the user
+ *
+ */
+
 function feedbackLike() {
   let feedbackLike = document.createElement('p');
   feedbackLike.setAttribute('class', 'feedback-like');
