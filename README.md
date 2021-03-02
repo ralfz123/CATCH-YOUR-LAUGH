@@ -39,16 +39,13 @@ You may *like* the combination of the cat and the joke. It will be saved on the 
 <img src="assets/README/app-screenshot.png" alt="live-demo-screenshot" width="700px">
 
 #### Features
-- By clicking on the 'ANOTHER COMBO' button you can see a different combination of cat and joke
-- Like your favourite combination of cat and joke
-- Create favourites list with your favourite combinations of cat & joke
+- By clicking on the 'ANOTHER COMBO' button you can see a different combination of a cat image and a joke
+- Like your favourite combination of a cat image and a joke
+- Create a favourites list with your favourite combinations of a cat image and a joke
 
 #### Actor diagram
 **Not finished yet.**
 <img src="assets/README/actordiagram.jpg" width="900px" />
-
-Questions:
-- Have I have to handle overview and detail routes in the diagram?
 
 #### Interaction diagram
 **Not finished yet.**
