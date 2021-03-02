@@ -135,10 +135,7 @@ This app is built, using:
 - [x] Check where to use `let` or `const`
 - [ ] Descriptive function/variable names
 - [ ] BONUS: Templating 
-
-##### CSS:
-- [ ] custom properties colors
-
+- [ ] BONUS: CSS - custom properties color
 ##### Readme:
 - [x] Transform to English language
 - [x] Screenshot app
