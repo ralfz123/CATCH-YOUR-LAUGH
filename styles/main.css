@@ -234,7 +234,7 @@ main section.active {
 }
 
 #like-area #likeBtn:disabled:hover {
-  cursor: default;
+  cursor: not-allowed;
   transform: none;
   background-position: left center;
 }
@@ -304,10 +304,11 @@ main section.active {
 }
 
 #comboBtn:disabled:hover {
-  cursor: default;
+  cursor: not-allowed;
   transform: none;
   background-position: left center;
   box-shadow: 0 0 10px rgb(122, 122, 122);
+  color: #006979;
 }
 
 /* ------- FAVOURITES ------- */
@@ -537,18 +538,22 @@ footer p a:hover {
   height: 80px;
   position: absolute;
   z-index: 10;
+  top: 10%;
+  left: 21em;
 }
+
 .loader:after {
   content: ' ';
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 5em;
+  height: 5em;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid rgb(28, 27, 27);
-  border-color: rgb(28, 27, 27) transparent rgb(28, 27, 27) transparent;
+  border: 20px solid #7b78f7;
+  border-color: #7b78f7 transparent #7b78f7 transparent;
   animation: loader 1.2s linear infinite;
 }
+
 @keyframes loader {
   0% {
     transform: rotate(0deg);
@@ -557,7 +562,8 @@ footer p a:hover {
     transform: rotate(360deg);
   }
 }
-.loader-hide {
+
+.hide {
   display: none;
 }
 

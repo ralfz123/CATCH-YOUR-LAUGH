@@ -16,8 +16,22 @@ function routeHandler() {
     'favourites/:id': function () {
       sectionToggler('fav-item');
     },
+    // 'favourites/:id': function (id) {
+    //   console.log(id);
+    //   sectionToggler(id)
+    //   addSection(id);
+    //   toggle(id);
+    //   const filtered = filterPlayers(playerData, id);
+    //   renderPlayerData(filtered);
+    // },
   });
 }
+
+// function addSection(id) {
+//   const teamSection = document.querySelector("ol");
+//   teamSection.classList = "";
+//   teamSection.classList.add(id);
+// }
 
 /**
  * Manages which pages will be displayed
