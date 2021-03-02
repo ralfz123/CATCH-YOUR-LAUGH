@@ -1,5 +1,4 @@
 import '../vendor/routie.js';
-import { emptyStateHandler } from '../utils/emptyState.js';
 
 function routeHandler() {
   routie({

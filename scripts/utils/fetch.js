@@ -28,7 +28,10 @@ async function fetchData(url) {
 
 async function getData() {
   const likeBtn = document.getElementById('likeBtn');
-  likeBtn.setAttribute('disabled', true); // Set variable to disabled so that you're not able to like the unfetched data
+  likeBtn.setAttribute('disabled', true); // Set button to disabled, so that you're not able to like the unfetched data
+  const comboBtn = document.getElementById('comboBtn');
+  comboBtn.setAttribute('disabled', true); // Set button to disabled, so that you're not able to see other unfetched data
+
 
   const dataCats = await fetchData(urlCats);
   const dataJokes = await fetchData(urlJokes);
@@ -38,6 +41,7 @@ async function getData() {
   const filteredDataJoke = filterJokeData(dataJokes);
 
   likeBtn.removeAttribute('disabled', true); // Data is fetched, so now the like button is enabled
+  comboBtn.removeAttribute('disabled', true); // Data is fetched, so now the combo button is enabled
 
   return { filteredDataCat, filteredDataJoke };
 }

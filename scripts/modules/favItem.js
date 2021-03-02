@@ -1,8 +1,58 @@
-import { favouritesArray, renderFavItem } from './like.js';
+import { favouritesArray } from './like.js';
 import { renderDetail } from './favDetail.js';
-import { emptyStateHandler } from '../utils/emptyState.js';
 
-function clickDetailFav(arrayData) {
+// Creates a favourite item and renders the data
+function renderFavItem(arrayData) {
+  let currentContainer = document.querySelector('ol');
+  currentContainer.innerHTML = ''; // Make it empty before data will be rendered
+
+  arrayData.forEach((object) => {
+    // Creates new <li> in the list
+    let newFav = document.createElement('li');
+    newFav.setAttribute('class', 'fav-item');
+
+    // Image
+    let newCatImg = document.createElement('img');
+    newCatImg.src = object.catData.url;
+    newFav.appendChild(newCatImg);
+
+    // Joke container
+    let jokeContainer = document.createElement('div');
+    newFav.appendChild(jokeContainer);
+
+    // Joke
+    let newJoke = document.createElement('p');
+    newJoke.innerHTML = object.jokeData.setup;
+    jokeContainer.appendChild(newJoke);
+
+    // Punchline
+    let newJokePunchline = document.createElement('p');
+    newJokePunchline.innerHTML = object.jokeData.punchline;
+    jokeContainer.appendChild(newJokePunchline);
+
+    // Buttons container
+    let btnsContainer = document.createElement('div');
+    newFav.appendChild(btnsContainer);
+
+    // Check button to check the fav-item
+    let checkBtn = document.createElement('button');
+    checkBtn.setAttribute('class', 'checkBtn');
+    btnsContainer.appendChild(checkBtn);
+
+    // Delete button to delete the fav-item
+    let deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('class', 'deleteBtn');
+    btnsContainer.appendChild(deleteBtn);
+
+    currentContainer.appendChild(newFav);
+
+    clickDetailFav();
+    deleteFavItem();
+    deleteAllFavItems();
+  });
+}
+
+function clickDetailFav() {
   let checkFavItemBtns = document.querySelectorAll('.checkBtn');
 
   for (let i = 0; i < checkFavItemBtns.length; i++) {
@@ -14,65 +64,36 @@ function clickDetailFav(arrayData) {
         })
         .indexOf(favouritesArray[i].jokeData.id); // What's the purpose of this code?
 
-      renderDetail(favouritesArray[indexFav]);
       location.hash = `favourites/${favouritesArray[indexFav].jokeData.id}`;
+      renderDetail(favouritesArray[indexFav]);
       // } // end curly brace of for loop
     });
   }
 }
 
 // Removes one favourite item from favourites list
-function deleteFavItem(arrayData) {
+function deleteFavItem() {
   let deleteBtns = document.querySelectorAll('.deleteBtn');
 
   for (let i = 0; i < deleteBtns.length; i++) {
     deleteBtns[i].addEventListener('click', () => {
-      // let num = 0;
-      // let button = deleteBtns[i];
-      // let numIndex = button - 1;
-      console.log(arrayData);
-      let buttonSpecific = document.querySelectorAll('ol li .deleteBtn').length;
-      // console.log(buttonSpecific);
-      let index = buttonSpecific - 1;
-      console.log(index);
-      arrayData.splice(index, 1);
-      console.log(arrayData);
-      renderFavItem(arrayData);
+      const indexFav = favouritesArray
+        .map(function (object) {
+          return object.jokeData.id;
+        })
+        .indexOf(favouritesArray[i].jokeData.id); // What's the purpose of this code?
 
-      // Determain which object in array it is
-      // let favItem = document.querySelector('.fav-item');
-      // favItem.remove();
+      favouritesArray.splice(indexFav, 1);
 
-      //----  Code to remove it from array:
-      // Count li (object) from ol
-      // Count li.number - 1
-      // Take that value and remove object out array (arrayData.splice(indexOf, 1))
+      // const index = favouritesArray.indexOf(indexFav);
+      console.log(indexFav);
+      // console.log(index);
+      // favouritesArray.splice(index, 1);
 
-      // // get favorites from local storage or empty array
-      // var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      // // add class 'fav' to each favorite
-      // favorites.forEach(function (favorite) {
-      //   document.getElementById(favorite).className = 'fav';
-      // });
-      // // register click event listener
-      // document.querySelector('.list').addEventListener('click', function (e) {
-      //   var id = e.target.id,
-      //     item = e.target,
-      //     index = favorites.indexOf(id);
-      //   // return if target doesn't have an id (shouldn't happen)
-      //   if (!id) return;
-      //   // item is not favorite
-      //   if (index == -1) {
-      //     favorites.push(id);
-      //     item.className = 'fav';
-      //     // item is already favorite
-      //   } else {
-      //     favorites.splice(index, 1);
-      //     item.className = '';
-      //   }
-      //   // store array in local storage
-      //   localStorage.setItem('favorites', JSON.stringify(favorites));
-      // });
+      console.log('Removed');
+      // console.log('Zoveelste el:', indexFav);
+      console.log('Must be subtracted by 1: ', favouritesArray.length);
+      renderFavItem(favouritesArray);
     });
   }
 }
@@ -84,10 +105,9 @@ function deleteAllFavItems() {
     let favouritesArray = [];
     renderFavItem(favouritesArray);
     console.log('Liked items:', favouritesArray);
-    // emptyStateHandler(favouritesArray.length)
   });
 }
 
 deleteAllFavItems();
 
-export { clickDetailFav, deleteFavItem, deleteAllFavItems };
+export { renderFavItem, clickDetailFav, deleteFavItem, deleteAllFavItems };

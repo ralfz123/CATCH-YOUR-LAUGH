@@ -65,7 +65,7 @@ main button:focus {
   outline: none;
 }
 
-/* --/* --  Default a styling --/* -- */
+/* --/* --  Default <a> styling --/* -- */
 
 main a {
   border-radius: 10px;
@@ -81,6 +81,15 @@ main a:hover {
   background: white;
   color: black;
   border: 1px solid black;
+}
+
+main section {
+  display: none;
+  position: relative;
+}
+
+main section.active {
+  display: block;
 }
 
 #combo-generator.active {
@@ -170,6 +179,7 @@ main a:hover {
   padding: 8px 2px;
   transition: background-color 0.1s;
   width: 150px;
+  width: 12em;
   margin: 0 auto;
   color: white;
 }
@@ -294,6 +304,17 @@ main a:hover {
 
 #comboBtn:active {
   transform: scale(0.9);
+}
+
+#comboBtn:disabled {
+  opacity: 0.3;
+}
+
+#comboBtn:disabled:hover {
+  cursor: default;
+  transform: none;
+  background-position: left center;
+  box-shadow: 0 0 10px rgb(122, 122, 122);
 }
 
 /* ------- FAVOURITES ------- */

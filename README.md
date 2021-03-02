@@ -115,8 +115,8 @@ This app is built, using:
 - [x] Data rendered in detail page (favourite item)
 - [x] "Another combo" button fetches again without page reload (only invoking yet)
 - [ ] UI is loaded when data is fetched
-- [ ] Another section has to be to `display:none;` **when** page is loaded
-- [ ] Empty state favourites UI
+- [x] Another section has to be to `display:none;` **when** page is loaded
+- [x] Empty state favourites UI
 
 #### Code:
 - [x] Modules
