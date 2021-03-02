@@ -1,8 +1,7 @@
 import { urlCats, urlJokes } from '../constants/api.js';
 import { loader } from './loader.js';
-import { renderData } from '../modules/render.js';
 import { filterCatData, filterJokeData } from './filter.js';
-import '../modules/refreshCombo.js';
+import '../modules/anotherCombo.js';
 
 /**
  * Fetching data and parses to JSON

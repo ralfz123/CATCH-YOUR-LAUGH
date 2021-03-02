@@ -30,11 +30,7 @@ In this course I will learn to build a web application _without_ frameworks or u
 
 You may *like* the combination of the cat and the joke. It will be saved on the 'My Favourites' page and there you will see all your favourite combinations. You can also click on one of your favourites and you will be taken to the detail page where you will see your favourite in large format.
 
-
-<!-- ### :bulb: Idea
-<img src="" alt="sketch" width="800px"> -->
-
-### [Live version here](https://ralfz123.github.io/CATCH-YOUR-LAUGH)
+### [Live version here :red_circle:](https://ralfz123.github.io/CATCH-YOUR-LAUGH)
 
 <img src="assets/README/app-screenshot.png" alt="live-demo-screenshot" width="700px">
 
@@ -44,12 +40,12 @@ You may *like* the combination of the cat and the joke. It will be saved on the 
 - Create a favourites list with your favourite combinations of a cat image and a joke
 
 #### Actor diagram
-**Not finished yet.**
-<img src="assets/README/actordiagram.jpg" width="900px" />
+<img src="assets/README/actor-dia-v3.png" width="900px" />
+
+
 
 #### Interaction diagram
-**Not finished yet.**
-<img src="assets/README/interaction_diagram.png" width="700px" />
+<img src="assets/README/interaction-dia-v2.png" width="700px" />
 
 ## :1234: Data  
 ### APIs are:
@@ -92,12 +88,71 @@ The data variables I used, are:
 
 ## :nerd_face: Technical summary
 This app is built, using:
-- `.map()`
-- `.reduce()` (first time)
-- Module patterns
 
 <details>
-<summary>To-Do's</summary>
+<summary>.map()</summary>
+
+
+
+[filterCatData(rawCatData)](https://github.com/ralfz123/CATCH-YOUR-LAUGH/blob/master/scripts/utils/filter.js#L9-L17)
+
+```js
+function filterCatData(rawCatData) {
+  const cleanCatData = rawCatData.map((element) => {
+    return {
+      id: element.id,
+      url: element.url,
+    };
+  });
+  return cleanCatData;
+}
+```
+</details>
+
+
+<details>
+<summary>.reduce()</summary>
+
+[checkDuplicateFav()](https://github.com/ralfz123/CATCH-YOUR-LAUGH/blob/master/scripts/modules/like.js#L41-L52)
+
+```js
+function checkDuplicateFav() {
+  const newArray = favouritesArray.reduce((newArray, currentValue) => {
+    if (
+      !newArray.some(
+        (element) => element.catData.url === currentValue.catData.url
+      )
+    )
+      newArray.push(currentValue);
+    return newArray;
+  }, []);
+  favouritesArray = newArray;
+}
+
+```
+</details>
+
+
+
+<!-- ## Challenges / Inventions:
+### Fetch 2 API's (Challenge)
+
+
+### Modules (Challenge)
+
+### Apply `async await` (Invention)
+
+
+### reduce() & some()
+
+
+### focus on that every function has to return something -->
+
+
+
+## To-Do's :pencil:
+<details>
+<summary>Expand</summary>
 
 #### App:
 - [x] Data fetch (getdata)
@@ -142,21 +197,7 @@ This app is built, using:
 
 </details>
 
-## Challenges / Inventions:
-### Fetch 2 API's (Challenge)
-lorem
 
-### Modules (Challenge)
-lorem
-### Apply `async await` (Invention)
-lorem
-
-### reduce() & some()
-lorem
-
-
-### focus on that every function has to return something
-lorem
 ## :gear: Installation
 1. Clone the repository:  
 ```
@@ -181,11 +222,16 @@ http://localhost:8000/
 ## :file_folder: Sources
 Credits to [Joost Faber](https://github.com/joostf) && [Koop](https://github.com/KoopReynders) && Suus for giving interesting lectures about Web Apps and JavaScript and how to deal with it.
 
-### LOREM sources
+### Code sources
+- Stackoverflow (n.d.). Searching for answers on dev questions - Stackoverflow. Retrieved 02 February 2021 from https://www.stackoverflow.com
+
+- ES6 modules - hacks.mozilla . Retrieved 10 February 2021, from https://hacks.mozilla.org/2015/08/es6-in-depth-modules/
+
 - Array.prototype.splice() - MDN. Retrieved 16 February 2021, from https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
-### Other sources
-- Stackoverflow (n.d.). Searching for answers on dev questions - Stackoverflow. Retrieved 02 February 2021 from https://www.stackoverflow.com
+- Array.prototype.some() - MDN. Retrieved 1 March 2021, from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+
+- Array.prototype.reduce() - MDN. Retrieved 1 March 2021, from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
 ## :cop: License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  

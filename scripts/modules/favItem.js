@@ -114,7 +114,6 @@ function deleteAllFavItems() {
   deleteAllBtn.onclick = () => {
     let favouritesArray = [];
     renderFavItem(favouritesArray);
-    console.log('Liked items:', favouritesArray);
   };
 }
 
