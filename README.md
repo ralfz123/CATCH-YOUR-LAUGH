@@ -185,14 +185,14 @@ function checkDuplicateFav() {
 - [ ] Arrow function
 - [x] **Map**/filter/reduce: use 1 of the 3
 - [x] Check where to use `let` or `const`
-- [ ] Descriptive function/variable names
+- [ ] Descriptive function/variable names check
 - [ ] BONUS: Templating 
 - [ ] BONUS: CSS - custom properties color
 ##### Readme:
 - [x] Transform to English language
 - [x] Screenshot app
-- [ ] Actor Diagram
-- [ ] Interaction Diagram
+- [x] Actor Diagram
+- [x] Interaction Diagram
 - [ ] Uitdagingen/learnings uitleggen
 
 </details>
