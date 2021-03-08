@@ -86,6 +86,7 @@ main a:hover {
 main section {
   display: none;
   position: relative;
+  width: 50vw;
 }
 
 main section.active {
@@ -103,9 +104,7 @@ main section.active {
   grid-auto-rows: minmax(15vh, auto);
   grid-gap: 5px;
 
-  width: 50em;
   margin: 0 auto;
-  position: relative;
   justify-items: center;
 }
 
@@ -315,8 +314,6 @@ main section.active {
 
 #favourites {
   margin: 0 auto;
-  position: relative;
-  width: 50em;
   visibility: visible;
   text-align: center;
   border-radius: 10px;
@@ -325,7 +322,7 @@ main section.active {
 #favourites a {
   position: absolute;
   left: 10px;
-  top: 5px;
+  top: -2px;
 }
 
 #favourites .deleteAllBtn {
@@ -438,18 +435,16 @@ main section.active {
 /* ------- FAVOURITE ITEM (DETAIL PAGE) ------- */
 
 #fav-item {
-  position: relative;
   margin: 0 auto;
-  width: 50em;
   height: 73vh;
   text-align: center;
-  border-radius: 10px;
 }
 
 #fav-item a {
   position: absolute;
+  display: block;
   left: 10px;
-  top: 5px;
+  top: -2px;
 }
 
 #fav-item img {
@@ -534,12 +529,11 @@ footer p a:hover {
 
 .loader {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 10em;
+  height: 10em;
   position: absolute;
-  z-index: 10;
-  top: 10%;
-  left: 21em;
+  z-index: 2;
+  top: 5%;
 }
 
 .loader:after {
@@ -588,4 +582,67 @@ footer p a:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #2c28bb;
+}
+
+@media all and (max-width: 50em) {
+  body {
+    overflow-y: scroll;
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  main section {
+    width: 90vw;
+  }
+
+  #combo-generator.active {
+    display: grid;
+    grid-template-areas:
+      'cats jokes'
+      'button button'
+      'like like';
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(10vh, auto);
+  }
+
+  #jokes h3 {
+    font-size: 1rem;
+  }
+
+  .feedback-like {
+    font-size: 8.5rem;
+    width: 1.5em;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  #favourites ol li {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-template-rows: 100px auto;
+    align-items: center;
+    transition: background 0.1s;
+    padding: 7px;
+  }
+
+  #favourites ol li img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  #favourites ol li div:first-of-type {
+    padding: 5px;
+  }
+
+  #favourites ol li div p {
+    font-size: 0.8rem;
+  }
+
+  #fav-item div {
+    font-size: 1rem;
+  }
 }
