@@ -32,7 +32,7 @@ You may *like* the combination of the cat and the joke. It will be saved on the 
 
 ### [Live version here :red_circle:](https://ralfz123.github.io/CATCH-YOUR-LAUGH)
 
-<img src="assets/README/app-screenshot.png" alt="live-demo-screenshot" width="700px">
+<img src="assets/README/app-screenshot-2.png" alt="live-demo-screenshot" width="500px">
 
 #### Features
 - By clicking on the 'ANOTHER COMBO' button you can see a different combination of a cat image and a joke
